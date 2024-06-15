@@ -11,192 +11,391 @@
 
 @section('content')
 
-<!--slider area start-->
-    <section class="slider_section">
-        
-        <div class="">
-            <div class="">
-                <div class="col-lg-12 col-md-12">
-                    <div class="slider_area slider_three owl-carousel">
-                        <?php for($i=1; $i<=2; $i++){ ?>
-                        <div class="single_slider">
-                            <img src="assets/img/bds/slider.jpg">
-                        </div>
-                        <div class="single_slider">
-                            <img src="assets/img/bds/A301.jpg">
-                        </div>
-                        <?php } ?>
-                    </div>
+<!------------------- HERO ------------------->
+<section class="sec-hero">
+    <div class="hero-slider">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><span style='background-image: url("assets/images/capital.jpg")' class="w-100 thumb"></span></div>
+            </div>
+            <div class="swiper-navigator">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-navigator-btn">
+                    <div class="swiper-button-prev"><i class="icon-prev-thin"></i></div>
+                    <div class="swiper-button-next"><i class="icon-next-thin"></i></div>
                 </div>
             </div>
         </div>
-
-    </section>
-    <!--slider area end-->
-
-    <!--product area start-->
-    <section class="section1 new_product_area mb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section_title">
-                        <h2><span> sdfsdfsdf <strong>sdfsda ádf</strong></span></h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tab-content">
-                <div class="new_product_container">
-                    <div class="sample_product">
-                        <div class="product_thumb">
-                            <a href="#"><img src="assets/img/bds/sp2.jpg" alt=""></a>
-                        </div>
-                        <div class="product_name">
-                            <h3><a class="bold" href="">New and sale</a></h3>
-                        </div>
-                        <div class="product_content">
-                            <div class="product_ratings">
-                                <ul>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                    <li><a href="#"><i class="ion-star"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="detail">
-                                <a href="">Chi tiết</a>
-                            </div>
-                            <!-- <div class="price_box">
-                                <span class="current_price">Giá bán: 710,000,000 VND</span>
-                                <span class="old_price">$180.00</span>
-                            </div> -->
-                        </div>
-                    </div>
-                    <div class="product_carousel product_bg  product_column2 owl-carousel">
-                        
-                        <div class="small_product">
-                            <div class="single_product">
-                                <div class="product_content">
-                                    <h3><a href="">VinFast VF3</a></h3>
-                                    <div class="product_ratings">
-                                        <ul>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="detail">
-                                        <a href="">Chi tiết</a>
-                                    </div>
-                                </div>
-                                <div class="product_thumb">
-                                    <a class="primary_img" href="product-details.html"><img src="assets/img/bds/sp2.jpg" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="single_product">
-                                <div class="product_content">
-                                    <h3><a href="">Bluetooth 2</a></h3>
-                                    <div class="product_ratings">
-                                        <ul>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="price_box">
-                                        <span class="current_price">1,710,000,000 VND</span>
-                                        <!-- <span class="regular_price">1,710,000,000 VND</span> -->
-                                    </div>
-                                </div>
-                                <div class="product_thumb">
-                                    <a class="primary_img" href="product-details.html"><img src="assets/img/bds/sp2.jpg" alt=""></a>
-                                </div>
-                            </div>
-                            <div class="single_product">
-                                <div class="product_content">
-                                    <h3><a href="product-details.html">JBL Flip 3 </a></h3>
-                                    <div class="product_ratings">
-                                        <ul>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                            <li><a href="#"><i class="ion-star"></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="price_box">
-                                        <span class="regular_price">$180.00</span>
-                                    </div>
-                                </div>
-                                <div class="product_thumb">
-                                    <a class="primary_img" href="product-details.html"><img src="assets/img/bds/sp1.jpg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--product area end-->
-
-
-    <!--product area start-->
-    <section class="product_area mb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section_title">
-                        <h2><span> sdfsdfsdf <strong>sdfsda ádf</strong></span></h2>
-                    </div>
-                </div>
-            </div>
-                
-            <div class="fade show">
-                <div class="product_carousel product_column4 owl-carousel">
-                    <?php for($j = 1; $j <= 6; $j++){ ?>
-                    <div class="single_product_list">
-                        <?php for($i = 1; $i <= 2; $i++){ ?>
-                        <?php include('layout/single_product.php') ?>
-                        <?php } ?>
-                    </div>
-                    <?php } ?>
-                </div>
-            </div>
-                
-        </div>
-    </section>
-    <!--product area end-->
-
+    </div>
     
+</section>
 
-    <!--banner area start-->
-    <section class="banner_area mb-50">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="single_banner banner_fullwidth">
-                        <div class="banner_thumb">
-                            <a href="#"><img src="assets/img/bg/banner5.jpg" alt=""></a>
-                            <div class="banner_text">
-                                <h2>Win the cost of your</h2>
-                                <h3>Tyres back</h3>
-                                <p>Chance to win when you buy 2 + Pirell Tyres in March</p>
-                                <a href="shop.html">Discover Now</a>
+
+<!------------------- PRODUCT RENT ------------------->
+<section class="sec-product-rent">
+    <div class="container">
+        <div class="cover-title-home">
+            <div class="text-start">
+                <div class="cover-title">
+                    <h3><span class="cover-title-filled text-main">DỰ ÁN TRỌNG ĐIỂM</span></h3>
+                </div>
+                <div class="cover-descip">
+                    <p>Những dự án mang dấu ấn VIETNAM HOMES, được phát triển kinh doanh và phân phối độc quyền bỏi VIETNAM HOMES</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="position-relative broker-slider">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="col">
+                            <div class="card card-s card-s4">
+                                <a href="sale-detail.htm">
+                                    <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('https://datxanhindochine.com/data/product/z4594510880569_6a6ee8e09b3544f753bc998a7fa81f67.jpg');" alt="..."></span>
+                                    <span class="view-more">Chi tiết</span>
+                                    <div class="product-status">
+                                        <span><i class="icon-acreage me-1"></i>50 - 100m2</span>
+                                        <span><i class="icon-bed me-1"></i>2 - 3PN</span>
+                                        <span><i class="icon-bathroom me-1"></i>2 - 3WC</span>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <div class="card-body-wrap">
+                                        <h5 class="card-title"><a href="#" class="text-truncate">Capital Elite</a></h5>
+                                        <div class="card-info">
+                                            <span>18 Phạm Hùng, Nam Từ Liêm, Hà Nội</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-price">Giá từ: <span class="current-price">7 - 9 tỷ</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="col">
+                            <div class="card card-s card-s4">
+                                <a href="sale-detail.htm">
+                                    <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('https://datxanhindochine.com/data/product/Essensia-Nam-Sai-Gon-1024x576.jpg');" alt="..."></span>
+                                    <span class="view-more">Chi tiết</span>
+                                    <div class="product-status">
+                                        <span><i class="icon-acreage me-1"></i>50 - 100m2</span>
+                                        <span><i class="icon-bed me-1"></i>2 - 3PN</span>
+                                        <span><i class="icon-bathroom me-1"></i>2 - 3WC</span>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <div class="card-body-wrap">
+                                        <h5 class="card-title"><a href="#" class="text-truncate">Essensia Nam Sài Gòn</a></h5>
+                                        <div class="card-info">
+                                            <span>18 Phạm Hùng, Nam Từ Liêm, Hà Nội</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-price">Giá từ: <span class="current-price">7 - 9 tỷ</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="col">
+                            <div class="card card-s card-s4">
+                                <a href="sale-detail.htm">
+                                    <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('https://datxanhindochine.com/data/product/phoi-canh-masteri-west-heights-1536x987.jpg');" alt="..."></span>
+                                    <span class="view-more">Chi tiết</span>
+                                    <div class="product-status">
+                                        <span><i class="icon-acreage me-1"></i>50 - 100m2</span>
+                                        <span><i class="icon-bed me-1"></i>2 - 3PN</span>
+                                        <span><i class="icon-bathroom me-1"></i>2 - 3WC</span>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <div class="card-body-wrap">
+                                        <h5 class="card-title"><a href="#" class="text-truncate">Masteri West Heights</a></h5>
+                                        <div class="card-info">
+                                            <span>18 Phạm Hùng, Nam Từ Liêm, Hà Nội</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-price">Giá từ: <span class="current-price">7 - 9 tỷ</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="col">
+                            <div class="card card-s card-s4">
+                                <a href="sale-detail.htm">
+                                    <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('https://datxanhindochine.com/data/product/0027-1024x512.jpg');" alt="..."></span>
+                                    <span class="view-more">Chi tiết</span>
+                                    <div class="product-status">
+                                        <span><i class="icon-acreage me-1"></i>50 - 100m2</span>
+                                        <span><i class="icon-bed me-1"></i>2 - 3PN</span>
+                                        <span><i class="icon-bathroom me-1"></i>2 - 3WC</span>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <div class="card-body-wrap">
+                                        <h5 class="card-title"><a href="#" class="text-truncate">THE MATRIX ONE</a></h5>
+                                        <div class="card-info">
+                                            <span>18 Phạm Hùng, Nam Từ Liêm, Hà Nội</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-price">Giá: <span class="current-price">Liên hệ</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="col">
+                            <div class="card card-s card-s4">
+                                <a href="sale-detail.htm">
+                                    <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('https://datxanhindochine.com/data/product/0027-1024x512.jpg');" alt="..."></span>
+                                    <span class="view-more">Chi tiết</span>
+                                    <div class="product-status">
+                                        <span><i class="icon-acreage me-1"></i>50 - 100m2</span>
+                                        <span><i class="icon-bed me-1"></i>2 - 3PN</span>
+                                        <span><i class="icon-bathroom me-1"></i>2 - 3WC</span>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <div class="card-body-wrap">
+                                        <h5 class="card-title"><a href="#" class="text-truncate">THE MATRIX ONE</a></h5>
+                                        <div class="card-info">
+                                            <span>18 Phạm Hùng, Nam Từ Liêm, Hà Nội</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-price">Giá: <span class="current-price">Liên hệ</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="col">
+                            <div class="card card-s card-s4">
+                                <a href="sale-detail.htm">
+                                    <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('https://datxanhindochine.com/data/product/0027-1024x512.jpg');" alt="..."></span>
+                                    <span class="view-more">Chi tiết</span>
+                                    <div class="product-status">
+                                        <span><i class="icon-acreage me-1"></i>50 - 100m2</span>
+                                        <span><i class="icon-bed me-1"></i>2 - 3PN</span>
+                                        <span><i class="icon-bathroom me-1"></i>2 - 3WC</span>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <div class="card-body-wrap">
+                                        <h5 class="card-title"><a href="#" class="text-truncate">THE MATRIX ONE</a></h5>
+                                        <div class="card-info">
+                                            <span>18 Phạm Hùng, Nam Từ Liêm, Hà Nội</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-price">Giá: <span class="current-price">Liên hệ</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="col">
+                            <div class="card card-s card-s4">
+                                <a href="sale-detail.htm">
+                                    <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('https://datxanhindochine.com/data/product/0027-1024x512.jpg');" alt="..."></span>
+                                    <span class="view-more">Chi tiết</span>
+                                    <div class="product-status">
+                                        <span><i class="icon-acreage me-1"></i>50 - 100m2</span>
+                                        <span><i class="icon-bed me-1"></i>2 - 3PN</span>
+                                        <span><i class="icon-bathroom me-1"></i>2 - 3WC</span>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <div class="card-body-wrap">
+                                        <h5 class="card-title"><a href="#" class="text-truncate">THE MATRIX ONE</a></h5>
+                                        <div class="card-info">
+                                            <span>18 Phạm Hùng, Nam Từ Liêm, Hà Nội</span>
+                                        </div>
+                                    </div>
+                                    <div class="card-price">Giá: <span class="current-price">Liên hệ</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="swiper-pagination "></div>
+            </div>
+            <div class="swiper-button-next d-none d-lg-flex d-lg-none"></div>
+            <div class="swiper-button-prev d-none d-lg-flex d-lg-none"></div>
+        </div>
+
+        <div class="load-more text-center mt-4 pt-2">
+            <div class="cta-btn ir">
+                <a class="" href="#"><span class="cta-text font-weight-semibold">Xem tất cả</span><span class="cta-ico"><i class="icon-next"></i></span></a>
             </div>
         </div>
-    </section>
-    <!--banner area end-->
+    </div>
+</section>
+
+<!------------------- SERVICE ------------------->
+<section class="sec-productcity-hp bg1">
+    <div class="container position-relative">
+        <div class="cover-title-home">
+            <div class="text-start">
+                <div class="cover-title">
+                    <h3><span class="cover-title-filled text-main">DỰ ÁN TOÀN QUỐC</span></h3>
+                </div>
+            </div>
+        </div>
+        <div class="news-hightlight">
+            <div class="row g-3">
+                <div class="col-lg-3">
+                    <div class="card-overlay-flex">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <div class="card-overlay-body">
+                                <h2><span>Quảng</span><span>Ninh</span></h2>
+                                <div>100 sản phẩm</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-overlay-flex">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <div class="card-overlay-body">
+                                <h2><span>Quảng</span><span>Ninh</span></h2>
+                                <div>100 sản phẩm</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card-overlay-flex">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <div class="card-overlay-body">
+                                <h2><span>Quảng</span><span>Ninh</span></h2>
+                                <div>100 sản phẩm</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-overlay-flex">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <div class="card-overlay-body">
+                                <h2><span>Quảng</span><span>Ninh</span></h2>
+                                <div>100 sản phẩm</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card-overlay-flex">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <div class="card-overlay-body">
+                                <h2><span>Quảng</span><span>Ninh</span></h2>
+                                <div>100 sản phẩm</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-overlay-flex">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <div class="card-overlay-body">
+                                <h2><span>Quảng</span><span>Ninh</span></h2>
+                                <div>100 sản phẩm</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card-overlay-flex">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <div class="card-overlay-body">
+                                <h2><span>Quảng</span><span>Ninh</span></h2>
+                                <div>100 sản phẩm</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-overlay-flex">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <div class="card-overlay-body">
+                                <h2><span>Quảng</span><span>Ninh</span></h2>
+                                <div>100 sản phẩm</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        <div class="load-more text-center mt-4 pt-2">
+            <div class="cta-btn ir">
+                <a class="" href="#"><span class="cta-text font-weight-semibold">Xem tất cả</span><span class="cta-ico"><i class="icon-next"></i></span></a>
+            </div>
+        </div>
+    </div>
+</section>
+<!------------------- END SERVICE ------------------->
+
+<section class="sec-productcity-hp tintuc">
+    <div class="container position-relative">
+        <div class="cover-title-home">
+            <div class="text-start">
+                <div class="cover-title">
+                    <h3><span class="cover-title-filled text-main">TIN TỨC</span></h3>
+                </div>
+                <div class="cover-descip">
+                    <p>Cập nhật những thông tin mới nhất từ VIETNAM HOMES và thị trường bất động sản</p>
+                </div>
+            </div>
+        </div>
+        <div class="news-hightlight">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="card-overlay-flex">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                            <span class="card-overlay-img"><img src="assets/images/space-3.gif" alt="" class="w-100 thumb" style="background-image: url('https://datxanhindochine.com/data/news/dt_15120241439_screenshot-(65).jpg');"></span>
+                            <div class="card-overlay-body">
+                                <h3>30.000 chuyên gia cao cấp khu Tây Hà Nội có nơi nghỉ dưỡng xứng đáng dành cho mình?</h3>
+                                <div class="description text-truncate-set text-truncate-set-2">Bước sang năm 2024, quần thể đô thị nghỉ dưỡng Casa Del Rio quy mô 142 ha bất ngờ tung 30 căn biệt thự phiên bản giới hạn thuộc phân khu Roma, thu hút sự quan tâm của đông đảo khách hàng, đặc biệt là giới chuyên gia làm</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <a href="#" class="news-item">
+                        <span><img src="assets/images/space-1.gif" style="background-image: url('https://datxanhindochine.com/data/news/1vh-anh-1.jpg')" alt="" class="w-100 thumb"></span>
+                        <div class="news-item-body">
+                            <p class="mb-0 text-truncate-set text-truncate-set-3">Review phường Hoàng Liệt Bản đồ , vị trí , dịch vụ tiện ích và các thông tin </p>
+                        </div>
+                    </a>
+                    <a href="#" class="news-item">
+                        <span><img src="assets/images/space-1.gif" style="background-image: url('https://datxanhindochine.com/data/news/chung-cu-ha-noi-vi-tri-dep-1536x864.jpg')" alt="" class="w-100 thumb"></span>
+                        <div class="news-item-body">
+                            <p class="mb-0 text-truncate-set text-truncate-set-3">Review phường Hoàng Liệt Bản đồ , vị trí , dịch vụ tiện ích và các thông tin </p>
+                        </div>
+                    </a>
+                    <a href="#" class="news-item">
+                        <span><img src="assets/images/space-1.gif" style="background-image: url('https://datxanhindochine.com/data/news/546db51c9b7730296966-1-8100.jpg')" alt="" class="w-100 thumb"></span>
+                        <div class="news-item-body">
+                            <p class="mb-0 text-truncate-set text-truncate-set-3">Review phường Hoàng Liệt Bản đồ , vị trí , dịch vụ tiện ích và các thông tin </p>
+                        </div>
+                    </a>
+                    <a href="#" class="news-item">
+                        <span><img src="assets/images/space-1.gif" style="background-image: url('https://datxanhindochine.com/data/news/1vh-anh-1.jpg')" alt="" class="w-100 thumb"></span>
+                        <div class="news-item-body">
+                            <p class="mb-0 text-truncate-set text-truncate-set-3">Review phường Hoàng Liệt Bản đồ , vị trí , dịch vụ tiện ích và các thông tin </p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="load-more text-center mt-4 pt-2">
+            <div class="cta-btn ir">
+                <a class="" href="#"><span class="cta-text font-weight-semibold">Xem tất cả</span><span class="cta-ico"><i class="icon-next"></i></span></a>
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection
 

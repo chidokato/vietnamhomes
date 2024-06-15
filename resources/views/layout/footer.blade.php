@@ -1,85 +1,75 @@
-<!--call to action start-->
-    <section class="call_to_action">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="call_action_inner">
-                        <div class="call_text">
-                            <h3>Theo dõi chúng tôi trên các nền tảng mạng xã hội</h3>
-                            <p>Để nhận được nhiều ưu đãi sớm nhất</p>
+
+<!------------------- FOOTER ------------------->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 ft-contact-wrap">
+                <div class="ft-contact">
+                    <div class="ft-contact-item">
+                        <div class="ft-contact-item-text">
+                            <h6>HOTLINE TƯ VẤN</h6>
+                            <span><a href="tel:0919511881">0868.023.799</a></span>
                         </div>
-                        <!-- <div class="discover_now">
-                            <a href="#">discover now</a>
-                        </div> -->
-                        <div class="link_follow">
-                            <ul>
-                                <li><a target="_blank" href="{{$setting->facebook}}"><i class="ion-social-facebook"></i></a></li>
-                                <!-- <li><a href="#"><i class="ion-social-tiktok"></i></a></li> -->
-                                <!-- <li><a href="#"><i class="ion-social-googleplus"></i></a></li> -->
-                                <li><a target="_blank" href="{{$setting->youtube}}"><i class="ion-social-youtube"></i></a></li>
+                        <span class="ft-contact-item-ico"><i class="icon-phone-filled"></i></span>
+                    </div>
+                    <div class="ft-contact-item">
+                        <div class="ft-contact-item-text">
+                            <h6>Email</h6>
+                            <span><a href="mailto:info@vietnamhomesgroup.com.vn" class="">info@vietnamhomesgroup.com.vn</a></span>
+                        </div>
+                        <span class="ft-contact-item-ico"><i class="icon-mail-filled"></i></span>
+                    </div>
+                    <div class="ft-contact-item">
+                        <div class="ft-contact-item-text">
+                            <h6>ĐỊA CHỈ VĂN PHÒNG</h6>
+                            <span>Số 21 Cầu Cốc, Phường Tây Mỗ, Quận Nam Từ Liêm, Hà Nội</span>
+                        </div>
+                        <span class="ft-contact-item-ico"><i class="icon-building-filled"></i></span>
+                    </div>
+                </div>
+                <div class="ft-social">
+                    <ul class="social">
+                        <li><a class=""><i class="icon-facebook"></i></a></li>
+                        <li><a class=""><i class="icon-youtube"></i></a></li>
+                        <li><a class=""><i class="icon-zalo"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8 ft-main">
+                <div class="row">
+                    <div class="col-6 col-lg-6 ft-info">
+                        <img src="assets/images/logo VNH-04.png" alt="">
+                    </div>
+                    <!-- <div class="col-6 col-lg-3">
+                        <div class="ft-link">
+                            <h5 class="line-b">Về Vietnam Homes</h5>
+                            <ul class="ft-link-items">
+                                <li><a href="#" class="">Giới thiệu</a></li>
+                                <li><a href="#" class="">Liên hệ</a></li>
+                                <li><a href="#" class="">Chính sách bảo mật thông tin</a></li>
                             </ul>
                         </div>
+                    </div> -->
+                    <div class="col-6 col-lg-6">
+                        <div class="ft-link">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15676.90695339032!2d106.6893047!3d10.7939386!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317528cdeb13ffff%3A0x8db7b80bb49f4899!2zQ8O0bmcgVHkgQ-G7lSBQaOG6p24gQuG6pXQgxJDhu5luZyBT4bqjbiBJbmRvY2hpbmU!5e0!3m2!1svi!2s!4v1718358591174!5m2!1svi!2s" style="border:0; width: 100%; height: 300px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <!--call to action end-->
 
-<!--footer area start-->
-    <footer class="footer_widgets">
-        <div class="container">
-            <div class="footer_top">
-                <div class="row">
-                    <div class="col-lg-4 col-md-6">
-                        <div class="widgets_container contact_us">
-                            <div class="footer_logo">
-                                <a href="#"><img src="assets/img/logo/logo.png" alt=""></a>
-                            </div>
-                            <div class="footer_contact">
-                                <p><span>Địa chỉ:</span> {{$setting->address}}</p>
-                                <p><span>Số điện thoại:</span><a href="tel:{{$setting->hotline}}">{{$setting->hotline}}</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="widgets_container widget_menu">
-                            <h3>Thôn tin về chúng tôi</h3>
-                            <div class="footer_menu">
-                                <ul>
-                                    <!-- <li><a href="">Giới thiệu</a></li> -->
-                                    <li><a href="lien-he">Liên hệ</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="widgets_container">
-                            <h3>Theo dõi chúng tôi</h3>
-                            <p>Chung tôi luôn cam kết bảo mật thông tin người dùng</p>
-                            <div class="subscribe_form">
-                                <form id="mc-form" class="mc-form footer-newsletter">
-                                    <input id="mc-email" type="email" autocomplete="off" placeholder="Enter you email address here..." />
-                                    <button id="mc-submit">Subscribe</button>
-                                </form>
-                            </div>
+                
+                <div class="row ft-register-subscribe mb-4">
+                    <div class="col-lg-6 align-self-center"><span class="line-b">ĐĂNG KÝ NHẬN THÔNG TIN TỪ <b>VIETNAM HOMES GROUP</b></span></div>
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Nhập email của bạn" aria-label="Nhập email của bạn" aria-describedby="button-addon2">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="icon-send"></i></button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer_bottom">
-                <div class="row">
-                    <div class="col-lg-6 col-md-6">
-                        <div class="copyright_area">
-                            <p>Bản quyền thuộc về <a href="rinlisa.com">rinlisa.com</a></p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6">
-                        
-                    </div>
-                </div>
+                <p class="ft-copyright text-end">Copyright © 2021 VietNam Homes, All Rights Reserved</p>
             </div>
         </div>
-    </footer>
-    <!--footer area end-->
+    </div>
+</footer>
+<!------------------- END: FOOTER ------------------->

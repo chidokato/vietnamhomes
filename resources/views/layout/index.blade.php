@@ -39,39 +39,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet"> 
 
     <!-- CSS ========================= -->
-    <!--bootstrap min css-->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <!--owl carousel min css-->
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <!--slick min css-->
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <!--magnific popup min css-->
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <!--font awesome css-->
-    <link rel="stylesheet" href="assets/css/font.awesome.css">
-    <!--ionicons min css-->
-    <link rel="stylesheet" href="assets/css/ionicons.min.css">
-    <!--animate css-->
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <!--jquery ui min css-->
-    <link rel="stylesheet" href="assets/css/jquery-ui.min.css">
-    <!--slinky menu css-->
-    <link rel="stylesheet" href="assets/css/slinky.menu.css">
-    <!-- Plugins CSS -->
-    <link rel="stylesheet" href="assets/css/plugins.css">
-    
-    <!-- Main Style CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
-
-    <!-- responsive -->
-    <link rel="stylesheet" href="assets/css/responsive.css">
-    
-    <!--modernizr min js here-->
-    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!------------------- CSS ------------------->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/fonts.css" rel="stylesheet">
+    <link href="assets/css/common.css" rel="stylesheet">
+    <link href="assets/css/header.css" rel="stylesheet">
+    <link href="assets/css/footer.css" rel="stylesheet">
+    <link href="assets/css/sort.css" rel="stylesheet">
+    <link href="assets/css/card.css" rel="stylesheet">
+    <link href="assets/css/form.css" rel="stylesheet">
+    <link href="assets/css/simpleLightbox.css" rel="stylesheet">
+    <link href="assets/css/home.css" rel="stylesheet">
+    <!-- <link href="css/tuan.css" rel="stylesheet"> -->
 
     @yield('css')
     
@@ -83,53 +63,210 @@
     @include('layout.footer')
     <!-- JS
     ============================================ -->
-    <!--jquery min js-->
-    <script src="assets/js/vendor/jquery-3.4.1.min.js"></script>
-    <!--popper min js-->
-    <script src="assets/js/popper.js"></script>
-    <!--bootstrap min js-->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!--owl carousel min js-->
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <!--slick min js-->
-    <script src="assets/js/slick.min.js"></script>
-    <!--magnific popup min js-->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <!--jquery countdown min js-->
-    <script src="assets/js/jquery.countdown.js"></script>
-    <!--jquery ui min js-->
-    <script src="assets/js/jquery.ui.js"></script>
-    <!--jquery elevatezoom min js-->
-    <script src="assets/js/jquery.elevatezoom.js"></script>
-    <!--isotope packaged min js-->
-    <script src="assets/js/isotope.pkgd.min.js"></script>
-    <!--slinky menu js-->
-    <script src="assets/js/slinky.menu.js"></script>
-    <!-- Plugins JS -->
-    <script src="assets/js/plugins.js"></script>
+    <!------------------- JS core------------------->
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/simpleLightbox.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // const myChart = new Chart(
+    //   document.getElementById('fluctuatingPrice'),
+    //   fluctuatingPrice,
+    // );
 
-    <!-- Main JS -->
-    <script src="assets/js/main.js"></script>
+    new SimpleLightbox({elements: '.main-ads-slider a'});
+</script>
+<!-- Initialize Swiper -->
+<script>
+        var swiper1 = new Swiper(".broker-slider .swiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: ".broker-slider .swiper-pagination",
+                clickable: true,
+            },
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 20
+                },
+                // when window width is >= 480px
+                768: {
+                    slidesPerView: 3,
+                    spaceBetween: 30,
+                },
+                // when window width is >= 640px
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: ".broker-slider .swiper-button-next",
+                        prevEl: ".broker-slider .swiper-button-prev",
+                    },
+                }
+            },
+        });
 
-    <!-- JavaScript -->
-    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+        var swiper2 = new Swiper(".agent-partner-slider .swiper", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            pagination: {
+                el: ".agent-partner-slider .swiper-pagination",
+                clickable: true,
+            },
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is >= 480px
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 30,
+                },
+                // when window width is >= 640px
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    navigation: {
+                        nextEl: ".agent-partner-slider .swiper-button-next",
+                        prevEl: ".agent-partner-slider .swiper-button-prev",
+                    },
+                }
+            },
+        });
 
-    <!--zoom img-->
-    <!-- <script src="https://unpkg.com/js-image-zoom@0.4.1/js-image-zoom.js" type="application/javascript"></script>
-    <script>
-    var options = {
-        width: 400,
-        zoomWidth: 500,
-        offset: {vertical: 0, horizontal: 10}
-    };
-    new ImageZoom(document.getElementById("img-container"), options);
-    </script> -->
-    
-    <script src="assets/js/custom.js"></script>
+        var swiper3 = new Swiper(".service-slider .swiper", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            pagination: {
+                el: ".agent-partner-slider .swiper-pagination",
+                clickable: true,
+            },
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 0
+                },
+                // when window width is >= 480px
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+                // when window width is >= 640px
+                1024: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                }
+            },
+        });
 
-    <!-- validate -->
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js" type="text/javascript"></script>
-    <script src="assets/js/validate.js"></script>
+        var swiper4 = new Swiper(".review-project-content .swiper", {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            pagination: {
+                el: ".review-project-content .swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        var swiper5 = new Swiper(".thumb-ads-slider .swiper", {
+            spaceBetween: 1,
+            lazy: true,
+            slidesPerView: "auto",
+            freeMode: true,
+            watchSlidesProgress: true,
+            // autoplay: {
+            //   delay: 2500,
+            // },
+        });
+        var swiper6 = new Swiper(".main-ads-slider .swiper", {
+            spaceBetween: 0,
+            lazy: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            thumbs: {
+                swiper: swiper5,
+            },
+        });
+
+        var swiper7 = new Swiper(".product-hot-slider .swiper", {
+            slidesPerView: 3,
+            loop: true,
+            spaceBetween: 30,
+            grabCursor: true,
+            centeredSlides: true,
+            effect: "coverflow",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                scale:.9,
+                depth: 0,
+                modifier: 1,
+                slideShadows : false,
+            },
+            pagination: {
+                el: ".product-hot-slider .swiper-pagination",
+                clickable: true,
+            },
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                    coverflowEffect: {
+                        
+                        depth: 10,
+                    }
+                },
+                // when window width is >= 480px
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+                // when window width is >= 640px
+                1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 0,
+                    navigation: {
+                        nextEl: ".product-hot-slider .swiper-button-next",
+                        prevEl: ".product-hot-slider .swiper-button-prev",
+                    },
+                }
+            },  
+        });
+
+
+        var swiper8 = new Swiper(".hero-slider .swiper", {
+            spaceBetween: 0,
+            effect: "fade",
+            lazy: true,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".hero-slider .swiper-pagination",
+                type: "fraction",
+            },
+            navigation: {
+                nextEl: ".hero-slider .swiper-button-next",
+                prevEl: ".hero-slider .swiper-button-prev",
+            },
+        });
+    </script>
+
+    <!-- <script src="https://nhaongay.vn/js/custom.js?v=30"></script> -->
 
     @yield('js')
     

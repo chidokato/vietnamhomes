@@ -39,34 +39,63 @@
         <div class="row">
             <div class="col-lg-3 d-none d-lg-block">
                 <div class="widget widget-list widget-hightlight mb-3">
-                    <h4><span>Sản phẩm bán nhiều</span></h4>
+                    <h4><span>Loại hình</span></h4>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
                         <label class="form-check-label" for="flexCheck1">
-                            Quận Hai Bà Trưng (1.000)
+                            Chung cư
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck2">
                         <label class="form-check-label" for="flexCheck2">
-                            Quận Hoàng Mai (500)
+                            Biệt thự
                         </label>
                       </div>
                       <hr>
-                      <h4><span>Sản phẩm bán nhiều</span></h4>
+                    <h4><span>Tình thành</span></h4>
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheck1">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
                         <label class="form-check-label" for="flexCheck1">
-                            Quận Hai Bà Trưng (1.000)
+                            Hà Nội
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheck2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck4">
                         <label class="form-check-label" for="flexCheck2">
-                            Quận Hoàng Mai (500)
+                            Hồ Chí Minh
                         </label>
                       </div>
+                      <hr>
+                      <h4><span>Quận huyện</span></h4>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck5">
+                        <label class="form-check-label" for="flexCheck1">
+                            Cầu Giấy
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck6">
+                        <label class="form-check-label" for="flexCheck2">
+                            Thanh Xuân
+                        </label>
+                      </div>
+                      <hr>
                       
+                      
+                      <h4><span>Mức giá</span></h4>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck7">
+                        <label class="form-check-label" for="flexCheck1">
+                            Dưới 1 tỷ
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheck8">
+                        <label class="form-check-label" for="flexCheck2">
+                            1 - 2 tỷ
+                        </label>
+                      </div>
                 </div>
 
             </div>

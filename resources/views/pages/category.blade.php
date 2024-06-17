@@ -56,13 +56,13 @@
                     <h4><span>Tình thành</span></h4>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck3">
-                        <label class="form-check-label" for="flexCheck1">
+                        <label class="form-check-label" for="flexCheck3">
                             Hà Nội
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck4">
-                        <label class="form-check-label" for="flexCheck2">
+                        <label class="form-check-label" for="flexCheck4">
                             Hồ Chí Minh
                         </label>
                       </div>
@@ -70,13 +70,13 @@
                       <h4><span>Quận huyện</span></h4>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck5">
-                        <label class="form-check-label" for="flexCheck1">
+                        <label class="form-check-label" for="flexCheck5">
                             Cầu Giấy
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck6">
-                        <label class="form-check-label" for="flexCheck2">
+                        <label class="form-check-label" for="flexCheck6">
                             Thanh Xuân
                         </label>
                       </div>
@@ -86,13 +86,13 @@
                       <h4><span>Mức giá</span></h4>
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck7">
-                        <label class="form-check-label" for="flexCheck1">
+                        <label class="form-check-label" for="flexCheck7">
                             Dưới 1 tỷ
                         </label>
                       </div>
                       <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="" id="flexCheck8">
-                        <label class="form-check-label" for="flexCheck2">
+                        <label class="form-check-label" for="flexCheck8">
                             1 - 2 tỷ
                         </label>
                       </div>

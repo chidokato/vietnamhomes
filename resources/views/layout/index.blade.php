@@ -266,7 +266,7 @@
         });
     </script>
 
-    <!-- <script src="https://nhaongay.vn/js/custom.js?v=30"></script> -->
+    <script src="assets/js/custom.js?v=30"></script>
 
     @yield('js')
     

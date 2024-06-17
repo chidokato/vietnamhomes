@@ -1,19 +1,14 @@
-var scrollSpy = new bootstrap.ScrollSpy(document.body, {
-  target: '#review-4-phuong',
-  offset: 100
-})
-
 var prevScrollpos = window.pageYOffset;
 var myDiv = document.querySelector('body')
 window.onscroll = function () {
   var currentScrollPos = window.pageYOffset;
   
-  if (currentScrollPos > 80) {
+  if (currentScrollPos > 50) {
     myDiv.classList.add("scrollDown");
   } else {
     myDiv.classList.remove("scrollDown");
   }
-
+  
   if (prevScrollpos > currentScrollPos) {
     myDiv.classList.remove("scrollUp");
   } else {
@@ -22,7 +17,6 @@ window.onscroll = function () {
 
   if (currentScrollPos + window.innerHeight >= myDiv.scrollHeight) {
     myDiv.classList.remove("scrollUp");
-
   }
 
   prevScrollpos = currentScrollPos;
@@ -39,9 +33,11 @@ window.onscroll = function () {
   }
 }
 
-
-
-
+// var body = document.querySelector('body')
+// body.onclick = function(e) {
+//   var search_valuation = document.getElementById('search_valuation');
+//   search_valuation.style.display = 'none';
+// }
 
 var mainMenu = document.getElementById('navbarToggler');
     mainMenu.onclick = function() {toggleActive()}

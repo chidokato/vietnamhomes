@@ -12,7 +12,7 @@
 .form-check-input:checked {background-color:var(--main-color); border-color: var(--main-color)}
 
 
-.search-input {background-color: #f2f2f2;border-radius: 3px;height: 48px;}
+.search-input {background-color: #fff;border-radius: 3px;height: 35px; width: 70%; border-radius: 100px}
 .search-input input, .search-input input:focus, .search-input .input-group-text, .select-input .input-group-text {background: none; font-size: 14px;}
 .select-input {position:relative}
 .select-input {border: 1px solid #ced4da; border-radius: 3px;}
@@ -21,11 +21,11 @@
 .select-input i, .search-input i {font-size:20px}
 
 
-.floating-label {border-bottom: 1px solid #edebeb;padding: 12px 0 1px;}
+.floating-label {border-bottom: 1px solid #edebeb;padding: 12px 0;}
 .floating-label .form-floating .form-select {font-size:14px;background-position: right .75rem top .75rem;}
 .floating-label .form-floating label {font-size:13px}
-.floating-label .btn-circle, .sec-search .btn-circle.btn-toggle {background:var(--main-color);padding:0;color:#fff;font-size: 20px;border-radius:50%;height: 40px;width: 40px;display: flex;justify-content: center;align-items: center;margin-top: 6px;margin-left: auto;}
-.floating-label .form-control {height:48px}
+.floating-label .btn-circle, .sec-search .btn-circle.btn-toggle {width: 30%; border-radius: 100px; font-size: 1rem; background:var(--main-color);padding:0;color:#fff; padding-bottom: 3px; display: flex;justify-content: center;align-items: center;margin-left: auto;}
+.floating-label .form-control {height:35px}
 
 option:hover,
 option:focus,
@@ -53,6 +53,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .form-switch .form-check-input {width: 2.8em;height: 1.6em;}
 
 .sec-fiter-search.floating-label .search-input input {padding-left: 0;}
+
+.sec-fiter-search .col-lg-4{ display:flex; border:1.5px solid var(--main-color); border-radius:100px; padding:0 }
 
 .form-control {border-radius:.25rem;height: auto;}
 

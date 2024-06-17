@@ -1,14 +1,24 @@
+:root {
+    --main-color:#9d0917;
+    --sub-color:#b1934d;
+    --light-color:#fff;
+
+    --body-fontface:'UTM Avo', sans-serif;
+    --title-fontface:'UTM Avo';
+    --subtitle-fontface:'UTM Avo';
+}
+hr{ margin:1.3rem 0 }
 .widget.affix {top:64px}
-.widget-list {background: #f5f5f5;border: 1px solid rgb(0 0 0 / 6%);border-radius: 0.25rem;padding: .75rem 1rem;font-size: 14px;}
-.widget-list h4, .scrollspy > a {font-size: 17px;-webkit-text-stroke-width: .4px;/* padding-bottom: 12px; */margin-bottom: 12px;border-bottom: 1px solid rgb(0 0 0 / 6%); text-transform:uppercase; color:var(--main-color)}
-.widget-list h4 span, .scrollspy > a span {position: relative;display: inline-block;padding-bottom: 10px;}
-.widget-list h4 span:before, .scrollspy > a span:before {position: absolute;content: '';height: 2px;left: 0;width: 100%;background-color: var(--sub-color);bottom: 0px;}
+.widget-list {background: #f5f5f5;border: 1px solid rgb(0 0 0 / 6%);border-radius: 0.25rem;padding: 1.2rem 1rem;font-size: 14px;}
+.widget-list h4, .scrollspy > a {font-size: 17px;-webkit-text-stroke-width: .4px;/* padding-bottom: 12px; */margin-bottom: 8px;  color:var(--main-color)}
+.widget-list h4 span, .scrollspy > a span {position: relative;display: inline-block;padding-bottom: 5px;}
+/*.widget-list h4 span:before, .scrollspy > a span:before {position: absolute;content: '';height: 1px;left: 0;width: 100%;background-color: var(--sub-color);bottom: 0px;}*/
 .widget-list ul li {display:block}
 .widget-list ul li a {padding: 3px 0;display:block;color: #222;}
 .widget-list ul li a:hover {color:var(--sub-color)}
 .widget-list ul li a i, .widget-list nav .nav-link i {color:var(--main-color);font-size: 16px;vertical-align: -2px;}
 
-.widget-list .form-check {padding-left: 1.75em;cursor: pointer;}
+.widget-list .form-check {padding-left: 1.75em;cursor: pointer; margin-bottom: 8px}
 .widget-list .form-check-label {cursor: pointer;}
 .widget-list .form-check .form-check-input {margin-top: 3px;margin-left: -1.75em;width: 1.2em;height: 1.2em;border-radius: 2px;}
 .form-check-input:focus {box-shadow:none}
@@ -21,10 +31,9 @@
 .widget-list .scrollspy > nav {margin-bottom:16px}
 .widget-list .scrollspy a:hover, .widget-list .scrollspy a:focus, .widget-list nav .nav-link.active {color:var(--main-color); background: none;}
 
-.widget-hightlight {background-color:var(--sub-color); color: rgba(255, 255, 255, 1);}
-.widget-hightlight h4 {color:#fff}
-.widget-hightlight h4 span:before {background-color:#fff}
-.widget-hightlight .form-check .form-check-input {border:none}
+.widget-hightlight {}
+.widget-hightlight h4 {color:var(--main-color); font-size: 1rem}
+/*.widget-hightlight h4 span:before {background-color:var(--main-color);}*/
 
 .widget-subscribe {position:relative;/* box-shadow: 0 0 32px rgba(0,0,0,.4); */border-radius: 4px;}
 

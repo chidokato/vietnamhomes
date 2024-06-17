@@ -17,18 +17,21 @@
           <div class="navbar-collapse flex-grow-1" id="navbarsExample07XL">
             <ul class="collapse navbar-nav mb-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="homepage.htm">Trang chủ</a>
+                    <a class="nav-link" href="{{asset('')}}">Trang chủ</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="sales.htm">Giới thiệu</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="rents.htm">Dự án</a>
-                </li>
+                @foreach($menu as $key => $val)
+                @if($key==2)
                 <li class="logo">
-                    <a class="navbar-brand" href="#"><img src="assets/images/logo.png" alt="" class="mw-100"></a>
+                    <a class="navbar-brand" href="{{asset('')}}"><img src="assets/images/logo.png" alt="" class="mw-100"></a>
                 </li>
+                @else
                 <li class="nav-item">
+                    <a class="nav-link" href="{{$val->slug}}">{{$val->name}}</a>
+                </li>
+                @endif
+                @endforeach
+                
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="projects.htm">Tin tức</a>
                 </li>
                 <li class="nav-item">
@@ -45,7 +48,8 @@
                             <li><a href="#" class="submenu-link"><i class="icon-next me-2"></i>Quy hoạch đô thị</a></li>
                         </ul>
                     </div>
-                </li>
+                </li> -->
+                
             </ul>
             
           </div>

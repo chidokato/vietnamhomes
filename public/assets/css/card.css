@@ -6,7 +6,7 @@
 
 .card-s {height: 100%;border: none; background: none;}
 .card-s .card-img, .card-s .card-img-top {border-radius:.25rem .25rem 0 0 }
-.card-s .card-body {background: #fff;border: 1px solid rgb(0 0 0 / 6%);border-radius:0 0 0.25rem 0.25rem;box-shadow: 0 0 2px rgb(0 0 0 / 10%);font-size: 14px;position: relative;padding: 15px 12px 8px;}
+.card-s .card-body {background: #fff;border: 1px solid rgb(0 0 0 / 6%);border-radius:0 0 0.25rem 0.25rem;box-shadow: 0 0 2px rgb(0 0 0 / 10%);font-size: 14px;position: relative;padding: 15px 12px;}
 .card-info {display: flex;align-items: center;justify-content: space-between;/* font-style: italic; */margin-bottom: 8px;color: #888;flex-wrap: wrap;}
 .card-info i {font-size: 18px;margin-right: 6px !important;margin-top: 3px;}
 .card-s .card-title {font-size: 17px;position: relative;margin-bottom: 5px;-webkit-text-stroke-width: 0.25px; font-weight: bold; }
@@ -21,7 +21,7 @@
 .card-s .cat, .card-s .hot, .card-s .view-more {position:absolute; z-index:2;}
 .card-s .hot {top: -6px;right: -6px;display: block;width: 64px;}
 .card-s .hot img {max-width:100%}
-.card-s .cat {top: 12px;left: 12px;background-color: rgba(0,0,0,.64);border-radius: 4px;color: #fff;font-size: 12px;padding: 2px 12px 4px;}
+.card-s .cat {top: 5px;left: 0px;border-radius: 4px;color: #fff;font-size: 12px;padding: 2px 12px 4px;}
 
 .card-s.video > a .view-more, .card-s .view-more {display:none}
 
@@ -53,10 +53,11 @@
 .card-s .cat span {background-color: rgba(0,0,0,.64);padding: 1px 8px 3px;border-radius: 4px;}
 .card-s .cat .btn {padding:0}
 .card-s .cat .heart {margin-right: 16px;font-size:20px;display:flex;align-items:center;height: 36px;border-radius: 50%;padding-top: 4px; color: #fff;}
-.card-s .cat .room-status {position:relative}
+.card-s .cat .room-status {position:relative; margin-right: 10px;}
 .card-s .cat .btn ~ .room-status::before {content:''}
 .card-s .cat .room-status::before {position:absolute;width:1px;height: 24px;background-color: #292727;left: -9px;top:0;bottom:0;margin:auto;}
 .card-s .cat .btn.active .heart {background-color:var(--sub-color)}
+.bg-red{ background-color:var(--main-color) !important; }
 
 .video > a::before, .video > a::after {content:'';position: absolute;top:0;bottom:0;right:0;left: 0;margin: auto;z-index: 2;}
 .video > a::before {background-color: rgba(0,0,0,.5);width: 48px;height: 48px;border-radius: 50%;}
@@ -246,6 +247,7 @@
 
 	.hire-sec .card-s.card-s1 .card-body-wrap p, .hire-sec .card-s.card-s1 .author {display: none !important;}
 
+
 	.news-hightlight {margin-bottom:24px}
 	.news-hightlight .card-overlay {margin-bottom:16px;}
 	.news-hightlight .card-overlay-body .time-box {font-size: 16px;}
@@ -265,3 +267,6 @@
 @media (max-width: 767px) {
 	.sales-sec .horizontal-view.row-cols-md-1>* {width: 100%;}
 }
+
+
+.card-body-price{ align-items: center; justify-content: space-between; }

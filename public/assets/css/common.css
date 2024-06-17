@@ -81,6 +81,7 @@ h5 {font-family: var(--subtitle-fontface); font-size: 19px;}
 .fz-40 {font-size: 40%}
 
 .bg1{ background:#f0f0f099 }
+.border100{ border-radius:100px }
 
 .text-main {color:var(--main-color)!important;}
 .text-sub {color:var(--sub-color)!important;}
@@ -363,6 +364,11 @@ header, a, a h5, .notify-num, .navbar .navbar-brand, .nav-link, .sec-nav .navbar
 
 .slbElement {z-index: 10000; position: relative;}
 
+
+.title-cat{ font-size:1.2rem; color:var(--main-color); font-weight:bold; margin-bottom:15px }
+.option-cat{ display:flex; margin-bottom:10px }
+.option-cat .iteam a{ margin-right:20px; font-size: .8rem; background:#ddd; padding:2px 10px 5px; border-radius:20px }
+/*.option-cat .iteam a{ color:#000 }*/
 
 @media (min-width: 769px) {
 	.scrollbar {

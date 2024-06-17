@@ -80,7 +80,7 @@
                             Thanh Xuân
                         </label>
                       </div>
-                      <hr>
+                      <hr> 
                       
                       
                       <h4><span>Mức giá</span></h4>

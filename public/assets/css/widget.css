@@ -31,7 +31,7 @@ hr{ margin:1.3rem 0 }
 .widget-list .scrollspy > nav {margin-bottom:16px}
 .widget-list .scrollspy a:hover, .widget-list .scrollspy a:focus, .widget-list nav .nav-link.active {color:var(--main-color); background: none;}
 
-.widget-hightlight {}
+.widget-hightlight { position:sticky; top:80px }
 .widget-hightlight h4 {color:var(--main-color); font-size: 1rem}
 /*.widget-hightlight h4 span:before {background-color:var(--main-color);}*/
 

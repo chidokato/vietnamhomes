@@ -25,6 +25,7 @@
 .section2 .menu ul li a.active, .section2 .menu ul li a:hover{ background:#57050c; }
 
 .section3{ padding-bottom:100px }
+.section3 .img img{ width:100% }
 .section3 .content{ text-align:justify;  }
 
 .section4{ background: url(../images/gioithieu/bg-don-vi-phat-trien.png); padding:0px 0px 30px; background-size:cover; background-color: #e6e6e6; }

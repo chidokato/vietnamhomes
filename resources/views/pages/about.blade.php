@@ -22,17 +22,17 @@
 <section class="section2">
     <div class="menu">
         <ul>
-            <li> <a class="active" href="">Giới thiệu</a> </li>
-            <li> <a href="">Tầm nhìn - sứ mệnh</a> </li>
-            <li> <a href="">Mục tiêu chiến lược</a> </li>
-            <li> <a href="">Giá trị cốt lõi</a> </li>
-            <li> <a href="">Dịch vụ</a> </li>
+            <li> <a class="active" href="gioi-thieu#gioithieu">Giới thiệu</a> </li>
+            <li> <a href="gioi-thieu#tamnhin">Tầm nhìn - sứ mệnh</a> </li>
+            <li> <a href="gioi-thieu#muctieu">Mục tiêu chiến lược</a> </li>
+            <li> <a href="gioi-thieu#giatri">Giá trị cốt lõi</a> </li>
+            <li> <a href="gioi-thieu#dichvu">Dịch vụ</a> </li>
         </ul>
     </div>
 </section>
 
-<section class="section3 bg">
-    <div class="container">
+<section class="section3 bg" >
+    <div class="container" id="gioithieu">
         <div class="row">
             <div class="col-4">
                 <div class="img">
@@ -56,7 +56,7 @@
         <div class="row">
             <div class="col-12">
                 <h2>Đơn vị phát triển & phân phối <br> bất động sản hàng đầu</h2>
-                
+
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><img src="assets/images/gioithieu/dvpt-01.png"></div>
@@ -74,7 +74,7 @@
     </div>
 </section>
 
-<section class="section5 bg">
+<section class="section5 bg" id="tamnhin">
     <div class="container">
         <div class="row">
             <div class="col-7">

@@ -45,8 +45,8 @@
             </div>
         </div>
 
-        <div class="position-relative broker-slider">
-            <div class="swiper">
+        <div class="position-relative">
+            <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
                     @for ($i=1; $i<=9; $i++)
                     <div class="swiper-slide">
@@ -178,6 +178,15 @@
 
 @section('js')
 
-
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 4,
+        spaceBetween: 30,
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        },
+    });
+</script>
 
 @endsection

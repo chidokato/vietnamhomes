@@ -40,18 +40,6 @@
 
     <!-- CSS ========================= -->
     <!------------------- CSS ------------------->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
-    <link href="assets/css/fonts.css" rel="stylesheet">
-    <link href="assets/css/common.css" rel="stylesheet">
-    <link href="assets/css/header.css" rel="stylesheet">
-    <link href="assets/css/footer.css" rel="stylesheet">
-    <link href="assets/css/sort.css" rel="stylesheet">
-    <link href="assets/css/card.css" rel="stylesheet">
-    <link href="assets/css/form.css" rel="stylesheet">
-    <link href="assets/css/simpleLightbox.css" rel="stylesheet">
-    <link href="assets/css/home.css" rel="stylesheet">
-    <!-- <link href="css/tuan.css" rel="stylesheet"> -->
 
     @yield('css')
     
@@ -64,11 +52,7 @@
     <!-- JS
     ============================================ -->
     <!------------------- JS core------------------->
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/simpleLightbox.min.js"></script>
 
-<script src="assets/js/custom.js?v=30"></script>
 
 @yield('js')
 

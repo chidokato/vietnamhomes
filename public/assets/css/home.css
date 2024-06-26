@@ -151,8 +151,7 @@
 .sec-product-hot .card-s > a .card-price .current-price {padding-right: 16px;padding-left: 6px;color: #fff;padding-bottom: 3px;}
 .sec-product-hot .card-s > a .card-price .old-price {padding: 16px 12px;background-color: rgb(10 85 151 / 88%);color: #fff;}
 
-header {background: var(--main-color); position: sticky; top: 0; width: 100%;}
-.scrollDown header, header.show {background: var(--main-color);;}
+
 .sec-hero {/* position: relative; */}
 .sec-hero .hero-slider {height: 84vh; overflow-y: hidden;}
 .sec-hero .swiper-slide {height: 84vh;}

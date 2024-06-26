@@ -6,6 +6,17 @@
 @section('url'){{asset('')}}@endsection
 
 @section('css')
+<link href="assets/css/bootstrap.min.css" rel="stylesheet">
+<link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+<link href="assets/css/fonts.css" rel="stylesheet">
+<link href="assets/css/common.css" rel="stylesheet">
+<link href="assets/css/header.css" rel="stylesheet">
+<link href="assets/css/footer.css" rel="stylesheet">
+<link href="assets/css/sort.css" rel="stylesheet">
+<link href="assets/css/card.css" rel="stylesheet">
+<link href="assets/css/form.css" rel="stylesheet">
+<link href="assets/css/simpleLightbox.css" rel="stylesheet">
+
 <link href="assets/css/about.css" rel="stylesheet">
 @endsection
 @section('content')
@@ -22,11 +33,11 @@
 <section class="section2">
     <div class="menu">
         <ul>
-            <li> <a class="active" href="gioi-thieu#gioithieu">Giới thiệu</a> </li>
-            <li> <a href="gioi-thieu#tamnhin">Tầm nhìn - sứ mệnh</a> </li>
-            <li> <a href="gioi-thieu#muctieu">Mục tiêu chiến lược</a> </li>
-            <li> <a href="gioi-thieu#giatri">Giá trị cốt lõi</a> </li>
-            <li> <a href="gioi-thieu#dichvu">Dịch vụ</a> </li>
+            <li> <a class="nav-link" href="gioi-thieu#gioithieu">Giới thiệu</a> </li>
+            <li> <a class="nav-link" href="gioi-thieu#tamnhin">Tầm nhìn - sứ mệnh</a> </li>
+            <li> <a class="nav-link" href="gioi-thieu#muctieu">Mục tiêu chiến lược</a> </li>
+            <li> <a class="nav-link" href="gioi-thieu#giatri">Giá trị cốt lõi</a> </li>
+            <li> <a class="nav-link" href="gioi-thieu#dichvu">Dịch vụ</a> </li>
         </ul>
     </div>
 </section>
@@ -74,8 +85,8 @@
     </div>
 </section>
 
-<section class="section5 bg" id="tamnhin">
-    <div class="container">
+<section class="section5 bg">
+    <div class="container" id="tamnhin">
         <div class="row">
             <div class="col-7">
                <div class="img"><img src="assets/images/gioithieu/tam-nhin.png"></div>
@@ -95,10 +106,34 @@
     </div>
 </section>
 
+<section class="section6 bg">
+    <div class="container" id="tamnhin">
+        <div class="row">
+            <div class="col-7">
+               <div class="img"><img src="assets/images/gioithieu/tam-nhin.png"></div>
+            </div>
+            <div class="col-5">
+                <div class="content">
+                    <div class="title">
+                        <img src="assets/images/gioithieu/tam-nhin-1.png">
+                        <h3>TẦM NHÌN</h3>
+                    </div>
+                    <p>Trở thành đơn vị phân phối, cho thuê và quản lý các sản phẩm bất động sản năng động, linh hoạt tại Việt Nam & Quốc tế.</p>
+                    <p>Trở thành đơn vị đi đầu trong “chuyển đổi số” và tạo ra các giá trị vượt trội.</p>
+                    <p>Là đơn vị phát triển và phân phối bất động sản được lựa chọn hàng đầu Việt Nam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 @endsection
 
 @section('js')
+<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/simpleLightbox.min.js"></script>
+<script src="assets/js/custom.js?v=30"></script>
 <script>
     var swiper = new Swiper(".mySwiper", {
         slidesPerView: 6,

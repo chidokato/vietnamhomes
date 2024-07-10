@@ -1,7 +1,7 @@
 @foreach($posts as $val)
     <tr id="post">
         <input type="hidden" name="id" id="id" value="{{$val->id}}" >
-        <td class="thumb"><img src="data/news/{{$val->img}}"></td>
+        <td class="thumb"><img src="data/product/{{$val->img}}"></td>
         <td>
             <div class="name"><a href="{{route('post.edit',[$val->id])}}" >{{$val->name}}</a></div>
             <div class="slug">{{$val->slug}}</div>

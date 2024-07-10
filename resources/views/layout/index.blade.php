@@ -34,13 +34,18 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta property="article:author" content="admin" />
 
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Sen" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet"> 
-
     <!-- CSS ========================= -->
     <!------------------- CSS ------------------->
-
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
+    <link href="assets/css/fonts.css" rel="stylesheet">
+    <link href="assets/css/common.css" rel="stylesheet">
+    <link href="assets/css/header.css" rel="stylesheet">
+    <link href="assets/css/footer.css" rel="stylesheet">
+    <link href="assets/css/sort.css" rel="stylesheet">
+    <link href="assets/css/card.css" rel="stylesheet">
+    <link href="assets/css/form.css" rel="stylesheet">
+    <link href="assets/css/simpleLightbox.css" rel="stylesheet">
     @yield('css')
     
 </head>
@@ -52,15 +57,18 @@
     <!-- JS
     ============================================ -->
     <!------------------- JS core------------------->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/swiper-bundle.min.js"></script>
+    <script src="assets/js/simpleLightbox.min.js"></script>
+    <script src="assets/js/custom.js?v=30"></script>
+    
+    @yield('js')
 
-
-@yield('js')
-
-@if (Session::has('success'))
-<div class="alert alert-success">
-{{ Session::get('success') }}
-</div>
-@endif
+    @if (Session::has('success'))
+    <div class="alert alert-success">
+    {{ Session::get('success') }}
+    </div>
+    @endif
 
 </body>
 

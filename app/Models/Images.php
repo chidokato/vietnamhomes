@@ -15,8 +15,8 @@ class Images extends Model
         return $this->hasOne(Post::class, 'id', 'post_id');
     }
 
-    public function SectionTranslation()
+    public function Section()
     {
-        return $this->hasOne(SectionTranslation::class, 'id', 'section_id');
+        return $this->hasOne(Section::class, 'id', 'section_id');
     }
 }

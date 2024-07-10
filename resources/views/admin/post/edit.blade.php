@@ -27,187 +27,243 @@
 </nav>
 
 <div class="d-sm-flex align-items-center justify-content-between mb-3 flex" style="height: 38px;">
-    <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">Thêm mới</h2>
+    <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">Chỉnh sửa</h2>
 </div>
 
 <div class="row">
-  <div class="col-xl-9 col-lg-9">
-
-    <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Tùy chỉnh</h6>
-            </div>
-            <div class="card-body">
-
-                <div class="row">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                          <label>Tên sản phẩm</label>
-                          <input value="{{$data->name}}" name="name" placeholder="..." type="text" class="form-control">
-                      </div>
-                  </div>
-                  <div class="col-md-6">
-                      <div class="form-group">
-                          <label>Slug</label>
-                          <input value="{{$data->slug}}" name="slug" placeholder="..." type="text" class="form-control">
-                      </div>
-                  </div>
-              </div>
-              <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label class="">Danh mục</label>
-                            <select name='category_id' class="form-control select2" id="category">
-                              <?php addeditcat ($category,0,$str='',$data['category_id']); ?>
-                            </select>
-                        </div>
-                    </div>
+    <div class="col-xl-9 col-lg-9">
+        <div class="linkneo" id="section1">
+            <div class="card shadow mb-4" >
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Thông tin chung</h6>
                 </div>
-                <div class="row" id="loadcustom">
-                    @foreach($option as $val)
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            @if($val->name == 'img_1')
-                            <div style="display: flex;"><label>Mặt: <input type="file" name="img_1"></label> <img style="height:50px" src="data/product/knot/{{$data->img_1}}"></div>
-                            @elseif($val->name == 'img_2')
-                            <div style="display: flex; margin-bottom: 15px;"><label>Dây trên: <input type="file" name="img_1"></label> <img style="height:50px" src="data/product/knot/{{$data->img_1}}"></div>
-                            <div style="display: flex; margin-bottom: 15px;"><label>Dây dưới: <input type="file" name="img_2"></label> <img style="height:50px" src="data/product/knot/{{$data->img_2}}"></div>
-                            <div style="display: flex; margin-bottom: 15px;"><label>Dây cạnh mặt: <input type="file" name="img_3"></label> <img style="height:50px" src="data/product/knot/{{$data->img_3}}"></div>
-                            @else
-                            <label>{{$val->name}}: </label>
-                            @endif
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Name</label>
+                                <input value="{{$data->name}}" name="name" placeholder="..." type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="">Danh mục</label>
+                                <select name='category_id' class="form-control select2" id="category">
+                                    <?php addeditcat ($category,0,$str='',$data['category_id']); ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Giá bán</label>
+                                <div class="flex">
+                                    <input value="{{$data->price}}" name="price" placeholder="..." type="text" class="form-control">
+                                    <select name="unit" class="form-control">
+                                        <option <?php if($data->unit == 'Tỷ'){echo 'selected';} ?> value="¥">Tỷ</option>
+                                        <option <?php if($data->unit == 'VNĐ'){echo 'selected';} ?> value="₫">VNĐ</option>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-10 customize">
-                        <div class="form-group">
-                            @foreach(Option::where('parent', $val->id)->get() as $key => $subO)
-                            <label> <input <?php if($data[$val->sku] == $subO->name){ echo 'checked'; } ?> value="{{$subO->name}}" class="form-check-input" type="radio" name="{{$val->sku}}"> {{$subO->name}}</label>
-                            @endforeach
-                        </div>
-                    </div>
-                    @endforeach
-                </div>
-            </div>
-
-        </div>
-    
-        <div class="card shadow mb-2">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Nội dung</h6>
-            </div>
-            <div class="tab-content overflow">
-                <div class="tab-pane active" id="vi">
-                  <div class="card-body">
-                      <div class="row">
-                          
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Mô tả ngắn</label>
-                                  <textarea rows="4" name="detail" class="form-control">{{$data->detail}}</textarea>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Mô tả sản phẩm</label>
-                                  <textarea name="content" class="form-control" id="ckeditor">{{$data->content}}</textarea>
-                              </div>
-                          </div>
-                          <div class="col-md-12">
-                              <div class="form-group">
-                                  <label>Thông số sản phẩm</label>
-                                  <textarea name="parameter" class="form-control" id="ckeditor1">{{$data->parameter}}</textarea>
-                              </div>
-                          </div>
-                          
-                      </div>
-                  </div>
                 </div>
             </div>
         </div>
-        @include('admin.layout.seo')
-    </div>
-    <div class="col-xl-3 col-lg-3">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Tùy chọn</h6>
-            </div>
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Giá bán</label>
-                            <div class="flex">
-                                <input value="{{$data->price}}" name="price" placeholder="..." type="text" class="form-control">
-                                <select name="unit" class="form-control">
-                                    <option <?php if($data->unit == '¥'){echo 'selected';} ?> value="¥">JPY</option>
-                                    <option <?php if($data->unit == '₫'){echo 'selected';} ?> value="₫">VNĐ</option>
+
+        <div class="linkneo" id="section2">
+            <div class="card shadow mb-4" >
+                <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Vị trí</h6>
+                </span>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="">Địa chỉ</label>
+                                <input name="address" placeholder="..." type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="">Tỉnh Thành</label>
+                                <select name='' class="form-control select2" id="category">
+                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="">Quận Huyện</label>
+                                <select name='' class="form-control select2" id="category">
+                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="">Phường Xã</label>
+                                <select name='' class="form-control select2" id="category">
+                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Khuyến mãi</label>
-                            <input name="sale" value="{{$data->sale}}" placeholder="..." type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="form-group">
-                            <label>Tồn kho</label>
-                            <input name="quantity" value="{{$data->quantity}}" placeholder="..." type="text" class="form-control">
-                        </div>
-
-                        <div class="form-group">
-                            <label> <input <?php if($data->genuine == 'on'){ echo 'checked'; } ?> type="checkbox" name="genuine"> Hàng chính hãng</label>
-                        </div>
-                    </div>
-                      
                 </div>
             </div>
         </div>
 
-          <div class="card shadow mb-4">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Ảnh đại diện</h6>
+        <div class="linkneo" id="section3">
+            <div class="card shadow mb-4" >
+                <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Hình ảnh</h6>
+                </span>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div style="display: flex;">
+                                <div class="file-upload">
+                                    <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
+                                        <img class="file-upload-image" src="{{ isset($data) ? 'data/product/'.$data->img : 'data/no_image.jpg' }}" />
+                                    </div>
+                                    <div class="image-upload-wrap">
+                                        <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                                    </div>
+                                </div>
+                                
+                                <span>
+                                    @foreach($images as $val)
+                                    <span class="view-img-ditail" id="detail_img">
+                                        <img src="data/product/detail/{{$val->img}}">
+                                        <button onClick="delete_row(this)" type="button" id="del_img_detail"> <i class="fa fa-times" aria-hidden="true"></i> </button>
+                                        <input type="hidden"  name="id_img_detail" id="id_img_detail" value="{{$val->id}}" />
+                                    </span>
+                                    @endforeach
+                                    <span class="image-preview" id="imagePreview"></span>
+                                    <span class="file-input-wrapper">
+                                        <input type="file" name="imgdetail[]" multiple class="file-input" id="imgInput">
+                                        <img src="admin_asset/img/add-img.png" alt="Upload Image" class="custom-file-input1" id="customFileInput">
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row detail-img">
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
+        @foreach($section as $key => $val)
+        <input type="hidden" value="{{$val->id}}" name="id-edit[]">
+        <div class="linkneo section" id="section-{{$val->id}}">
+            <button class="btn btn-danger remove-section" type="button">Xóa Section</button>
+            <div class="card shadow mb-4" >
+                <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">{{$val->tab}}</h6>
+                </span>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <div class="form-group">
+                                <label class="">STT</label>
+                                <input name="stt-edit[]" value="{{$val->stt}}" placeholder="..." type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="">Tab</label>
+                                <input name="tab-edit[]" value="{{$val->tab}}" placeholder="..." type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label class="">Heading</label>
+                                <input name="heading-edit[]" value="{{$val->heading}}" placeholder="..." type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <label class="">Hình ảnh</label>
+                                <input multiple name="img_ss-edit{{$key}}[]" placeholder="..." type="file" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <textarea rows="" name="content-edit[]" class="form-control editor"> {!! $val->content !!} </textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                @foreach($val->Images as $img)
+                                <span class="view-img-ditail" id="detail_img">
+                                    <img src="data/product/detail/{{$img->img}}">
+                                    <button onClick="delete_row(this)" type="button" id="del_img_detail"> <i class="fa fa-times" aria-hidden="true"></i> </button>
+                                    <input type="hidden"  name="id_img_detail" id="id_img_detail" value="{{$img->id}}" />
+                                </span>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @endforeach
+        
+        <div id="sectionContainer"></div>
+
+        <button id="addSectionButton" class="btn-success btn" type="button">Thêm Section</button>
+
+        <br>
+        <br>
+        <div class="linkneo" id="seo">
+            <div class="card shadow mb-4" >
+                <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Cấu hình SEO</h6>
+                </span>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="">Title</label>
+                                <input value="{{$data->title}}" name="title" placeholder="..." type="text" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="">description</label>
+                                <input value="{{$data->description}}" name="description" placeholder="..." type="text" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-3" >
+        <div class="card shadow mb-4" style="position: sticky; top: 60px;">
+            <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Menu</h6>
+            </span>
             <div class="card-body">
-                <div class="file-upload">
-                    <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
-                        <img class="file-upload-image" src="{{ isset($data) ? 'data/news/'.$data->img : 'data/no_image.jpg' }}" />
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="menu-product">
+                            <ul>
+                                <li><a class="scroll-link" href="#section1">Thông tin chung</a></li>
+                                <li><a class="scroll-link" href="#section2">vitri</a></li>
+                                <li><a class="scroll-link" href="#section3">Hình ảnh</a></li>
+                                @foreach($section as $val)
+                                <li><a class="scroll-link" href="#section-{{$val->id}}">{{$val->tab}}</a></li>
+                                @endforeach
+                                <li><a class="scroll-link" href="#seo">Cấu hình SEO</a></li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="image-upload-wrap">
-                        <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="card shadow mb-2">
-            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Chọn nhiều ảnh</h6>
-            </div>
-            <div class="card-body">
-                <div class="form-group">
-                    <input type="file" name="imgdetail[]" multiple class="form-control">
-                    <p>Nhấn giữ <i style="color: red">Ctrl</i> để chọn nhiều ảnh !</p>
-                </div>
-                <div class="row detail-img">
-                    @foreach($images as $val)
-                    <div class="col-md-4" id="detail_img">
-                        <img src="data/product/detail/{{$val->img}}">
-                        <button onClick="delete_row(this)" type="button" id="del_img_detail"> <i class="fa fa-times" aria-hidden="true"></i> </button>
-                        <input type="hidden"  name="id_img_detail" id="id_img_detail" value="{{$val->id}}" />
-                    </div>
-                    @endforeach
                 </div>
             </div>
         </div>
-
-
-      </div>
+    </div>
 </div>
 </form>
+
 <?php 
     function addeditcat ($data, $parent=0, $str='',$select=0)
     {
@@ -233,5 +289,8 @@
     function delete_row(e) {
         e.parentElement.remove();
     }
+
+
+
 </script>
 @endsection

@@ -5,21 +5,8 @@
 @section('robots') index, follow @endsection
 @section('url'){{asset('')}}@endsection
 
-
-
 @section('css')
-<link href="assets/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/css/swiper-bundle.min.css" rel="stylesheet">
-<link href="assets/css/fonts.css" rel="stylesheet">
-<link href="assets/css/common.css" rel="stylesheet">
-<link href="assets/css/header.css" rel="stylesheet">
-<link href="assets/css/footer.css" rel="stylesheet">
-<link href="assets/css/sort.css" rel="stylesheet">
-<link href="assets/css/card.css" rel="stylesheet">
-<link href="assets/css/form.css" rel="stylesheet">
-<link href="assets/css/simpleLightbox.css" rel="stylesheet">
 
-<link href="assets/css/widget.css" rel="stylesheet">
 @endsection
 
 @section('content')
@@ -138,9 +125,9 @@
                     </div>
                 </div>
                 <div class="row row-cols-3 row-cols-md-3 g-4 " id="">
-                    @for ($i=1; $i<=9; $i++)
-                    @include('pages.iteam.product')
-                    @endfor
+                    @foreach($post as $key => $val)
+                        @include('pages.iteam.product')
+                    @endforeach
                 </div>
                 <div class="load-more text-center mt-4 pt-2">
                     <div class="cta-btn ir">
@@ -158,9 +145,5 @@
 
 
 @section('js')
-<script src="assets/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/swiper-bundle.min.js"></script>
-<script src="assets/js/simpleLightbox.min.js"></script>
-<script src="assets/js/custom.js?v=30"></script>
 
 @endsection

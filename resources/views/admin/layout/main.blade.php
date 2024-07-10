@@ -19,6 +19,7 @@
     <link href="admin_asset/zoom/zoom.css" rel="stylesheet">
     <!-- select2 multiple css -->
     <link href="admin_asset/select2/css/select2.min.css" rel="stylesheet">
+
     @yield('css')
 </head>
 
@@ -64,7 +65,10 @@
         </div>
     </div>
 
-    <script src="//cdn.ckeditor.com/4.22.1/full/ckeditor.js"></script>
+    
+
+
+    <!-- <script src="https://cdn.ckeditor.com/4.22.1/standard/ckeditor.js"></script>
     <script>
     var options = {
         filebrowserImageBrowseUrl: 'laravel-filemanager?type=Images',
@@ -118,7 +122,7 @@
         @for ($i = 1; $i <= 10; $i++)
             CKEDITOR.replace('ckeditor{{$i}}', options);
         @endfor
-    </script>
+    </script> -->
     
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <!-- <script src="admin_asset/jquery/jquery.min.js"></script> -->
@@ -174,6 +178,33 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+    <script>
+        document.querySelectorAll('.editor').forEach((editorElement) => {
+            ClassicEditor
+                .create(editorElement, {
+                    toolbar: [
+                        'undo', 'redo', 'imageUpload', 
+                        'bold', 'italic', 'heading', 'bulletedList', 'numberedList', 
+                        'link', 'insertTable', 'blockQuote', 'removeFormat'
+                    ],
+                    ckfinder: {
+                        uploadUrl: '{{ route("upload") }}?_token={{ csrf_token() }}'
+                    },
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        });
+    </script>
+
+    <!-- ckeditor.com/4.24.0 -->
+    <!-- <script src="https://cdn.ckeditor.com/4.24.0-lts/standard/ckeditor.js"></script>
+    <script>
+            CKEDITOR.replace('editor1');
+    </script> -->
+    
     @yield('js')
 </body>
 </html>

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Menu;
 use App\Models\Category;
 use App\Models\Post;
+use App\Models\Section;
 use App\Models\Images;
 use App\Models\Setting;
 use App\Models\Slider;
@@ -445,12 +446,12 @@ class HomeController extends Controller
     public function post($catslug, $slug)
     {
         $post = Post::where('slug', $slug)->first();
-        $images = Images::where('post_id', $post->id)->get();
+        $sections = Section::where('post_id', $post->id)->get();
         $related_post = Post::where('category_id', $post->category_id)->whereNotIn('id', [$post->id])->orderBy('id', 'desc')->take(10)->get();
         if ($post->sort_by == 'Product') {
             return view('pages.project', compact(
                 'post',
-                'images',
+                'sections',
                 'related_post',
             ));
         }elseif ($post->sort_by == 'News') {

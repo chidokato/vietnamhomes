@@ -26,4 +26,8 @@ class Post extends Model
     {
         return $this->hasMany(Order::class, 'product_id', 'id');
     }
+    public function Section()
+    {
+        return $this->hasMany(Section::class, 'post_id', 'id');
+    }
 }

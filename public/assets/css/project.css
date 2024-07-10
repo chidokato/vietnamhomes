@@ -1,5 +1,66 @@
-@media (max-width: 1024px) {
-	.sec-cover picture {display: none;}
-	.sec-cover .container {max-width:100%; padding:0}
-	.sec-cover .cover-content {position: static;padding: 40px 24px 56px; background:url(../images/cover-valuation.jpg) no-repeat center center;background-size: cover;max-width: unset;}
-}
+.swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+
+    .mySwiper2 {
+      width: 100%;
+    }
+    .mySwiper2 .swiper-slide img{  }
+    .mySwiper .swiper-slide img{ height:100px }
+
+    .mySwiper {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+
+    .mySwiper .swiper-slide {
+      width: 25%;
+      height: 100%;
+      opacity: 0.4;
+    }
+
+    .mySwiper .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }.
+.swiper-button-next:after, .swiper-button-prev:after{ font-size:1rem }
+.swiper-button-next::after, .swiper-button-prev::after{ font-size:1rem }
+.swiper-button-next:hover, .swiper-button-prev:hover, .swiper-button-next, .swiper-rtl .swiper-button-prev{ width:43px }
+
+.main-content img{ max-width:100%; height:auto !important; }

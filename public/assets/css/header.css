@@ -43,6 +43,14 @@ header nav li a.active.dropdown-toggle img, header nav li a.dropdown-toggle:hove
 header {background: var(--main-color); position: sticky; top: 0; width: 100%;}
 .scrollDown header, header.show {background: var(--main-color);}
 
+.active .navbar-expand-lg .navbar-nav .nav-link {
+    padding: 18px 0px;
+}
+.active .navbar-brand img {
+    width: 100px;
+}
+.active nav{ height:58px }
+
 .toggle-menu {margin-left: 92px;border: 1px solid var(--sub-color) !important;margin-top: 6px;margin-bottom: 8px;border-radius: 0.25rem;height: 40px;width: 40px;justify-content: center;display: none;align-items: center;}
 .ico-menu {display: flex;position: relative;width: 24px;padding: 8px 0px !important;}
 .ico-menu span {background: var(--sub-color);position: absolute;height: 2px;left: 0;right: 0;}

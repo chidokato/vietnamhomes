@@ -185,3 +185,159 @@ $("select#category").change(function(){
         $("#loadcustom").html(data);
     });
 });
+
+
+// imagePreview khi thêm nhiều ảnh
+var selectedFiles = [];
+document.getElementById('customFileInput').addEventListener('click', function() {
+    console.log('Custom file input clicked');
+    document.getElementById('imgInput').click();
+});
+document.getElementById('imgInput').addEventListener('change', function(event) {
+    var files = Array.from(event.target.files);
+    selectedFiles = selectedFiles.concat(files);
+    updateImagePreview();
+});
+function updateImagePreview() {
+    var preview = document.getElementById('imagePreview');
+    preview.innerHTML = ''; // Clear any existing previews
+
+    selectedFiles.forEach(function(file, index) {
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            var imgContainer = document.createElement('span');
+            imgContainer.className = 'image-container';
+
+            var img = document.createElement('img');
+            img.src = e.target.result;
+
+            var deleteButton = document.createElement('button');
+            deleteButton.className = 'delete-button';
+            deleteButton.innerText = 'X';
+            deleteButton.addEventListener('click', function() {
+                selectedFiles.splice(index, 1);
+                updateImagePreview();
+            });
+
+            imgContainer.appendChild(img);
+            imgContainer.appendChild(deleteButton);
+            preview.appendChild(imgContainer);
+        }
+
+        reader.readAsDataURL(file);
+    });
+    var dataTransfer = new DataTransfer();
+    selectedFiles.forEach(function(file) {
+        dataTransfer.items.add(file);
+    });
+    document.getElementById('imgInput').files = dataTransfer.files;
+}
+
+$(document).ready(function() {
+    let sectionCount = -1;
+    $('#addSectionButton').click(function() {
+        sectionCount++;
+        $.get('admin/get-section', function(data) {
+            let newSection = $(data);
+            newSection.attr('id', 'section-' + sectionCount);  // Set unique ID
+            newSection.find('input[name="img_ss[]"]').attr('name', 'img_ss' + sectionCount + '[]');  // Update input file name
+            $('#sectionContainer').append(newSection);
+            newSection.find('.editor').each(function() {
+                ClassicEditor
+                    .create(this, {
+                        toolbar: [
+                            'undo', 'redo', 'imageUpload', 
+                            'bold', 'italic', 'heading', 'bulletedList', 'numberedList', 
+                            'link', 'insertTable', 'blockQuote', 'removeFormat'
+                        ],
+                        ckfinder: {
+                            uploadUrl: '{{ route("uplsssoada") }}?command=QuickUpload&type=Files&_token={{ csrf_token() }}',
+                            options: {
+                                resourceType: 'Images'
+                            }
+                        }
+                    })
+                    .then(editor => {
+                        console.log('Editor was initialized', editor);
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            });
+        });
+    });
+
+    $('#sectionContainer').on('click', '.remove-section', function() {
+        $(this).closest('.section').remove();
+    });
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    var links = document.querySelectorAll('.scroll-link');
+
+    links.forEach(function(link) {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            var targetId = this.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                smoothScrollTo(targetElement, 300, this);
+            }
+        });
+    });
+
+    window.addEventListener('scroll', function() {
+        var currentPosition = window.scrollY;
+
+        links.forEach(function(link) {
+            var targetId = link.getAttribute('href').substring(1);
+            var targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                var targetPosition = targetElement.offsetTop;
+                var targetHeight = targetElement.offsetHeight;
+
+                if (currentPosition >= targetPosition && currentPosition < targetPosition + targetHeight) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            }
+        });
+    });
+});
+
+function smoothScrollTo(target, duration, link) {
+    var targetPosition = target.getBoundingClientRect().top + window.scrollY;
+    var startPosition = window.scrollY;
+    var distance = targetPosition - startPosition;
+    var startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+        } else {
+            window.scrollTo(0, targetPosition);
+            link.classList.add('active'); // Thêm lớp 'active' vào liên kết sau khi cuộn hoàn tất
+        }
+    }
+
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+
+

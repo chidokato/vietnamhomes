@@ -1,6 +1,6 @@
 
 <!------------------- NAVIGATOR ------------------->
-<header class="navhome">
+<header class="navhome" id="header">
     <nav class="navbar navbar-expand-lg navbar-dark" aria-label="Ninth navbar example">
         <div class="container">
           

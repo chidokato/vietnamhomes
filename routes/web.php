@@ -23,6 +23,8 @@ use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\DistrictController;
 use App\Http\Controllers\Admin\WardController;
 
+use App\Http\Controllers\Admin\UploadController;
+
 use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeSystemController;
@@ -37,7 +39,10 @@ Route::get('logout', [LoginController::class, 'logout'])->name('logout');
 Route::post('account/register', [LoginController::class, 'register'])->name('register');
 
 
-
+Route::post('/upload', [UploadController::class, 'upload'])->name('upload');
+Route::get('admin/get-section', function () {
+    return view('admin.post.add_section')->render();
+});
 
 
 // ajax

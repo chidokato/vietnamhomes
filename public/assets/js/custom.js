@@ -1,7 +1,20 @@
+
+ window.addEventListener('scroll', function() {
+    var header = document.getElementById('header');
+    if (window.scrollY > 0) { // Kiểm tra nếu người dùng lăn chuột xuống quá 50px
+        header.classList.add('active');
+    } else {
+        header.classList.remove('active');
+    }
+});
+
+
 // var scrollSpy = new bootstrap.ScrollSpy(document.body, {
 //   target: '#review-4-phuong',
 //   offset: 100
 // })
+
+// document.addEventListener('DOMContentLoaded', function() {
 
 // var prevScrollpos = window.pageYOffset;
 // var myDiv = document.querySelector('body')
@@ -39,6 +52,7 @@
 //   }
 // }
 
+// });
 
 
 
@@ -60,7 +74,7 @@
 //     }
 
 
-function myFunctLink(element) {
-  location.href = element.attributes.href.value;
-}
+// function myFunctLink(element) {
+//   location.href = element.attributes.href.value;
+// }
 

@@ -1,7 +1,7 @@
 <div class="col">
     <div class="card card-s card-s4">
-        <a href="sale-detail.htm">
-            <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('https://datxanhindochine.com/data/product/z4594510880569_6a6ee8e09b3544f753bc998a7fa81f67.jpg');" alt="..."></span>
+        <a href="{{$val->category->slug}}/{{$val->slug}}">
+            <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('data/product/{{$val->img}}');" alt="..."></span>
             <span class="cat">
                 <span class="room-status bg-red">Độc quyền</span>
                 <span class="room-status">Mới ra mắt</span>
@@ -15,7 +15,7 @@
         </a>
         <div class="card-body">
             <div class="card-body-wrap">
-                <h5 class="card-title"><a href="#" class="text-truncate">Capital Elite</a></h5>
+                <h5 class="card-title"><a href="{{$val->category->slug}}/{{$val->slug}}" class="text-truncate">{{$val->name}}</a></h5>
                 <div class="card-info">
                     <span>18 Phạm Hùng, Nam Từ Liêm, Hà Nội</span>
                 </div>

@@ -6,7 +6,7 @@
 @section('url'){{asset('')}}@endsection
 
 @section('css')
-
+<link href="assets/css/widget.css" rel="stylesheet">
 @endsection
 
 @section('content')

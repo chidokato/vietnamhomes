@@ -64,3 +64,6 @@
 .swiper-button-next:hover, .swiper-button-prev:hover, .swiper-button-next, .swiper-rtl .swiper-button-prev{ width:43px }
 
 .main-content img{ max-width:100%; height:auto !important; }
+.main-content h2{ font-size:1.3rem;  }
+
+.heading{ display:flex; }

@@ -50,9 +50,12 @@
                 <li class="breadcrumb-item active" aria-current="page">Dự án</li>
                 </ol>
             </nav>
-            <h1 class="text-uppercase title-cat">Các dự án bất động sản trên toàn quốc</h1>
+            <div class="heading">
+                <h1 class="text-uppercase title-cat">Các dự án bất động sản trên toàn quốc</h1>
+                <div class="price"> <span>Giá bán: </span> 1.2 - 3 tỷ</div>
+            </div>
             <div class="location">
-                
+                <div> <span>Diện tích: </span> 50 - 60 triệu/m2</div>
             </div>
             <div class="main-content">
                 @foreach($sections as $section)
@@ -62,8 +65,9 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="price">
-                <div>1.2 - 3 tỷ</div>
+            <div class="">
+                
+                
             </div>
         </div>
     </div>

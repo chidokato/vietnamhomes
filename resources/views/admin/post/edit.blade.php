@@ -40,7 +40,7 @@
                 <div class="card-body">
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">Tên dự án</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-10 input-group">
                             <input value="{{$data->name}}" name="name" placeholder="Tên dự án" type="text" class="form-control">
                             <input value="{{$data->slug}}" name="slug" placeholder="" type="text" class="form-control">
                         </div>

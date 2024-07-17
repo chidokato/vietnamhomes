@@ -77,9 +77,22 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="form">
-                
+            <div class="right-sidebar">
+                <div class="top">
+                    <div class="avatar">
+                        <img src="assets/images/avata-tgd.png">
+                    </div>
+                    <div class="right">
+                        <h5>Liên hệ tư vấn</h5>
+                        <p>Chuyên viên tư vấn đã sãn sàng hỗ trợ</p>
+                    </div>
+                </div>
+                <div class="hotline"> <a href="tel:0977 572 947"><i class="icon-phone"></i> 0977 572 947</a> </div>
             </div>
+            <div class="pupup">
+                <button> <img src="assets/images/icon-document-register.svg"> Đăng ký nhận tài liệu dự án</button>
+            </div>
+            
         </div>
     </div>
 </div>

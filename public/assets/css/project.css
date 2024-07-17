@@ -116,3 +116,5 @@
 .detail table td:first-child{     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap; padding-right:15px; font-weight:bold; }
+
+.content-img .swiper{ height:auto !important; }

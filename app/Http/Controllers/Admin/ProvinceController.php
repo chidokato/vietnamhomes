@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 
 use App\Models\Province;
-use App\Models\ProvinceTranslation;
 
 class ProvinceController extends Controller
 {
@@ -19,8 +18,7 @@ class ProvinceController extends Controller
      */
     public function index()
     {
-        $locale = Session::get('locale');
-        $province = ProvinceTranslation::where('locale', $locale)->orderBy('province_id', 'DESC')->get();
+        $province = Province::orderBy('id', 'desc')->get();
         return view('admin.province.index', compact('province'));
     }
 

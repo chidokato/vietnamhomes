@@ -12,52 +12,36 @@ use App\Models\Option;
 use App\Models\Menu;
 use App\Models\Post;
 use App\Models\Images;
-use App\Models\ProvinceTranslation;
-use App\Models\DistrictTranslation;
-use App\Models\WardTranslation;
-use App\Models\SectionTranslation;
+use App\Models\Province;
+use App\Models\District;
+use App\Models\Ward;
+use App\Models\Street;
+
 
 class AjaxController extends Controller
 {
-    public function change_cate_lang($id)
-    {
-        $data = CategoryTranslation::where('category_id',$id)->get();
-        foreach ($data as $key => $value) {
-    		echo '<input value="'.$value->id.'" name="category_id:'.$value->locale.'" type="hidden">';
-        }
-    }
-
     public function change_province($id)
     {
-        $Province = ProvinceTranslation::where('province_id',$id)->first();
-        $data = DistrictTranslation::where('province_id',$Province->id)->get();
+        $data = District::where('province_id',$id)->get();
         echo '<option value="">...</option>';
         foreach ($data as $key => $value) {
-    		echo '<option value="'.$value->district_id.'">'.$value->name.'</option>';
+    		echo '<option value="'.$value->id.'">'.$value->name.'</option>';
         }
     }
-    public function change_province_lang($id)
-    {
-        $data = ProvinceTranslation::where('province_id',$id)->get();
-        foreach ($data as $key => $value) {
-            echo '<input value="'.$value->id.'" name="province_id:'.$value->locale.'" type="hidden">';
-        }
-    }
-
     public function change_district($id)
     {
-        $District = DistrictTranslation::where('district_id',$id)->first();
-        $data = WardTranslation::where('district_id',$District->id)->get();
+        $data = Ward::where('district_id',$id)->get();
         echo '<option value="">...</option>';
         foreach ($data as $key => $value) {
-            echo '<option value="'.$value->ward_id.'">'.$value->name.'</option>';
+            echo '<option value="'.$value->id.'">'.$value->name.'</option>';
         }
     }
-    public function change_district_lang($id)
+    public function change_district_street($id)
     { 
-        $data = DistrictTranslation::where('district_id',$id)->get();
+        $data = Street::where('district_id',$id)->get();
+        echo '<option value="">...</option>';
         foreach ($data as $key => $value) {
-            echo '<input value="'.$value->id.'" name="district_id:'.$value->locale.'" type="hidden">';
+            echo '<option value="'.$value->id.'">'.$value->name.'</option>';
         }
     }
     public function change_ward_lang($id)

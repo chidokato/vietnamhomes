@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\PromotionController;
 use App\Http\Controllers\Admin\ProvinceController;
 use App\Http\Controllers\Admin\DistrictController;
 use App\Http\Controllers\Admin\WardController;
+use App\Http\Controllers\Admin\StreetController;
 
 use App\Http\Controllers\Admin\UploadController;
 
@@ -47,12 +48,9 @@ Route::get('admin/get-section', function () {
 
 // ajax
 Route::group(['prefix'=>'ajax'],function(){
-    Route::get('change_cate_lang/{id}', [AjaxController::class, 'change_cate_lang']);
     Route::get('change_province/{id}', [AjaxController::class, 'change_province']);
-    Route::get('change_province_lang/{id}', [AjaxController::class, 'change_province_lang']);
     Route::get('change_district/{id}', [AjaxController::class, 'change_district']);
-    Route::get('change_district_lang/{id}', [AjaxController::class, 'change_district_lang']);
-    Route::get('change_ward_lang/{id}', [AjaxController::class, 'change_ward_lang']);
+    Route::get('change_district_street/{id}', [AjaxController::class, 'change_district_street']);
     Route::get('change_SortBy/{id}', [AjaxController::class, 'change_SortBy']);
     Route::get('change_parent/{id}', [AjaxController::class, 'change_parent']);
     Route::get('update_category_view/{id}/{view}', [AjaxController::class, 'update_category_view']);
@@ -80,6 +78,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('province',ProvinceController::class);
         Route::resource('district',DistrictController::class);
         Route::resource('ward',WardController::class);
+        Route::resource('street',StreetController::class);
 
         Route::resource('menu',MenuController::class);
         Route::resource('category',CategoryController::class);

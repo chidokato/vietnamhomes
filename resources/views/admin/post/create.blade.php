@@ -38,78 +38,143 @@
                     <h6 class="m-0 font-weight-bold text-primary">Thông tin chung</h6>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input name="name" placeholder="..." type="text" class="form-control">
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Tên dự án</label>
+                        <div class="col-sm-10">
+                            <input name="name" placeholder="Tên dự án" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Danh mục</label>
+                        <div class="col-sm-10">
+                            <select name='category_id' class="form-control select2" id="category">
+                                <?php addeditcat ($category,0,$str='',old('parent')); ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Giá bán</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <select class="form-control" name="unit">
+                                    <option value="Tỷ">Tỷ</option>
+                                    <option value="Triệu">Triệu</option>
+                                </select>
+                                <input type="text" name="price" class="form-control" placeholder="Từ (mặc định)">
+                                <input type="text" name="price_max" class="form-control" placeholder="Đến">
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="">Danh mục</label>
-                                <select name='category_id' class="form-control select2" id="category">
-                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Diện tích</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">m2</span>
+                                </div>
+                                <input type="text" name="acreage" class="form-control" placeholder="Từ (mặc định)">
+                                <input type="text" name="acreage_max" class="form-control" placeholder="Đến">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Phòng ngủ</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">PN</span>
+                                </div>
+                                <input type="text" name="bedroom" class="form-control" placeholder="Từ (mặc định)">
+                                <input type="text" name="bedroom_max" class="form-control" placeholder="Đến">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Phòng vệ sinh</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">WC</span>
+                                </div>
+                                <input type="text" name="wc" class="form-control" placeholder="Từ (mặc định)">
+                                <input type="text" name="wc_max" class="form-control" placeholder="Đến">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Tổng số căn</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">Căn</span>
+                                </div> 
+                                <input type="text" name="total_product" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Vị trí</label>
+                        <div class="col-sm-10">
+                            <div class="input-group form-group">
+                                <select class="form-control select2" name="province" id="province">
+                                    <option value="">- Tỉnh/thành -</option>
+                                    @foreach($province as $val)
+                                    <option value="{{$val->id}}">{{$val->name}}</option>
+                                    @endforeach
+                                </select>
+                                <select class="form-control select2" name="district" id="district">
+                                    <option value="">- Quận/huyện -</option>
+                                </select>
+                                <select class="form-control select2" name="ward" id="ward">
+                                    <option value="">- Phường/xã -</option>
+                                </select>
+                                <select class="form-control select2" name="street" id="street">
+                                    <option value="">- Đường -</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <label class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input name="address" type="text" class="form-control" placeholder="Địa chỉ chi tiết ...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2">Tùy chọn khác</label>
+                        <div class="col-sm-10">
                             <div class="form-group">
-                                <label>Giá bán</label>
-                                <div class="flex">
-                                    <input name="price" placeholder="..." type="text" class="form-control">
-                                    <select name="unit" class="form-control">
-                                        <option value="Tỷ">Tỷ</option>
-                                        <option value="VNĐ">VNĐ</option>
-                                    </select>
+                                <div class="col-auto my-1">
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input name="monopoly" type="checkbox" class="custom-control-input" id="customControlAutosizing1">
+                                        <label class="custom-control-label" for="customControlAutosizing1">Độc quyền</label>
+                                    </div>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <div class="col-auto my-1">
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input name="for_sale" type="checkbox" class="custom-control-input" id="customControlAutosizing2">
+                                        <label class="custom-control-label" for="customControlAutosizing2">Đang mở bán</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-auto my-1">
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input name="new_product" type="checkbox" class="custom-control-input" id="customControlAutosizing3">
+                                        <label class="custom-control-label" for="customControlAutosizing3">Mới ra mắt</label>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
-        <div class="linkneo" id="section2">
-            <div class="card shadow mb-4" >
-                <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Vị trí</h6>
-                </span>
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="">Địa chỉ</label>
-                                <input name="address" placeholder="..." type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="">Tỉnh Thành</label>
-                                <select name='category_id' class="form-control select2" id="category">
-                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="">Quận Huyện</label>
-                                <select name='category_id' class="form-control select2" id="category">
-                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="">Phường Xã</label>
-                                <select name='category_id' class="form-control select2" id="category">
-                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        
         <div class="linkneo" id="section3">
             <div class="card shadow mb-4" >
                 <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -193,16 +258,22 @@
                     <h6 class="m-0 font-weight-bold text-primary">Cấu hình SEO</h6>
                 </span>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="">Title</label>
-                                <input name="title" placeholder="..." type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="">description</label>
-                                <input name="description" placeholder="..." type="text" class="form-control">
-                            </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Title</label>
+                        <div class="col-sm-10">
+                            <input name="title" placeholder="..." type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Description</label>
+                        <div class="col-sm-10">
+                            <input name="description" placeholder="..." type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Hiển thị</label>
+                        <div class="col-sm-10">
+                            asdasd ádasd
                         </div>
                     </div>
                 </div>
@@ -220,8 +291,7 @@
                     <div class="col-md-12">
                         <div class="menu-product">
                             <ul>
-                                <li><a class="scroll-link" href="#section1">Tổng quan</a></li>
-                                <li><a class="scroll-link" href="#section2">vitri</a></li>
+                                <li><a class="scroll-link" href="#section1">Thông tin chung</a></li>
                                 <li><a class="scroll-link" href="#section3">Hình ảnh</a></li>
                                 <li><a class="scroll-link" href="#seo">Cấu hình SEO</a></li>
                             </ul>

@@ -38,34 +38,148 @@
                     <h6 class="m-0 font-weight-bold text-primary">Thông tin chung</h6>
                 </div>
                 <div class="card-body">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Name</label>
-                                <input value="{{$data->name}}" name="name" placeholder="..." type="text" class="form-control">
-                            </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Tên dự án</label>
+                        <div class="col-sm-10">
+                            <input value="{{$data->name}}" name="name" placeholder="Tên dự án" type="text" class="form-control">
                         </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label class="">Danh mục</label>
-                                <select name='category_id' class="form-control select2" id="category">
-                                    <?php addeditcat ($category,0,$str='',$data['category_id']); ?>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Danh mục</label>
+                        <div class="col-sm-10">
+                            <select name='category_id' class="form-control select2" id="category">
+                                <?php addeditcat ($category,0,$str='',$data['category_id']); ?>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Giá bán</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <select class="form-control" name="unit">
+                                    <option value="Tỷ">Tỷ</option>
+                                    <option value="Triệu">Triệu</option>
                                 </select>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Giá bán</label>
-                                <div class="flex">
-                                    <input value="{{$data->price}}" name="price" placeholder="..." type="text" class="form-control">
-                                    <select name="unit" class="form-control">
-                                        <option <?php if($data->unit == 'Tỷ'){echo 'selected';} ?> value="¥">Tỷ</option>
-                                        <option <?php if($data->unit == 'VNĐ'){echo 'selected';} ?> value="₫">VNĐ</option>
-                                    </select>
-                                </div>
+                                <input value="{{$data->price}}" type="text" name="price" class="form-control" placeholder="Từ (mặc định)">
+                                <input value="{{$data->price_max}}" type="text" name="price_max" class="form-control" placeholder="Đến">
                             </div>
                         </div>
                     </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Diện tích</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">m2</span>
+                                </div>
+                                <input value="{{$data->acreage}}" type="text" name="acreage" class="form-control" placeholder="Từ (mặc định)">
+                                <input value="{{$data->acreage_max}}" type="text" name="acreage_max" class="form-control" placeholder="Đến">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Phòng ngủ</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">PN</span>
+                                </div>
+                                <input value="{{$data->bedroom}}" type="text" name="bedroom" class="form-control" placeholder="Từ (mặc định)">
+                                <input value="{{$data->bedroom_max}}" type="text" name="bedroom_max" class="form-control" placeholder="Đến">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Phòng vệ sinh</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">WC</span>
+                                </div>
+                                <input value="{{$data->wc}}" type="text" name="wc" class="form-control" placeholder="Từ (mặc định)">
+                                <input value="{{$data->wc_max}}" type="text" name="wc_max" class="form-control" placeholder="Đến">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Tổng số căn</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="basic-addon2">Căn</span>
+                                </div> 
+                                <input value="{{$data->total_product}}" type="text" name="total_product" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2 col-form-label">Vị trí</label>
+                        <div class="col-sm-10">
+                            <div class="input-group form-group">
+                                <select class="form-control select2" name="province" id="province">
+                                    <option value="">- Tỉnh/thành -</option>
+                                    @foreach($province as $val)
+                                    <option {{ $val->id == $data->province_id ? 'selected':'' }} value="{{$val->id}}">{{$val->name}}</option>
+                                    @endforeach
+                                </select>
+                                <select class="form-control select2" name="district" id="district">
+                                    <option value="">- Quận/huyện -</option>
+                                    @foreach($district as $val)
+                                    <option {{ $val->id == $data->district_id ? 'selected':'' }} value="{{$val->id}}">{{$val->name}}</option>
+                                    @endforeach
+                                </select>
+                                <select class="form-control select2" name="ward" id="ward">
+                                    <option value="">- Phường/xã -</option>
+                                    @foreach($ward as $val)
+                                    <option {{ $val->id == $data->ward_id ? 'selected':'' }} value="{{$val->id}}">{{$val->name}}</option>
+                                    @endforeach
+                                </select>
+                                <select class="form-control select2" name="street" id="street">
+                                    <option value="">- Đường -</option>
+                                    @foreach($street as $val)
+                                    <option {{ $val->id == $data->street_id ? 'selected':'' }} value="{{$val->id}}">{{$val->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <label class="col-sm-2 col-form-label"></label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <input value="{{$data->address}}" name="address" type="text" class="form-control" placeholder="Địa chỉ chi tiết ...">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-sm-2">Tùy chọn khác</label>
+                        <div class="col-sm-10">
+                            <div class="form-group">
+                                <div class="col-auto my-1">
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input {{ $data->monopoly == '1' ? "checked":"" }} name="monopoly" type="checkbox" class="custom-control-input" id="customControlAutosizing1">
+                                        <label class="custom-control-label" for="customControlAutosizing1">Độc quyền</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-auto my-1">
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input {{ $data->for_sale == '1' ? "checked":"" }} name="for_sale" type="checkbox" class="custom-control-input" id="customControlAutosizing2">
+                                        <label class="custom-control-label" for="customControlAutosizing2">Đang mở bán</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-auto my-1">
+                                    <div class="custom-control custom-checkbox mr-sm-2">
+                                        <input {{ $data->new_product == '1' ? "checked":"" }} name="new_product" type="checkbox" class="custom-control-input" id="customControlAutosizing3">
+                                        <label class="custom-control-label" for="customControlAutosizing3">Mới ra mắt</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -73,39 +187,12 @@
         <div class="linkneo" id="section2">
             <div class="card shadow mb-4" >
                 <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                    <h6 class="m-0 font-weight-bold text-primary">Vị trí</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Thông tin dự án</h6>
                 </span>
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="">Địa chỉ</label>
-                                <input name="address" placeholder="..." type="text" class="form-control">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="">Tỉnh Thành</label>
-                                <select name='' class="form-control select2" id="category">
-                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="">Quận Huyện</label>
-                                <select name='' class="form-control select2" id="category">
-                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label class="">Phường Xã</label>
-                                <select name='' class="form-control select2" id="category">
-                                  <?php addeditcat ($category,0,$str='',old('parent')); ?>
-                                </select>
-                            </div>
+                            <textarea class="form-control editor" name="content"> {!! $data->content !!} </textarea>
                         </div>
                     </div>
                 </div>
@@ -156,7 +243,7 @@
         @foreach($section as $key => $val)
         <input type="hidden" value="{{$val->id}}" name="id-edit[]">
         <div class="linkneo section" id="section-{{$val->id}}">
-            <button class="btn btn-danger remove-section" type="button">Xóa Section</button>
+            <!-- <button class="btn btn-danger remove-section" type="button">Xóa Section</button> -->
             <div class="card shadow mb-4" >
                 <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                     <h6 class="m-0 font-weight-bold text-primary">{{$val->tab}}</h6>
@@ -215,6 +302,27 @@
 
         <br>
         <br>
+
+        <div class="linkneo" id="maps">
+            <div class="card shadow mb-4" >
+                <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Bản đồ định vị</h6>
+                </span>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <textarea id="maps" rows="5" class="form-control" oninput="loadMap()"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div id="load_maps" style="margin-top: 20px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="linkneo" id="seo">
             <div class="card shadow mb-4" >
                 <span class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -248,11 +356,12 @@
                         <div class="menu-product">
                             <ul>
                                 <li><a class="scroll-link" href="#section1">Thông tin chung</a></li>
-                                <li><a class="scroll-link" href="#section2">vitri</a></li>
+                                <li><a class="scroll-link" href="#section2">Thông tin dự án</a></li>
                                 <li><a class="scroll-link" href="#section3">Hình ảnh</a></li>
                                 @foreach($section as $val)
                                 <li><a class="scroll-link" href="#section-{{$val->id}}">{{$val->tab}}</a></li>
                                 @endforeach
+                                <li><a class="scroll-link" href="#maps">Bản đồ định vị</a></li>
                                 <li><a class="scroll-link" href="#seo">Cấu hình SEO</a></li>
                             </ul>
                         </div>
@@ -263,6 +372,14 @@
     </div>
 </div>
 </form>
+
+<style>
+    #load_maps iframe {
+        width: 100%;
+        height: 450px;
+        border: 0;
+    }
+</style>
 
 <?php 
     function addeditcat ($data, $parent=0, $str='',$select=0)
@@ -290,6 +407,10 @@
         e.parentElement.remove();
     }
 
+    function loadMap() {
+            var mapEmbedCode = document.getElementById('maps').value;
+            document.getElementById('load_maps').innerHTML = mapEmbedCode;
+        }
 
 
 </script>

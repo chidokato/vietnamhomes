@@ -15,3 +15,10 @@ var swiper = new Swiper(".mySwiper", {
         swiper: swiper,
       },
     });
+
+
+var swiper = new Swiper(".mySwiper-section", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });

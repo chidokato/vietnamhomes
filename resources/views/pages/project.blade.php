@@ -12,7 +12,7 @@
 
 @section('content')
 
-<section class="sec-img">
+<section class="sec-img bg">
     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
@@ -43,39 +43,73 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-9">
-            <nav aria-label="breadcrumb">
+        <div class="col-md-12">
+            <nav aria-label="breadcrumb" class="main-breadcrumb">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#">Vietnam Homes</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Dự án</li>
+                    <li class="breadcrumb-item"><a href="#">Vietnam Homes</a></li>
+                    <li class="breadcrumb-item"><a href="{{$post->category->slug}}/{{$post->slug}}">{{$post->name}}</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">{{$post->name}}</li>
                 </ol>
+                <div class="sub">
+                    <span class="bg-secondary">Độc quyền <i class="ms-1 icon-check"></i></span>
+                    <span class="bg-secondary">Đang mở bán <i class="ms-1 icon-check"></i></span>
+                    <span class="bg-secondary">Mới ra mắt <i class="ms-1 icon-check"></i></span>
+                </div>
             </nav>
             <div class="heading">
-                <h1 class="text-uppercase title-cat">Các dự án bất động sản trên toàn quốc</h1>
-                <div class="price"> <span>Giá bán: </span> 1.2 - 3 tỷ</div>
+                <div class="left">
+                    <h1 class="text-uppercase title-cat">{{$post->name}}</h1>
+                    <div class="address"><i class="icon-location me-1"></i> {{$post->address}}, {{$post->ward->name}}, {{$post->District->name}}, {{$post->Province->name}} <a href="">Xem trên bản đồ</a></div>
+                </div>
+                <div class="right">
+                    <div class="price"> {{$post->price}} {{$post->price_max ? ' - '.$post->price_max:''}} {{$post->unit}}</div>
+                    <div class="price_acreage">{{number_format($post->price*1000000000/$post->acreage/1000000, 2)}} triệu/m<sup>2</sup></div>
+                </div>
             </div>
-            <div class="location">
-                <div> <span>Diện tích: </span> 50 - 60 triệu/m2</div>
-            </div>
-            <div class="main-content">
-                @foreach($sections as $section)
-                <h2>{{$section->heading}}</h2>
-                {!! $section->content !!}
-                @endforeach
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="detail bg">
+                {!! $post->content !!}
             </div>
         </div>
         <div class="col-md-3">
-            <div class="">
-                
+            <div class="form">
                 
             </div>
         </div>
     </div>
 </div>
+@foreach($sections as $key => $section)
+<div class="main-content {{ $key % 2 == 0 ? 'section-chan':'section-le' }}">
+    <div class="row">
+        <div class="col-md-6 col-left">
+            <div class="content-text">
+                <h2>{{$section->heading}}</h2>
+                {!! $section->content !!}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="content-img">
+                <div class="swiper mySwiper-section">
+                    <div class="swiper-wrapper">
+                        @foreach($section->Images as $img)
+                        <div class="swiper-slide"><img src="data/product/detail/{{$img->img}}"></div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endforeach
 
 @endsection
 
 @section('js')
 <script src="assets/js/project.js"></script>
-
 @endsection

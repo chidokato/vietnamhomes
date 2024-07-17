@@ -30,4 +30,16 @@ class Post extends Model
     {
         return $this->hasMany(Section::class, 'post_id', 'id');
     }
+    public function Ward()
+    {
+        return $this->hasOne(Ward::class, 'id', 'ward_id');
+    }
+    public function District()
+    {
+        return $this->hasOne(District::class, 'id', 'district_id');
+    }
+    public function Province()
+    {
+        return $this->hasOne(Province::class, 'id', 'province_id');
+    }
 }

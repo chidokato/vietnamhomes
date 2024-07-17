@@ -5,25 +5,22 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
-use Astrotomic\Translatable\Translatable;
 
 class Ward extends Model
 {
-    use Translatable;
     use HasFactory;
     public $timestamps = true;
-    public $translatedAttributes = [
-    	'ward_id',
-    	'province_id',
-    	'content',
-    	'district_id',
-        'name',
-    	'prefix',
-    	'locale',
-    ];
-    protected $fillable = [
-    	'user_id',
-    	'status',
-    ];
+    
+    public function Province()
+    {
+        return $this->hasOne(Province::class, 'id', 'province_id');
+    }
+    public function District()
+    {
+        return $this->hasOne(District::class, 'id', 'district_id');
+    }
+    public function Post()
+    {
+        return $this->hasMany(Post::class, 'ward_id', 'id');
+    }
 }

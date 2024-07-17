@@ -38,8 +38,8 @@
         <div id="customer" class="collapse" aria-labelledby="headingUtilities"
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item" href="{{route('cart.index')}}">Đơn hàng</a>
-                <a class="collapse-item" href="{{route('customer.index')}}">Liên hệ</a>
+                <!-- <a class="collapse-item" href="{{route('cart.index')}}">Đơn hàng</a> -->
+                <a class="collapse-item" href="{{route('customer.index')}}">Data</a>
             </div>
         </div>
     </li>
@@ -93,7 +93,7 @@
                 <a class="collapse-item" href="{{route('province.index')}}">Province</a>
                 <a class="collapse-item" href="{{route('district.index')}}">District</a>
                 <a class="collapse-item" href="{{route('ward.index')}}">Ward</a>
-                <a class="collapse-item" href="admin/street/list">Street</a>
+                <a class="collapse-item" href="{{route('street.index')}}">Street</a>
             </div>
         </div>
     </li>

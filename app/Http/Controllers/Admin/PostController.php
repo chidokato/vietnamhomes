@@ -16,6 +16,11 @@ use App\Models\Section;
 use App\Models\Post;
 use App\Models\Images;
 
+use App\Models\Street;
+use App\Models\Ward;
+use App\Models\Province;
+use App\Models\District;
+
 
 class PostController extends Controller
 {
@@ -59,8 +64,12 @@ class PostController extends Controller
 
     public function create()
     {
+        $province = Province::get();
         $category = Category::where('sort_by', 'Product')->orderBy('view', 'DESC')->get();
-        return view('admin.post.create')->with(compact('category'));
+        return view('admin.post.create')->with(compact(
+            'province',
+            'category',
+        ));
     }
 
     /**
@@ -72,18 +81,38 @@ class PostController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        // dd($data);
+        // dd($request->has('for_sale'));
         $post = new Post();
         $post->user_id = Auth::User()->id;
         $post->status = 'true';
         $post->sort_by = 'Product';
-        $post->slug = Str::slug($data['name'], '-');
         $post->name = $data['name'];
+        $post->slug = Str::slug($data['name'], '-');
         $post->category_id = $data['category_id'];
+        
+        $post->price = $data['price'];
+        $post->price_max = $data['price_max'];
+        $post->unit = $data['unit'];
+        $post->acreage = $data['acreage'];
+        $post->acreage_max = $data['acreage_max'];
+        $post->bedroom = $data['bedroom'];
+        $post->bedroom_max = $data['bedroom_max'];
+        $post->wc = $data['wc'];
+        $post->wc_max = $data['wc_max'];
+        $post->total_product = $data['total_product'];
+        
+        $post->province_id = $data['province'];
+        $post->district_id = $data['district'];
+        $post->ward_id = $data['ward'];
+        $post->street_id = $data['street'];
+        $post->address = $data['address'];
+
+        $post->monopoly = $request->has('monopoly');
+        $post->for_sale = $request->has('for_sale');
+        $post->new_product = $request->has('new_product');
         $post->title = $data['title'];
         $post->description = $data['description'];
-        $post->price = $data['price'];
-        $post->unit = $data['unit'];
+        
         // thêm ảnh
         if ($request->hasFile('img')) {
             $file = $request->file('img');
@@ -165,7 +194,20 @@ class PostController extends Controller
         $data = Post::find($id);
         $images = Images::where('post_id', $data->id)->get();
         $section = Section::where('post_id', $data->id)->orderBy('stt', 'ASC')->get();
-        return view('admin.post.edit')->with(compact('category', 'data', 'images', 'section'));
+        $province = Province::get();
+        $district = District::where('province_id', $data->province_id)->get();
+        $ward = Ward::where('district_id', $data->district_id)->get();
+        $street = Street::where('district_id', $data->district_id)->get();
+        return view('admin.post.edit')->with(compact(
+            'category',
+            'data',
+            'images',
+            'section',
+            'province',
+            'district',
+            'ward',
+            'street',
+        ));
     }
 
     /**
@@ -180,11 +222,31 @@ class PostController extends Controller
         $data = $request->all();
         $post = Post::find($id);
         $post->name = $data['name'];
+        $post->content = $data['content'];
         $post->category_id = $data['category_id'];
+        
+        $post->price = $data['price'];
+        $post->price_max = $data['price_max'];
+        $post->unit = $data['unit'];
+        $post->acreage = $data['acreage'];
+        $post->acreage_max = $data['acreage_max'];
+        $post->bedroom = $data['bedroom'];
+        $post->bedroom_max = $data['bedroom_max'];
+        $post->wc = $data['wc'];
+        $post->wc_max = $data['wc_max'];
+        $post->total_product = $data['total_product'];
+        
+        $post->province_id = $data['province'];
+        $post->district_id = $data['district'];
+        $post->ward_id = $data['ward'];
+        $post->street_id = $data['street'];
+        $post->address = $data['address'];
+
+        $post->monopoly = $request->has('monopoly');
+        $post->for_sale = $request->has('for_sale');
+        $post->new_product = $request->has('new_product');
         $post->title = $data['title'];
         $post->description = $data['description'];
-        $post->price = $data['price'];
-        $post->unit = $data['unit'];
 
         // thêm ảnh
         if ($request->hasFile('img')) {

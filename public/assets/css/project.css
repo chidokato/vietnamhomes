@@ -1,69 +1,118 @@
 .swiper {
-      width: 100%;
-      height: 100%;
-    }
+  width: 100%;
+  height: 100%;
+}
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
-    .swiper {
-      width: 100%;
-      height: 500px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+.swiper {
+  width: 100%;
+  height: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-    .swiper-slide {
-      background-size: cover;
-      background-position: center;
-    }
+.swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
 
-    .mySwiper2 {
-      width: 100%;
-    }
-    .mySwiper2 .swiper-slide img{  }
-    .mySwiper .swiper-slide img{ height:100px }
+.mySwiper2 {
+  width: 100%;
+}
+.mySwiper2 .swiper-slide img{  }
+.mySwiper .swiper-slide img{ height:100px }
 
-    .mySwiper {
-      height: 20%;
-      box-sizing: border-box;
-      padding: 10px 0;
-    }
+.mySwiper {
+  height: 20%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
 
-    .mySwiper .swiper-slide {
-      width: 25%;
-      height: 100%;
-      opacity: 0.4;
-    }
+.mySwiper .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
 
-    .mySwiper .swiper-slide-thumb-active {
-      opacity: 1;
-    }
+.mySwiper .swiper-slide-thumb-active {
+  opacity: 1;
+}
 
-    .swiper-slide img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }.
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .swiper-button-next:after, .swiper-button-prev:after{ font-size:1rem }
 .swiper-button-next::after, .swiper-button-prev::after{ font-size:1rem }
 .swiper-button-next:hover, .swiper-button-prev:hover, .swiper-button-next, .swiper-rtl .swiper-button-prev{ width:43px }
 
+.main-content{ padding:50px 0px }
 .main-content img{ max-width:100%; height:auto !important; }
-.main-content h2{ font-size:1.3rem;  }
+.main-content h2{ font-size:1.3rem; font-weight:bold; position:relative; margin-bottom:25px }
+.main-content h2:after{ position:absolute; content:""; width:100px; height:2px; bottom:-7px; left:0; background-color:var(--main-color); }
+.main-content .row{ justify-content: flex-end; }
+.main-content .mySwiper-section img{ height:100% !important }
 
-.heading{ display:flex; }
+@media (min-width: 992px) {
+  .main-content .row .col-left{ width:480px; display:flex; align-items: center; }
+}
+@media (min-width: 1201px) {
+  .main-content .row .col-left{ width:570px; display:flex; align-items: center; }
+}
+@media (min-width: 1600px) {
+  .main-content .row .col-left{ width:700px; display:flex; align-items: center; }
+}
+.section-le{ background-color:#f0f0f061 }
+.section-le .row{ flex-direction: row-reverse;  }
+
+.heading{ display:flex; justify-content: space-between; margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:20px }
+.heading h1{ color:#000; font-size:2rem }
+.heading .price{ font-size:2rem; font-weight:bold; margin-bottom:15px }
+.heading .address{ font-size:1rem }
+.heading .address a{ color:#007AFF; margin-left:20px; text-decoration:underline; }
+
+.bg-secondary {
+    box-shadow: inset 0 0 0 1px #9d091738;
+    color: var(--main-color);
+    background: #f0f0f061 !important;
+    padding: 7px 10px; border-radius: 3px;
+    font-size: .8rem;
+}
+.bg{ background-color:#f0f0f061  }
+.main-breadcrumb{ display:flex;     align-items: center;
+    justify-content: space-between; margin-bottom:20px }
+
+.detail{ padding:20px; border-radius:5px;  }
+.detail ul{ display:flex; flex-direction: column; }
+.detail ul li{ position: relative; padding-left:15px }
+.detail ul li::before {
+    content: '+';
+    position: absolute;
+    left: 0;
+    top: -2px;
+}
+.detail ul li strong{ width:20% }
+.detail table{ width:100% }
+.detail table tr{ border-bottom:1px solid #ddd; }
+.detail table tr:last-child{ border:none }
+.detail table td{ padding:7px 0px }
+.detail table td:first-child{     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; padding-right:15px; font-weight:bold; }

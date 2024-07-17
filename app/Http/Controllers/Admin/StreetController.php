@@ -8,7 +8,9 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 
 use App\Models\Street;
-use App\Models\StreetTranslation;
+use App\Models\Ward;
+use App\Models\Province;
+use App\Models\District;
 
 class StreetController extends Controller
 {
@@ -19,9 +21,28 @@ class StreetController extends Controller
      */
     public function index()
     {
-        $locale = Session::get('locale');
-        $Street = StreetTranslation::where('locale', $locale)->orderBy('Street_id', 'DESC')->get();
-        return view('admin.Street.index', compact('Street'));
+        $province = Province::get();
+        $district = District::get();
+        $ward = Ward::get();
+        $street = Street::orderBy('id', 'DESC');
+
+        if($key = request()->key){
+            $street->where('name', 'like', '%' . $key . '%');
+        }
+        if($cid = request()->province_id){
+            $ward->where('province_id', $cid);
+        }
+        if(request()->district_id){
+            $street->where('district_id', request()->district_id);
+        }
+        $street = $street->paginate(50);
+
+        return view('admin.street.index', compact(
+            'street',
+            'ward',
+            'province',
+            'district',
+        ));
     }
 
     /**

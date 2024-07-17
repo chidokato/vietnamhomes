@@ -8,9 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 
 use App\Models\Ward;
-use App\Models\WardTranslation;
-use App\Models\ProvinceTranslation;
-use App\Models\DistrictTranslation;
+use App\Models\Province;
+use App\Models\District;
 
 class WardController extends Controller
 {
@@ -21,9 +20,26 @@ class WardController extends Controller
      */
     public function index()
     {
-        $locale = Session::get('locale');
-        $ward = WardTranslation::where('locale', $locale)->orderBy('ward_id', 'DESC')->get();
-        return view('admin.ward.index', compact('ward'));
+        $province = Province::get();
+        $district = District::get();
+        $ward = Ward::orderBy('id', 'DESC');
+
+        if($key = request()->key){
+            $ward->where('name', 'like', '%' . $key . '%');
+        }
+        if($cid = request()->province_id){
+            $ward->where('province_id', $cid);
+        }
+        if(request()->district_id){
+            $ward->where('district_id', request()->district_id);
+        }
+        $ward = $ward->paginate(50);
+
+        return view('admin.ward.index', compact(
+            'ward',
+            'province',
+            'district',
+        ));
     }
 
     /**

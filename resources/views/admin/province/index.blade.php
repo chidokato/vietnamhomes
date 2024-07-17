@@ -4,8 +4,8 @@
 @include('admin.layout.header')
 @include('admin.alert')
 <div class="d-sm-flex align-items-center justify-content-between mb-3 flex">
-    <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">{{__('lang.province')}}</h2>
-    <a class="add-iteam" href="{{route('province.create')}}"><button class="btn-success form-control" type="button"><i class="fa fa-plus" aria-hidden="true"></i> {{__('lang.add')}}</button></a>
+    <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">Danh sách</h2>
+    <a class="add-iteam" href="{{route('province.create')}}"><button class="btn-success form-control" type="button"><i class="fa fa-plus" aria-hidden="true"></i> add</button></a>
 </div>
 
 <div class="row">
@@ -13,7 +13,7 @@
         <div class="card shadow mb-4">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
                 <ul class="nav nav-pills">
-                    <li><a data-toggle="tab" class="nav-link active" href="#tab1">{{__('lang.all')}}</a></li>
+                    <li><a data-toggle="tab" class="nav-link active" href="#tab1">Tất cả</a></li>
                     <!-- <li><a data-toggle="tab" class="nav-link " href="#tab2">Hiển thị</a></li> -->
                     <!-- <li><a data-toggle="tab" class="nav-link" href="#tab3">Ẩn</a></li> -->
                 </ul>
@@ -25,6 +25,8 @@
                         <thead>
                             <tr>
                                 <th>Name</th>
+                                <th>Code</th>
+                                <th>Status</th>
                                 <th>date</th>
                                 <th></th>
                             </tr>
@@ -33,14 +35,18 @@
                             @foreach($province as $val)
                             <tr>
                                 <td>{{$val->name}}</td>
-                                <td>{{$val->created_at}}</td>
+                                <td>{{$val->code}}</td>
+                                <td>
+                                    <label class="container"><input <?php if($val->status == 'true'){echo "checked";} ?> type="checkbox" id='status_post' ><span class="checkmark"></span></label>
+                                </td>
+                                <td>{{$val->updated_at}}</td>
                                 <td style="display: flex;">
-                                    <a href="{{route('province.edit',[$val->province_id])}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
-                                    <form action="{{route('province.destroy',[$val->province_id])}}" method="POST">
+                                    <!-- <a href="{{route('province.edit',[$val->id])}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                                    <form action="{{route('province.destroy',[$val->id])}}" method="POST">
                                       @method('DELETE')
                                       @csrf
                                       <button class="button_none" onclick="return confirm('xác nhận')"><i class="fas fa-trash-alt"></i></button>
-                                    </form>
+                                    </form> -->
                                 </td>
                             </tr>
                             @endforeach

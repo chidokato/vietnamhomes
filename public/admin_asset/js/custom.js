@@ -45,13 +45,12 @@ function readURL(input) {
 $(document).ready(function(){
     $("select#province").change(function(){
         var id = $(this).val();
-        // alert(id);
         $.get("ajax/change_province/"+id,function(data){
             $("#district").html(data);
+            $("#ward").html('<option value="">...</option>');
+            $("#street").html('<option value="">...</option>');
         });
-        $.get("ajax/change_province_lang/"+id,function(data1){
-            $("#list_province").html(data1);
-        });
+
     });
 });
 $(document).ready(function(){
@@ -60,19 +59,12 @@ $(document).ready(function(){
         $.get("ajax/change_district/"+id,function(data){
             $("#ward").html(data);
         });
-        $.get("ajax/change_district_lang/"+id,function(data){
-            $("#list_district").html(data);
+        $.get("ajax/change_district_street/"+id,function(data){
+            $("#street").html(data);
         });
     });
 });
-$(document).ready(function(){
-    $("select#ward").change(function(){
-        var id = $(this).val();
-        $.get("ajax/change_ward_lang/"+id,function(data){
-            $("#list_ward").html(data);
-        });
-    });
-});
+
 
 // change sort by category
 $(document).ready(function(){

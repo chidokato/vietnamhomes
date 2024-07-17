@@ -8,8 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Session;
 
 use App\Models\District;
-use App\Models\DistrictTranslation;
-use App\Models\ProvinceTranslation;
+use App\Models\Province;
 
 class DistrictController extends Controller
 {
@@ -20,9 +19,23 @@ class DistrictController extends Controller
      */
     public function index()
     {
-        $locale = Session::get('locale');
-        $district = DistrictTranslation::where('locale', $locale)->orderBy('district_id', 'DESC')->get();
-        return view('admin.district.index', compact('district'));
+        // $district = District::orderBy('id', 'DESC')->paginate(50);
+        // return view('admin.district.index', compact('district'));
+        $province = Province::get();
+        $district = District::orderBy('id', 'DESC');
+
+        if($key = request()->key){
+            $district->where('name', 'like', '%' . $key . '%');
+        }
+        if($cid = request()->province_id){
+            $district->where('province_id', $cid);
+        }
+        $district = $district->paginate(50);
+
+        return view('admin.district.index', compact(
+            'district',
+            'province',
+        ));
     }
 
     /**

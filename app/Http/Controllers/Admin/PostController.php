@@ -222,6 +222,7 @@ class PostController extends Controller
         $data = $request->all();
         $post = Post::find($id);
         $post->name = $data['name'];
+        $post->slug = $data['slug'];
         $post->content = $data['content'];
         $post->category_id = $data['category_id'];
         

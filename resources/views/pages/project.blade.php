@@ -75,29 +75,122 @@
             <div class="detail bg">
                 {!! $post->content !!}
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="right-sidebar">
-                <div class="top">
-                    <div class="avatar">
-                        <img src="assets/images/avata-tgd.png">
+            @foreach($sections as $key => $section)
+            <div class="main-content">
+                <div class="content-text">
+                    <h2>{{$section->heading}}</h2>
+                    {!! $section->content !!}
+                </div>
+                <div class="content-img">
+                    @if($section->status == 1)
+                    <div class="swiper mySwiper-section-1">
+                        <div class="swiper-wrapper">
+                            @foreach($section->Images as $img)
+                            <div class="swiper-slide"><img src="data/product/detail/{{$img->img}}"></div>
+                            @endforeach
+                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="right">
-                        <h5>Liên hệ tư vấn</h5>
-                        <p>Chuyên viên tư vấn đã sãn sàng hỗ trợ</p>
+                    @elseif($section->status == 2)
+                    <div class="swiper mySwiper-section-2">
+                        <div class="swiper-wrapper">
+                            @foreach($section->Images as $img)
+                            <div class="swiper-slide"><img src="data/product/detail/{{$img->img}}"></div>
+                            @endforeach
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    @endif
+                </div>
+            </div>
+            @endforeach
+            <div class="main-content">
+                <h2>Mặt bằng căn hộ</h2>
+                <p>Chung cư Green Diamond 93 Láng Hạ là siêu phẩm căn hộ hạng sang hiếm hoi được ra mắt bởi Chủ đầu tư Vinaconex, giải tỏa “cơn khát” sở hữu nơi an cư hoàn toàn khép kín và giá trị gia tăng bền vững trọn đời giữa trung tâm Thủ đô của giới tinh hoa Hà Thành</p>
+                <div class="matbang">
+                    <div class="tab swiper menu-tab">
+                        <div class="swiper-wrapper">
+                            <button class="swiper-slide tablinks active" onclick="openTab(event, 'Tab1')">Tab 1</button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab2')">Tab 2</button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
+                        </div>
+                    </div>
+
+                    <div id="Tab1" class="tabcontent active" style="display: block;">
+                        <h3>Tab 1</h3>
+                        <p>Content for Tab 1.</p>
+                    </div>
+
+                    <div id="Tab2" class="tabcontent">
+                        <h3>Tab 2</h3>
+                        <p>Content for Tab 2.</p>
+                    </div>
+
+                    <div id="Tab3" class="tabcontent">
+                        <h3>Tab 3</h3>
+                        <p>Content for Tab 3.</p>
                     </div>
                 </div>
-                <div class="hotline"> <a href="tel:{{$setting->hotline}}"><i class="icon-phone"></i> {{$setting->hotline}}</a> </div>
             </div>
-            <div class="pupup">
-                <button> <img src="assets/images/icon-document-register.svg"> Đăng ký nhận tài liệu dự án</button>
+        </div>
+        <div class="col-md-3">
+            <div class="fixtop">
+                <div class="right-sidebar">
+                    <div class="top">
+                        <div class="avatar">
+                            <img src="assets/images/avata-tgd.png">
+                        </div>
+                        <div class="right">
+                            <h5>Liên hệ tư vấn</h5>
+                            <p>Chuyên viên tư vấn đã sãn sàng hỗ trợ</p>
+                        </div>
+                    </div>
+                    <div class="hotline"> <a href="tel:{{$setting->hotline}}"><i class="icon-phone"></i> {{$setting->hotline}}</a> </div>
+                </div>
+                <div class="pupup">
+                    <button> <img src="assets/images/icon-document-register.svg"> Đăng ký nhận tài liệu dự án</button>
+                </div>
             </div>
             
         </div>
     </div>
 </div>
-@foreach($sections as $key => $section)
-<div class="main-content {{ $key % 2 == 0 ? 'section-chan':'section-le' }}">
+<!-- @foreach($sections as $key => $section)
+@if($section->status == 0)
+<div class="main-content container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="content-text">
+                <h2>{{$section->heading}}</h2>
+                {!! $section->content !!}
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="content-img">
+                @if(count($section->Images)>1)
+                <div class="swiper mySwiper-section-2">
+                    <div class="swiper-wrapper">
+                        @foreach($section->Images as $img)
+                        <div class="swiper-slide"><img src="data/product/detail/{{$img->img}}"></div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                @else
+                <div class="img">
+                    <img src="data/product/detail/{{$img->img}}">
+                </div>
+                @endif
+            </div>
+        </div>
+    </div>
+</div>
+@elseif($section->status == 1)
+<div class="main-content section-chan">
     <div class="row">
         <div class="col-md-6 col-left">
             <div class="content-text">
@@ -107,7 +200,7 @@
         </div>
         <div class="col-md-6">
             <div class="content-img">
-                <div class="swiper mySwiper-section">
+                <div class="swiper mySwiper-section-1">
                     <div class="swiper-wrapper">
                         @foreach($section->Images as $img)
                         <div class="swiper-slide"><img src="data/product/detail/{{$img->img}}"></div>
@@ -119,7 +212,33 @@
         </div>
     </div>
 </div>
-@endforeach
+@elseif($section->status == 2)
+<div class="main-content section-le">
+    <div class="row">
+        <div class="col-md-6 col-left">
+            <div class="content-text">
+                <h2>{{$section->heading}}</h2>
+                {!! $section->content !!}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="content-img">
+                <div class="swiper mySwiper-section-1">
+                    <div class="swiper-wrapper">
+                        @foreach($section->Images as $img)
+                        <div class="swiper-slide"><img src="data/product/detail/{{$img->img}}"></div>
+                        @endforeach
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@elseif($section->status == 3)
+2
+@endif
+@endforeach -->
 
 @endsection
 

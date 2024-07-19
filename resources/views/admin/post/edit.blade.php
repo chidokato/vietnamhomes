@@ -258,13 +258,13 @@
                                 <input name="stt-edit[]" value="{{$val->stt}}" placeholder="..." type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <div class="form-group">
                                 <label class="">Tab</label>
                                 <input name="tab-edit[]" value="{{$val->tab}}" placeholder="..." type="text" class="form-control">
                             </div>
                         </div>
-                        <div class="col-md-5">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label class="">Heading</label>
                                 <input name="heading-edit[]" value="{{$val->heading}}" placeholder="..." type="text" class="form-control">
@@ -274,6 +274,17 @@
                             <div class="form-group">
                                 <label class="">Hình ảnh</label>
                                 <input multiple name="img_ss-edit{{$key}}[]" placeholder="..." type="file" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label class="">Tùy chọn</label>
+                                <select class="form-control" name="status[]">
+                                    <!-- <option {{ $val->status==0? 'selected':'' }} value="0">Mặc định</option> -->
+                                    <option {{ $val->status==1? 'selected':'' }} value="1">Kiểu 1</option>
+                                    <option {{ $val->status==2? 'selected':'' }} value="2">Kiểu 2</option>
+                                    <option {{ $val->status==3? 'selected':'' }} value="3">Mặt bằng</option>
+                                </select>
                             </div>
                         </div>
                         <div class="col-md-12">

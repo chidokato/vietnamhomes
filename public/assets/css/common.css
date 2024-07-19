@@ -121,7 +121,7 @@ header, a, a h5, .notify-num, .navbar .navbar-brand, .nav-link, .sec-nav .navbar
     transition: all .2s ease;
 }
 
-.swiper-wrapper {margin-bottom: 32px;}
+/*.swiper-wrapper {margin-bottom: 32px;}*/
 .swiper-pagination {bottom: 0px !important;}
 .swiper-pagination-bullet {background: var(--sub-color);opacity: .5;margin: 1px 3px !important;width: 8px;height: 8px;}
 .swiper-pagination-bullet-active {opacity: 1;background: var(--main-color) !important;box-sizing: content-box;vertical-align: middle; width: 30px; border-radius: 5px}

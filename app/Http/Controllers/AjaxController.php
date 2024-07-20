@@ -84,7 +84,7 @@ class AjaxController extends Controller
     public function del_img_detail($id)
     {
         $data = Images::find($id);
-        if(File::exists('data/product/detail/'.$data->img)) { File::delete('data/product/detail/'.$data->img);} // xóa ảnh cũ
+        if(File::exists('data/images/'.$data->img)) { File::delete('data/images/'.$data->img);} // xóa ảnh cũ
         $data->delete();
     }
 

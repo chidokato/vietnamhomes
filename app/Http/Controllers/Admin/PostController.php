@@ -131,6 +131,7 @@ class PostController extends Controller
                     $Images->post_id = $post->id;
                     $filename = saveImage($file); // Gọi hàm saveImage từ helper
                     $Images->img = $filename;
+                    $Images->name = $filename;
                     $Images->save();
                 }
             }
@@ -152,9 +153,11 @@ class PostController extends Controller
                     foreach ($request->file('img_ss'.$key.'') as $file) {
                     if(isset($file)){
                             $Images = new Images();
+                            $Images->post_id = $post->id;
                             $Images->section_id = $section->id;
                             $filename = saveImage($file); // Gọi hàm saveImage từ helper
                             $Images->img = $filename;
+                            $Images->name = $filename;
                             $Images->save();
                         }
                     }
@@ -245,20 +248,12 @@ class PostController extends Controller
         $post->title = $data['title'];
         $post->description = $data['description'];
 
-        // if ($request->hasFile('img')) {
-        //     
-        //     $file = $request->file('img');
-        //     $filename = $this->saveImage($file);
-        //     $post->img = $filename;
-        // }
-
         if ($request->hasFile('img')) {
-            if(File::exists('data/product/'.$post->img)) { File::delete('data/product/'.$post->img);} // xóa ảnh cũ
+            if(File::exists('data/images/'.$post->img)) { File::delete('data/images/'.$post->img);} // xóa ảnh cũ
             $file = $request->file('img');
             $filename = saveImage($file); // Gọi hàm saveImage từ helper
             $post->img = $filename;
         }
-
         $post->save();
 
         // thêm ảnh chi tiết
@@ -269,6 +264,7 @@ class PostController extends Controller
                     $Images->post_id = $post->id;
                     $filename = saveImage($file); // Gọi hàm saveImage từ helper
                     $Images->img = $filename;
+                    $Images->name = $filename;
                     $Images->save();
                 }
             }
@@ -288,9 +284,11 @@ class PostController extends Controller
                     foreach ($request->file('img_ss-edit'.$key.'') as $file) {
                     if(isset($file)){
                         $Images = new Images();
+                        $Images->post_id = $post->id;
                         $Images->section_id = $section->id;
                         $filename = saveImage($file); // Gọi hàm saveImage từ helper
                         $Images->img = $filename;
+                        $Images->name = $filename;
                         $Images->save();
                         }
                     }
@@ -318,6 +316,7 @@ class PostController extends Controller
                         $Images->section_id = $section->id;
                         $filename = saveImage($file); // Gọi hàm saveImage từ helper
                         $Images->img = $filename;
+                        $Images->name = $filename;
                         $Images->save();
                         }
                     }
@@ -339,7 +338,14 @@ class PostController extends Controller
     public function destroy($id)
     {
         $Post = Post::find($id);
-        if(File::exists('data/product/'.$Post->img)) { File::delete('data/product/'.$Post->img);} // xóa ảnh cũ
+        if(File::exists('data/images/'.$Post->img)) { File::delete('data/images/'.$Post->img);} // xóa ảnh cũ
+
+        foreach($Post->Images as $val){
+            $Images = Images::find($val['id']);
+            if(File::exists('data/images/'.$val->img)) { File::delete('data/images/'.$val->img);} // xóa ảnh cũ
+            $Images->delete();
+        }
+
         $Post->delete();
         return redirect()->back()->with('Success','Success');
     }

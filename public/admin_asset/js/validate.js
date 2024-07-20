@@ -16,6 +16,8 @@ $().ready(function() {
             "number":{ number: true, },
             "bedroom":{ number: true, },
             "category_id":{ required: true, },
+            "tab[]":{ required: true, maxlength: 50, minlength: 3, },
+            "tab-edit[]":{ required: true, maxlength: 50, minlength: 3, },
         },
         messages: {
             "name": {
@@ -58,6 +60,16 @@ $().ready(function() {
             },
             "category_id": {
                 required: "Bắt buộc phải nhập ...",
+            },
+            "tab[]": {
+                required: "Bắt buộc phải nhập ...",
+                maxlength: "Nhập ít hơn 50 ký tự",
+                minlength: "Nhập nhiều hơn 3 ký tự",
+            },
+            "tab-edit[]": {
+                required: "Bắt buộc phải nhập ...",
+                maxlength: "Nhập ít hơn 50 ký tự",
+                minlength: "Nhập nhiều hơn 3 ký tự",
             },
         }
     });

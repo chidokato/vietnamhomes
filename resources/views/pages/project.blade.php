@@ -76,13 +76,13 @@
                 {!! $post->content !!}
             </div>
             @foreach($sections as $key => $section)
+            @if($section->status == 1)
             <div class="main-content">
                 <div class="content-text">
                     <h2>{{$section->heading}}</h2>
                     {!! $section->content !!}
                 </div>
                 <div class="content-img">
-                    @if($section->status == 1)
                     <div class="swiper mySwiper-section-1">
                         <div class="swiper-wrapper">
                             @foreach($section->Images as $img)
@@ -91,7 +91,15 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-                    @elseif($section->status == 2)
+                </div>
+            </div>
+            @elseif($section->status == 2)
+            <div class="main-content">
+                <div class="content-text">
+                    <h2>{{$section->heading}}</h2>
+                    {!! $section->content !!}
+                </div>
+                <div class="content-img">
                     <div class="swiper mySwiper-section-2">
                         <div class="swiper-wrapper">
                             @foreach($section->Images as $img)
@@ -100,42 +108,41 @@
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
-                    @endif
                 </div>
             </div>
-            @endforeach
+            @elseif($section->status == 3) <!-- Mặt bằng -->
             <div class="main-content">
-                <h2>Mặt bằng căn hộ</h2>
-                <p>Chung cư Green Diamond 93 Láng Hạ là siêu phẩm căn hộ hạng sang hiếm hoi được ra mắt bởi Chủ đầu tư Vinaconex, giải tỏa “cơn khát” sở hữu nơi an cư hoàn toàn khép kín và giá trị gia tăng bền vững trọn đời giữa trung tâm Thủ đô của giới tinh hoa Hà Thành</p>
+                <h2>{{$section->heading}}</h2>
+                {!! $section->content !!}
                 <div class="matbang">
                     <div class="tab swiper menu-tab">
                         <div class="swiper-wrapper">
-                            <button class="swiper-slide tablinks active" onclick="openTab(event, 'Tab1')">Tab 1</button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab2')">Tab 2</button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')">Tab 3</button>
+                            <button class="swiper-slide tablinks active" onclick="openTab(event, 'Tab1')"> <span>MB Tòa A</span> </button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab2')"><span>MB Tòa A</span></button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
+                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
                         </div>
                     </div>
 
                     <div id="Tab1" class="tabcontent active" style="display: block;">
-                        <h3>Tab 1</h3>
-                        <p>Content for Tab 1.</p>
+                        <img src="http://localhost/www/vietnamhomes/public/uploads/1721361828.jpg">
                     </div>
 
                     <div id="Tab2" class="tabcontent">
-                        <h3>Tab 2</h3>
-                        <p>Content for Tab 2.</p>
+                        <img src="http://localhost/www/vietnamhomes/public/uploads/1721361828.jpg">
                     </div>
 
                     <div id="Tab3" class="tabcontent">
-                        <h3>Tab 3</h3>
-                        <p>Content for Tab 3.</p>
+                        <img src="http://localhost/www/vietnamhomes/public/uploads/1721361828.jpg">
                     </div>
                 </div>
             </div>
+            @endif
+            @endforeach
+            
         </div>
         <div class="col-md-3">
             <div class="fixtop">

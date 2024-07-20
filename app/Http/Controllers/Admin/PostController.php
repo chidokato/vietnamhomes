@@ -24,11 +24,13 @@ use App\Models\District;
 
 class PostController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $category = Category::where('sort_by', 'Product')->where('parent', '0')->orderBy('view', 'DESC')->get();
@@ -116,9 +118,7 @@ class PostController extends Controller
         // thêm ảnh
         if ($request->hasFile('img')) {
             $file = $request->file('img');
-            $filename = $file->getClientOriginalName();
-            while(file_exists("data/product/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/'.$filename));
+            $filename = saveImage($file); // Gọi hàm saveImage từ helper
             $post->img = $filename;
         }
         // ---------------------
@@ -129,10 +129,7 @@ class PostController extends Controller
                 if(isset($file)){
                     $Images = new Images();
                     $Images->post_id = $post->id;
-                    $filename = $file->getClientOriginalName();
-                    while(file_exists("data/product/detail/".$filename)){$filename = rand(0,99)."_".$filename;}
-                    $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/detail/'.$filename));
-                    // $file->move('data/product/detail', $filename);
+                    $filename = saveImage($file); // Gọi hàm saveImage từ helper
                     $Images->img = $filename;
                     $Images->save();
                 }
@@ -154,14 +151,11 @@ class PostController extends Controller
                 if($request->hasFile('img_ss'.$key.'')){
                     foreach ($request->file('img_ss'.$key.'') as $file) {
                     if(isset($file)){
-                        $Images = new Images();
-                        $Images->section_id = $section->id;
-                        $filename = $file->getClientOriginalName();
-                        while(file_exists("data/product/detail/".$filename)){$filename = rand(0,99)."_".$filename;}
-                        $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/detail/'.$filename));
-                        // $file->move('data/product/detail', $filename);
-                        $Images->img = $filename;
-                        $Images->save();
+                            $Images = new Images();
+                            $Images->section_id = $section->id;
+                            $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                            $Images->img = $filename;
+                            $Images->save();
                         }
                     }
                 }
@@ -218,6 +212,7 @@ class PostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
         $data = $request->all();
@@ -250,17 +245,20 @@ class PostController extends Controller
         $post->title = $data['title'];
         $post->description = $data['description'];
 
-        // thêm ảnh
+        // if ($request->hasFile('img')) {
+        //     
+        //     $file = $request->file('img');
+        //     $filename = $this->saveImage($file);
+        //     $post->img = $filename;
+        // }
+
         if ($request->hasFile('img')) {
             if(File::exists('data/product/'.$post->img)) { File::delete('data/product/'.$post->img);} // xóa ảnh cũ
             $file = $request->file('img');
-            $filename = $file->getClientOriginalName();
-            while(file_exists("data/product/".$filename)){$filename = rand(0,99)."_".$filename;}
-            $img = Image::make($file)->resize(800, 800, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/'.$filename));
+            $filename = saveImage($file); // Gọi hàm saveImage từ helper
             $post->img = $filename;
         }
-        // ------------------
-        // thêm ảnh
+
         $post->save();
 
         // thêm ảnh chi tiết
@@ -269,10 +267,7 @@ class PostController extends Controller
                 if(isset($file)){
                     $Images = new Images();
                     $Images->post_id = $post->id;
-                    $filename = $file->getClientOriginalName();
-                    while(file_exists("data/product/detail/".$filename)){$filename = rand(0,99)."_".$filename;}
-                    $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/detail/'.$filename));
-                    // $file->move('data/product/detail', $filename);
+                    $filename = saveImage($file); // Gọi hàm saveImage từ helper
                     $Images->img = $filename;
                     $Images->save();
                 }
@@ -294,10 +289,7 @@ class PostController extends Controller
                     if(isset($file)){
                         $Images = new Images();
                         $Images->section_id = $section->id;
-                        $filename = $file->getClientOriginalName();
-                        while(file_exists("data/product/detail/".$filename)){$filename = rand(0,99)."_".$filename;}
-                        $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/detail/'.$filename));
-                        // $file->move('data/product/detail', $filename);
+                        $filename = saveImage($file); // Gọi hàm saveImage từ helper
                         $Images->img = $filename;
                         $Images->save();
                         }
@@ -324,10 +316,7 @@ class PostController extends Controller
                     if(isset($file)){
                         $Images = new Images();
                         $Images->section_id = $section->id;
-                        $filename = $file->getClientOriginalName();
-                        while(file_exists("data/product/detail/".$filename)){$filename = rand(0,99)."_".$filename;}
-                        $img = Image::make($file)->resize(1000, 1000, function ($constraint) {$constraint->aspectRatio();})->save(public_path('data/product/detail/'.$filename));
-                        // $file->move('data/product/detail', $filename);
+                        $filename = saveImage($file); // Gọi hàm saveImage từ helper
                         $Images->img = $filename;
                         $Images->save();
                         }

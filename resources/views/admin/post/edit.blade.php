@@ -2,7 +2,7 @@
 @section('content')
 @include('admin.alert')
 <?php use App\Models\Images; use App\Models\Option; ?>
-<form method="POST" action="{{route('post.update', [$data->id])}}" enctype="multipart/form-data">
+<form id="" method="POST" action="{{route('post.update', [$data->id])}}" enctype="multipart/form-data">
 @csrf
 @method('PUT')
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow fixed">
@@ -74,8 +74,8 @@
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="basic-addon2">m2</span>
                                 </div>
-                                <input value="{{$data->acreage}}" type="text" name="acreage" class="form-control" placeholder="Từ (mặc định)">
-                                <input value="{{$data->acreage_max}}" type="text" name="acreage_max" class="form-control" placeholder="Đến">
+                                <input value="{{$data->acreage}}" type="text" name="acreage" class="form-control tab" placeholder="Từ (mặc định)">
+                                <input value="{{$data->acreage_max}}" type="text" name="acreage_max" class="form-control tab" placeholder="Đến">
                             </div>
                         </div>
                     </div>
@@ -212,7 +212,7 @@
                             <div style="display: flex;">
                                 <div class="file-upload">
                                     <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
-                                        <img class="file-upload-image" src="{{ isset($data) ? 'data/product/'.$data->img : 'data/no_image.jpg' }}" />
+                                        <img class="file-upload-image" src="{{ isset($data) ? 'data/images/'.$data->img : 'data/no_image.jpg' }}" />
                                     </div>
                                     <div class="image-upload-wrap">
                                         <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
@@ -222,7 +222,7 @@
                                 <span>
                                     @foreach($images as $val)
                                     <span class="view-img-ditail" id="detail_img">
-                                        <img src="data/product/detail/{{$val->img}}">
+                                        <img src="data/images/{{$val->img}}">
                                         <button onClick="delete_row(this)" type="button" id="del_img_detail"> <i class="fa fa-times" aria-hidden="true"></i> </button>
                                         <input type="hidden"  name="id_img_detail" id="id_img_detail" value="{{$val->id}}" />
                                     </span>
@@ -261,7 +261,7 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label class="">Tab</label>
-                                <input name="tab-edit[]" value="{{$val->tab}}" placeholder="..." type="text" class="form-control">
+                                <input required name="tab-edit[]" value="{{$val->tab}}" placeholder="..." type="text" class="form-control">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -296,7 +296,7 @@
                             <div class="form-group">
                                 @foreach($val->Images as $img)
                                 <span class="view-img-ditail" id="detail_img">
-                                    <img src="data/product/detail/{{$img->img}}">
+                                    <img src="data/images/{{$img->img}}">
                                     <button onClick="delete_row(this)" type="button" id="del_img_detail"> <i class="fa fa-times" aria-hidden="true"></i> </button>
                                     <input type="hidden"  name="id_img_detail" id="id_img_detail" value="{{$img->id}}" />
                                 </span>

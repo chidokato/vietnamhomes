@@ -40,7 +40,7 @@
 .mySwiper {
   height: 20%;
   box-sizing: border-box;
-  padding: 10px 0;
+  padding: 5px 0;
 }
 
 .mySwiper .swiper-slide {
@@ -148,8 +148,11 @@
 }
 
 .fixtop{ position:sticky; top:70px; }
-.matbang .swiper{ height:auto; }
-
+.matbang .swiper{
+  height:auto;
+  background: #dddddd3d;
+}
+.matbang .swiper-wrapper{ justify-content: center; }
 /* Style the buttons inside the tab */
 .tab {
     overflow: hidden;
@@ -161,15 +164,26 @@
     cursor: pointer;
     transition: 0.3s;
     font-size: 17px;
+    padding: 10px;  background: none;
+    border-radius: 5px;
 }
 .tab button:hover {
-    background-color: #ddd;
+    
 }
-.tab button.active {
-    background-color: #ccc;
+.tab button.active span{ position:relative; }
+.tab button.active span:after {
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 100%;
+  bottom: -3px;
+  left: 0;
+  background: var(--main-color);
 }
+
 .tabcontent {
     display: none;
-    padding: 6px 12px;
     border-top: none;
 }
+
+

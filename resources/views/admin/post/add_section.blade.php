@@ -15,7 +15,7 @@
                 <div class="col-md-3">
                     <div class="form-group">
                         <label class="">Tab</label>
-                        <input name="tab[]" placeholder="..." type="text" class="form-control">
+                        <input required name="tab[]" placeholder="..." type="text" class="form-control">
                     </div>
                 </div>
                 <div class="col-md-5">

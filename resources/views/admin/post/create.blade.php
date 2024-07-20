@@ -3,7 +3,7 @@
 @section('content')
 
 @include('admin.alert')
-<form method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
+<form id="validateForm" method="post" action="{{route('post.store')}}" enctype="multipart/form-data">
 @csrf
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow fixed">
     <button type="button" id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3"><i class="fa fa-bars"></i></button>

@@ -16,7 +16,7 @@
     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="data/product/{{$post->img}}" />
+                <img src="data/images/{{$post->img}}" />
             </div>
             @foreach($post->Images as $img)
             <div class="swiper-slide">

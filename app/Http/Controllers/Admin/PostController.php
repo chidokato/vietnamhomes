@@ -24,6 +24,24 @@ use App\Models\District;
 
 class PostController extends Controller
 {
+    function saveImage($file, $path = 'data/images/', $width = 800, $height = 800) {
+        $originalFilename = $file->getClientOriginalName();
+        $filenameWithoutExtension = Str::slug(pathinfo($originalFilename, PATHINFO_FILENAME), '-');
+        $extension = $file->getClientOriginalExtension();
+        $filename = $filenameWithoutExtension . '.' . $extension;
+
+        while (file_exists(public_path($path . $filename))) {
+            $filename = $filenameWithoutExtension . '_' . rand(0, 99) . '.' . $extension;
+        }
+
+        $img = Image::make($file)
+            ->resize($width, $height, function ($constraint) {
+                $constraint->aspectRatio();
+            })
+            ->save(public_path($path . $filename));
+
+        return $filename;
+    }
     
     /**
      * Display a listing of the resource.
@@ -118,7 +136,8 @@ class PostController extends Controller
         // thêm ảnh
         if ($request->hasFile('img')) {
             $file = $request->file('img');
-            $filename = saveImage($file); // Gọi hàm saveImage từ helper
+            // $filename = saveImage($file); // Gọi hàm saveImage từ helper
+            $filename = $this->saveImage($file);
             $post->img = $filename;
         }
         // ---------------------
@@ -129,7 +148,8 @@ class PostController extends Controller
                 if(isset($file)){
                     $Images = new Images();
                     $Images->post_id = $post->id;
-                    $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                    // $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                    $filename = $this->saveImage($file);
                     $Images->img = $filename;
                     $Images->name = $filename;
                     $Images->save();
@@ -251,7 +271,8 @@ class PostController extends Controller
         if ($request->hasFile('img')) {
             if(File::exists('data/images/'.$post->img)) { File::delete('data/images/'.$post->img);} // xóa ảnh cũ
             $file = $request->file('img');
-            $filename = saveImage($file); // Gọi hàm saveImage từ helper
+            // $filename = saveImage($file); // Gọi hàm saveImage từ helper
+            $filename = $this->saveImage($file);
             $post->img = $filename;
         }
         $post->save();
@@ -262,7 +283,8 @@ class PostController extends Controller
                 if(isset($file)){
                     $Images = new Images();
                     $Images->post_id = $post->id;
-                    $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                    // $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                    $filename = $this->saveImage($file);
                     $Images->img = $filename;
                     $Images->name = $filename;
                     $Images->save();
@@ -286,7 +308,8 @@ class PostController extends Controller
                         $Images = new Images();
                         $Images->post_id = $post->id;
                         $Images->section_id = $section->id;
-                        $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                        // $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                        $filename = $this->saveImage($file);
                         $Images->img = $filename;
                         $Images->name = $filename;
                         $Images->save();
@@ -314,7 +337,8 @@ class PostController extends Controller
                     if(isset($file)){
                         $Images = new Images();
                         $Images->section_id = $section->id;
-                        $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                        // $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                        $filename = $this->saveImage($file);
                         $Images->img = $filename;
                         $Images->name = $filename;
                         $Images->save();

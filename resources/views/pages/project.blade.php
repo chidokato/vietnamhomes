@@ -20,7 +20,7 @@
             </div>
             @foreach($post->Images as $img)
             <div class="swiper-slide">
-                <img src="data/product/detail/{{$img->img}}" />
+                <img src="data/images/{{$img->img}}" />
             </div>
             @endforeach
         </div>
@@ -30,11 +30,11 @@
     <div thumbsSlider="" class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
-                <img src="data/product/{{$post->img}}" />
+                <img src="data/images/{{$post->img}}" />
             </div>
             @foreach($post->Images as $img)
             <div class="swiper-slide">
-                <img src="data/product/detail/{{$img->img}}" />
+                <img src="data/images/{{$img->img}}" />
             </div>
             @endforeach
         </div>

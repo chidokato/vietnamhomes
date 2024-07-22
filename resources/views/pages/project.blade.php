@@ -51,9 +51,9 @@
                     <li class="breadcrumb-item active" aria-current="page">{{$post->name}}</li>
                 </ol>
                 <div class="sub">
-                    <span class="bg-secondary">Độc quyền <i class="ms-1 icon-check"></i></span>
-                    <span class="bg-secondary">Đang mở bán <i class="ms-1 icon-check"></i></span>
-                    <span class="bg-secondary">Mới ra mắt <i class="ms-1 icon-check"></i></span>
+                    @if($post->monopoly == 1)<span class="bg-secondary">Độc quyền <i class="ms-1 icon-check"></i></span>@endif
+                    @if($post->for_sale == 1)<span class="bg-secondary">Đang mở bán <i class="ms-1 icon-check"></i></span>@endif
+                    @if($post->new_product == 1)<span class="bg-secondary">Mới ra mắt <i class="ms-1 icon-check"></i></span>@endif
                 </div>
             </nav>
             <div class="heading">

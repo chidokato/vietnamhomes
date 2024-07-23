@@ -1,7 +1,7 @@
 <div class="col">
     <div class="card card-s card-s4">
         <a href="{{$val->category->slug}}/{{$val->slug}}">
-            <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('data/product/{{$val->img}}');" alt="..."></span>
+            <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('data/images/{{$val->img}}');" alt="..."></span>
             <span class="cat">
                 <span class="room-status bg-red">Độc quyền</span>
                 <span class="room-status">Mới ra mắt</span>

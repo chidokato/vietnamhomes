@@ -110,7 +110,7 @@
                     <div class="iteam"><a href="">Vietnam Homes phân phối độc quyền</a></div>
                 </div>
                 <div class="sort-box">
-                    <span>có <span class="text-main font-weight-semibold">1.000</span> sản phẩm</span>
+                    <span>có <span class="text-main font-weight-semibold">{{ count($post) }}</span> sản phẩm</span>
                     <div class="sort-ct">
                         <div class="dropdown">
                             <a class="btn ripple-effect dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">

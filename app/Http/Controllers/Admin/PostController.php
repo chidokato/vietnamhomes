@@ -24,7 +24,7 @@ use App\Models\District;
 
 class PostController extends Controller
 {
-    function saveImage($file, $path = 'data/images/', $width = 800, $height = 800) {
+    function saveImage($file, $path = 'data/images/', $maxWidth = 2000, $maxHeight = 2000) {
         $originalFilename = $file->getClientOriginalName();
         $filenameWithoutExtension = Str::slug(pathinfo($originalFilename, PATHINFO_FILENAME), '-');
         $extension = $file->getClientOriginalExtension();
@@ -35,7 +35,7 @@ class PostController extends Controller
         }
 
         $img = Image::make($file)
-            ->resize($width, $height, function ($constraint) {
+            ->resize($maxWidth, $maxHeight, function ($constraint) {
                 $constraint->aspectRatio();
             })
             ->save(public_path($path . $filename));

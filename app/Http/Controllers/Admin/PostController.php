@@ -33,13 +33,12 @@ class PostController extends Controller
         while (file_exists(public_path($path . $filename))) {
             $filename = $filenameWithoutExtension . '_' . rand(0, 99) . '.' . $extension;
         }
-
-        $img = Image::make($file)
-            ->resize($maxWidth, $maxHeight, function ($constraint) {
-                $constraint->aspectRatio();
-            })
-            ->save(public_path($path . $filename));
-
+        $img = Image::make($file);
+        $img->resize($maxWidth, $maxHeight, function ($constraint) {
+            $constraint->aspectRatio();
+            $constraint->upsize();
+        });
+        $img->save(public_path($path . $filename));
         return $filename;
     }
     

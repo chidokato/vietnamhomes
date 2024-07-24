@@ -88,6 +88,13 @@ class AjaxController extends Controller
         $data->delete();
     }
 
+    public function name_img_detail($id, $name)
+    {
+        $data = Images::find($id);
+        $data->name = $name;
+        $data->save();
+    }
+
     public function del_section($id)
     {
         $data = SectionTranslation::where('section_id', $id)->get();

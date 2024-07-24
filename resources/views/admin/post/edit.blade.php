@@ -297,6 +297,7 @@
                                 @foreach($val->Images as $img)
                                 <span class="view-img-ditail" id="detail_img">
                                     <img src="data/images/{{$img->img}}">
+                                    <input value="{{$img->name}}" type="" name="" id="name_img_detail" name="form-control">
                                     <button onClick="delete_row(this)" type="button" id="del_img_detail"> <i class="fa fa-times" aria-hidden="true"></i> </button>
                                     <input type="hidden"  name="id_img_detail" id="id_img_detail" value="{{$img->id}}" />
                                 </span>

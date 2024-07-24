@@ -118,6 +118,20 @@ $(document).ready(function(){
     });
 }); // xóa ảnh trong db
 $(document).ready(function(){
+    $("input#name_img_detail").blur(function(){
+        var name = $(this).val();
+        var id = $(this).parents('#detail_img').find('input[id="id_img_detail"]').val();
+        $.ajax({
+            url: 'ajax/name_img_detail/'+id+"/"+name,
+            type: 'GET',
+            cache: false,
+            data: {
+                "id":id
+            },
+        });
+    });
+});
+$(document).ready(function(){
     $("button#del_section").click(function(){
         var id = $(this).parents('#section').find('input[id="id_section"]').val();
         // alert(id);

@@ -210,7 +210,7 @@ class PostController extends Controller
     {
         $category = Category::where('sort_by', 'Product')->get();
         $data = Post::find($id);
-        $images = Images::where('post_id', $data->id)->get();
+        $images = Images::where('post_id', $data->id)->where('section_id', null)->get();
         $section = Section::where('post_id', $data->id)->orderBy('stt', 'ASC')->get();
         $province = Province::get();
         $district = District::where('province_id', $data->province_id)->get();

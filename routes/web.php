@@ -56,6 +56,7 @@ Route::group(['prefix'=>'ajax'],function(){
     Route::get('update_category_view/{id}/{view}', [AjaxController::class, 'update_category_view']);
     Route::get('update_menu_view/{id}/{view}', [AjaxController::class, 'update_menu_view']);
     Route::get('del_img_detail/{id}', [AjaxController::class, 'del_img_detail']);
+    Route::get('name_img_detail/{id}/{name}', [AjaxController::class, 'name_img_detail']);
     Route::get('del_section/{id}', [AjaxController::class, 'del_section']);
     Route::get('update_status_category/{id}/{status}', [AjaxController::class, 'update_status_category']);
     Route::get('update_status_post/{id}/{status}', [AjaxController::class, 'update_status_post']);

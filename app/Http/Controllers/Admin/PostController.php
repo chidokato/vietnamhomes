@@ -24,7 +24,7 @@ use App\Models\District;
 
 class PostController extends Controller
 {
-    function saveImage($file, $path = 'data/images/', $maxWidth = 2000, $maxHeight = 2000) {
+    function saveImage($file, $path = 'data/images/', $maxWidth = 1500, $maxHeight = 1500) {
         $originalFilename = $file->getClientOriginalName();
         $filenameWithoutExtension = Str::slug(pathinfo($originalFilename, PATHINFO_FILENAME), '-');
         $extension = $file->getClientOriginalExtension();

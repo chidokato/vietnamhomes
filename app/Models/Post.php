@@ -42,4 +42,8 @@ class Post extends Model
     {
         return $this->hasOne(Province::class, 'id', 'province_id');
     }
+    public function Street()
+    {
+        return $this->hasOne(Street::class, 'id', 'street_id');
+    }
 }

@@ -19,4 +19,8 @@ class Street extends Model
     {
         return $this->hasOne(District::class, 'id', 'district_id');
     }
+    public function Post()
+    {
+        return $this->hasOne(Post::class, 'id', 'street_id');
+    }
 }

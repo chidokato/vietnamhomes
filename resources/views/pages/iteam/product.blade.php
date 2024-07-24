@@ -4,7 +4,7 @@
             <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('data/images/{{$val->img}}');" alt="..."></span>
             <span class="cat">
                 {!! $val->monopoly?'<span class="room-status bg-red">Độc quyền</span>':'' !!}
-                {!! $val->for_sale?'<span class="room-status bg-red">Đang mở bán</span>':'' !!}
+                <!-- {!! $val->for_sale?'<span class="room-status bg-red">Đang mở bán</span>':'' !!} -->
                 {!! $val->new_product?'<span class="room-status">Mới ra mắt</span>':'' !!}
             </span>
             <!-- <span class="view-more">Chi tiết</span> -->

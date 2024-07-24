@@ -44,23 +44,11 @@ class HomeController extends Controller
     public function index()
     {
         $slider = Slider::orderBy('id', 'desc')->get();
-        $cafe = Post::where('category_id', 77)->orderBy('id', 'desc')->take(6)->get();
-        $sphot = Post::where('hot', 'true')->orderBy('id', 'desc')->take(6)->get();
-        $seikonam = Post::wherein('category_id', [83])->orderBy('id', 'desc')->take(12)->get();
-        $seikonu = Post::wherein('category_id', [84])->orderBy('id', 'desc')->take(12)->get();
-        $mypham = Post::wherein('category_id', [78,91,92])->orderBy('id', 'desc')->take(8)->get();
-        $thucpham = Post::wherein('category_id', [85])->orderBy('id', 'desc')->take(8)->get();
-        $traicay = Post::wherein('category_id', [79])->orderBy('id', 'desc')->take(8)->get();
+        $product = Post::where('hot', 'true')->orderBy('id', 'desc')->take(8)->get();
 
         return view('pages.home', compact(
             'slider',
-            'cafe',
-            'sphot',
-            'seikonam',
-            'seikonu',
-            'mypham',
-            'thucpham',
-            'traicay',
+            'product',
 
         ));
     }

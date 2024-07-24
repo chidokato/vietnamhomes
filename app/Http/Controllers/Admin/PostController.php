@@ -175,7 +175,8 @@ class PostController extends Controller
                             $Images = new Images();
                             $Images->post_id = $post->id;
                             $Images->section_id = $section->id;
-                            $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                            // $filename = saveImage($file); // Gọi hàm saveImage từ helper
+                            $filename = $this->saveImage($file);
                             $Images->img = $filename;
                             $Images->name = $filename;
                             $Images->save();

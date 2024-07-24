@@ -83,7 +83,7 @@
 .section-le{ background-color:#f0f0f061 }
 .section-le .row{ flex-direction: row-reverse;  }
 
-.heading{ display:flex; justify-content: space-between; margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:20px }
+.heading{ display:flex; justify-content: space-between; margin-bottom:20px; border-bottom:1px solid #ddd; padding-bottom:20px; align-items: center; }
 .heading h1{ color:#000; font-size:2rem }
 .heading .price{ font-size:2rem; font-weight:bold; margin-bottom:15px }
 .heading .address{ font-size:1rem }

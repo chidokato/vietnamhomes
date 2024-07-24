@@ -48,10 +48,11 @@
         <div class="position-relative">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                    @for ($i=1; $i<=9; $i++)
+                    @foreach($product as $val)
                     <div class="swiper-slide">
+                        @include('pages.iteam.product')
                     </div>
-                    @endfor
+                    @endforeach
                 </div>
                 <div class="swiper-pagination "></div>
             </div>

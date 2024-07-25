@@ -138,6 +138,30 @@
                 </div>
             </div>
             <?php $matbang = count($section->Images); ?>
+            @elseif($section->status == 4) <!-- Căn hộ -->
+            <div class="main-content">
+                <h2>{{$section->heading}}</h2>
+                {!! $section->content !!}
+                <div class="matbang">
+                    <div class="tab swiper menu-tab">
+                        <div class="swiper-wrapper">
+                            @foreach($section->Images as $key => $img)
+                            <button class="swiper-slide tablinks {{$key==0?'active':''}}" onclick="openTab(event, 'Tab{{$img->id}}')"> <span>{{$img->name}}</span> </button>
+                            @endforeach
+                        </div>
+                    </div>
+                    @foreach($section->Images as $key => $img)
+                    <div id="Tab{{$img->id}}" class="tabcontent {{$key==0?'active':''}}" style="{{$key==0?'display: block;':''}}">
+                        <div class="card-overlay-flex">
+                            <a class="card-overlay" data-fancybox="matbang" href="data/images/{{$img->img}}" title="2/4">
+                                <span class="card-overlay-img"><img src="data/images/{{$img->img}}" alt="" class="w-100"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                    @endforeach
+                </div>
+            </div>
             @endif
             @endforeach
             

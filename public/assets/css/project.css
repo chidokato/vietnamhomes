@@ -151,7 +151,7 @@
 .matbang .swiper{
   height:auto;
 }
-.matbang .swiper-wrapper{ justify-content: center; }
+/*.matbang .swiper-wrapper{ justify-content: center; }*/
 /* Style the buttons inside the tab */
 .tab {
     overflow: hidden;

@@ -240,4 +240,13 @@
 
 @section('js')
 <script src="assets/js/project.js"></script>
+<script type="text/javascript">
+    var swiper = new Swiper(".menu-tab", {
+      spaceBetween: 10,
+      slidesPerView: {{count($section->Images) > 5 ? 6:count($section->Images)}},
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
+</script>
 @endsection

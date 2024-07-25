@@ -180,18 +180,24 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
 
     <script src="https://cdn.ckeditor.com/ckeditor5/34.2.0/classic/ckeditor.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-alignment@42.0.1/+esm" type="text/javascript"></script>
     <script>
         document.querySelectorAll('.editor').forEach((editorElement) => {
             ClassicEditor
                 .create(editorElement, {
-                    toolbar: [
-                        'undo', 'redo', 'imageUpload', 
-                        'bold', 'italic', 'heading', 'bulletedList', 'numberedList', 
-                        'link', 'insertTable', 'blockQuote', 'removeFormat'
-                    ],
+                    alignment: {
+                        options: [ 'left', 'right' ]
+                    },
                     ckfinder: {
                         uploadUrl: '{{ route("upload") }}?_token={{ csrf_token() }}'
                     },
+                    toolbar: [
+                        'undo', 'redo', 'imageUpload',  '|', 
+                        'bold', 'italic', 'heading', 'bulletedList', 'numberedList', 
+                        'link', 'insertTable', 'blockQuote', 'removeFormat', 'alignment',
+                    ],
+                    
+                    
                 })
                 .catch(error => {
                     console.error(error);

@@ -187,3 +187,5 @@
 }
 
 
+.content-text ul{ display:flex; flex-direction: column; }
+.content-text ul li{ margin:5px 0px }

@@ -192,3 +192,4 @@
 .content-text table td{ padding: 7px 0px; }
 .content-text table tr{ border-bottom: 1px solid #ddd; }
 .content-text table{ width:100% }
+.content-text table tr:last-child{ border: none; }

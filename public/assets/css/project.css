@@ -193,3 +193,27 @@
 .content-text table tr{ border-bottom: 1px solid #ddd; }
 .content-text table{ width:100% }
 .content-text table tr:last-child{ border: none; }
+
+
+.card-overlay-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-overlay {
+    display: block;
+    overflow: hidden;
+}
+
+.card-overlay-img img {
+    transition: transform 0.3s ease;
+    width: 100%;
+    height: auto;
+}
+
+.card-overlay:hover .card-overlay-img img {
+    transform: scale(1);
+}

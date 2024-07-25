@@ -8,6 +8,8 @@
 @section('css')
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link href="assets/css/project.css" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 @endsection
 
 @section('content')
@@ -125,8 +127,13 @@
                     </div>
                     @foreach($section->Images as $key => $img)
                     <div id="Tab{{$img->id}}" class="tabcontent {{$key==0?'active':''}}" style="{{$key==0?'display: block;':''}}">
-                        <img src="data/images/{{$img->img}}">
+                        <div class="card-overlay-flex">
+                            <a class="card-overlay" data-fancybox="gallery{{$key}}" href="data/images/{{$img->img}}" title="2/4">
+                                <span class="card-overlay-img"><img src="data/images/{{$img->img}}" alt="" class="w-100"></span>
+                            </a>
+                        </div>
                     </div>
+
                     @endforeach
                 </div>
             </div>
@@ -241,6 +248,7 @@
 @endsection
 
 @section('js')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/project.js"></script>
 <script type="text/javascript">
     var swiper = new Swiper(".menu-tab", {
@@ -251,4 +259,5 @@
         },
     });
 </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 @endsection

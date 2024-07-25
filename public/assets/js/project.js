@@ -34,9 +34,6 @@ var swiper = new Swiper(".mySwiper-section-2", {
 });
 
 
-
-
-
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
 

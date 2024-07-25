@@ -75,6 +75,7 @@
             <div class="detail bg">
                 {!! $post->content !!}
             </div>
+            <?php $matbang = 0; ?>
             @foreach($sections as $key => $section)
             @if($section->status == 1)
             <div class="main-content">
@@ -129,6 +130,7 @@
                     @endforeach
                 </div>
             </div>
+            <?php $matbang = count($section->Images); ?>
             @endif
             @endforeach
             
@@ -242,11 +244,11 @@
 <script src="assets/js/project.js"></script>
 <script type="text/javascript">
     var swiper = new Swiper(".menu-tab", {
-      spaceBetween: 10,
-      slidesPerView: {{count($section->Images) > 5 ? 6:count($section->Images)}},
-      pagination: {
-        el: ".swiper-pagination",
-      },
+        spaceBetween: 10,
+        slidesPerView: {{ isset($matbang) && $matbang>5 ? 6:$matbang }},
+        pagination: {
+            el: ".swiper-pagination",
+        },
     });
 </script>
 @endsection

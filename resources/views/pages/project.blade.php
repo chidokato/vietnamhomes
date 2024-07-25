@@ -117,27 +117,16 @@
                 <div class="matbang">
                     <div class="tab swiper menu-tab">
                         <div class="swiper-wrapper">
-                            <button class="swiper-slide tablinks active" onclick="openTab(event, 'Tab1')"> <span>MB Tòa A</span> </button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab2')"><span>MB Tòa A</span></button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
-                            <button class="swiper-slide tablinks" onclick="openTab(event, 'Tab3')"><span>MB Tòa A</span></button>
+                            @foreach($section->Images as $key => $img)
+                            <button class="swiper-slide tablinks {{$key==0?'active':''}}" onclick="openTab(event, 'Tab{{$img->id}}')"> <span>MB Tòa A</span> </button>
+                            @endforeach
                         </div>
                     </div>
-
-                    <div id="Tab1" class="tabcontent active" style="display: block;">
-                        <img src="http://localhost/www/vietnamhomes/public/uploads/1721361828.jpg">
+                    @foreach($section->Images as $key => $img)
+                    <div id="Tab{{$img->id}}" class="tabcontent {{$key==0?'active':''}}" style="{{$key==0?'display: block;':''}}">
+                        <img src="data/images/{{$img->img}}">
                     </div>
-
-                    <div id="Tab2" class="tabcontent">
-                        <img src="http://localhost/www/vietnamhomes/public/uploads/1721361828.jpg">
-                    </div>
-
-                    <div id="Tab3" class="tabcontent">
-                        <img src="http://localhost/www/vietnamhomes/public/uploads/1721361828.jpg">
-                    </div>
+                    @endforeach
                 </div>
             </div>
             @endif

@@ -86,7 +86,7 @@
                     <div class="swiper mySwiper-section-1">
                         <div class="swiper-wrapper">
                             @foreach($section->Images as $img)
-                            <div class="swiper-slide"><img src="data/product/detail/{{$img->img}}"></div>
+                            <div class="swiper-slide"><img src="data/images/{{$img->img}}"></div>
                             @endforeach
                         </div>
                         <div class="swiper-pagination"></div>
@@ -103,7 +103,7 @@
                     <div class="swiper mySwiper-section-2">
                         <div class="swiper-wrapper">
                             @foreach($section->Images as $img)
-                            <div class="swiper-slide"><img src="data/product/detail/{{$img->img}}"></div>
+                            <div class="swiper-slide"><img src="data/images/{{$img->img}}"></div>
                             @endforeach
                         </div>
                         <div class="swiper-pagination"></div>

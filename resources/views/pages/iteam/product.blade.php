@@ -17,7 +17,7 @@
         <div class="card-body">
             <div class="card-body-wrap">
                 <h5 class="card-title"><a href="{{$val->category->slug}}/{{$val->slug}}" class="text-truncate">{{$val->name}}</a></h5>
-                <div class="card-info">
+                <div class="card-info" title="{{$val->address}}{{ $val->street_id ? ', '.$val->Street->name:'' }}{{$val->ward_id? ', '.$val->Ward->name:''}}{{', '.$val->District->name}}{{', '.$val->Province->name}}">
                     <span class="text-truncate-set text-truncate-set-1">{{$val->address}}{{ $val->street_id ? ', '.$val->Street->name:'' }}{{$val->ward_id? ', '.$val->Ward->name:''}}{{', '.$val->District->name}}{{', '.$val->Province->name}}</span>
                 </div>
             </div>

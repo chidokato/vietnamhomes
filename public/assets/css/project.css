@@ -189,3 +189,5 @@
 
 .content-text ul{ display:flex; flex-direction: column; }
 .content-text ul li{ margin:5px 0px }
+.content-text table td{ padding: 7px 0px; }
+.content-text table tr{ border-bottom: 1px solid #ddd; }

@@ -118,7 +118,7 @@
                     <div class="tab swiper menu-tab">
                         <div class="swiper-wrapper">
                             @foreach($section->Images as $key => $img)
-                            <button class="swiper-slide tablinks {{$key==0?'active':''}}" onclick="openTab(event, 'Tab{{$img->id}}')"> <span>MB Tòa A</span> </button>
+                            <button class="swiper-slide tablinks {{$key==0?'active':''}}" onclick="openTab(event, 'Tab{{$img->id}}')"> <span>{{$img->name}}</span> </button>
                             @endforeach
                         </div>
                     </div>

@@ -128,7 +128,7 @@
                     @foreach($section->Images as $key => $img)
                     <div id="Tab{{$img->id}}" class="tabcontent {{$key==0?'active':''}}" style="{{$key==0?'display: block;':''}}">
                         <div class="card-overlay-flex">
-                            <a class="card-overlay" data-fancybox="gallery{{$key}}" href="data/images/{{$img->img}}" title="2/4">
+                            <a class="card-overlay" data-fancybox="matbang" href="data/images/{{$img->img}}" title="2/4">
                                 <span class="card-overlay-img"><img src="data/images/{{$img->img}}" alt="" class="w-100"></span>
                             </a>
                         </div>

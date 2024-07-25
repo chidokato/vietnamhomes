@@ -194,7 +194,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <textarea class="form-control editor" name="content"> {!! $data->content !!} </textarea>
+                            <textarea class="form-control editor" name="content0"> {!! $data->content !!} </textarea>
                         </div>
                     </div>
                 </div>

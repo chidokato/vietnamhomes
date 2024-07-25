@@ -35,7 +35,7 @@ var swiper = new Swiper(".mySwiper-section-2", {
 
 var swiper = new Swiper(".menu-tab", {
   spaceBetween: 10,
-  slidesPerView: 7,
+  slidesPerView: 5,
   pagination: {
     el: ".swiper-pagination",
   },

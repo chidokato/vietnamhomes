@@ -108,7 +108,7 @@
                             @foreach($section->Images as $img)
                             <div class="swiper-slide">
                                 <div class="card-overlay-flex">
-                                    <a class="card-overlay" data-fancybox="gallery" href="data/images/{{$img->img}}" title="2/4">
+                                    <a class="card-overlay" data-fancybox="section{{$section->id}}" href="data/images/{{$img->img}}" title="2/4">
                                         <span class="card-overlay-img"><img src="data/images/{{$img->img}}" alt="" class="w-100"></span>
                                     </a>
                                 </div>

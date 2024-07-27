@@ -89,14 +89,28 @@
                     {!! $section->content !!}
                 </div>
                 <div class="content-img">
-                    <div class="swiper mySwiper-section-1">
+                    @if(count($section->Images) > 0)
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper slider-section">
                         <div class="swiper-wrapper">
                             @foreach($section->Images as $img)
-                            <div class="swiper-slide"><img src="data/images/{{$img->img}}"></div>
+                            <div class="swiper-slide">
+                                <img src="data/images/{{$img->img}}" />
+                            </div>
                             @endforeach
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
+                    <div thumbsSlider="" class="swiper slider-section-thumbs">
+                        <div class="swiper-wrapper">
+                            @foreach($section->Images as $img)
+                            <div class="swiper-slide">
+                                <img src="data/images/{{$img->img}}" />
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+                    @endif
                 </div>
             </div>
             @elseif($section->status == 2)

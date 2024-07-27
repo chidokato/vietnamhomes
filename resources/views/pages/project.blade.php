@@ -51,7 +51,7 @@
         <div class="col-md-12">
             <nav aria-label="breadcrumb" class="main-breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Vietnam Homes aa</a></li>
+                    <li class="breadcrumb-item"><a href="#">Vietnam Homes</a></li>
                     <li class="breadcrumb-item"><a href="{{$post->category->slug}}/{{$post->slug}}">{{$post->name}}</a></li>
                     <li class="breadcrumb-item active" aria-current="page">{{$post->name}}</li>
                 </ol>

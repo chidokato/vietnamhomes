@@ -106,6 +106,7 @@
                     {!! $section->content !!}
                 </div>
                 <div class="content-img">
+                    @if(count($section->Images > 0))
                     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper slider-section">
                         <div class="swiper-wrapper">
                             @foreach($section->Images as $img)
@@ -126,6 +127,7 @@
                             @endforeach
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
             @elseif($section->status == 3) <!-- Mặt bằng -->

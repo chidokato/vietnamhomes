@@ -106,7 +106,7 @@
                     {!! $section->content !!}
                 </div>
                 <div class="content-img">
-                    @if(count($section->Images > 0))
+                    @if(count($section->Images) > 0)
                     <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper slider-section">
                         <div class="swiper-wrapper">
                             @foreach($section->Images as $img)

@@ -6,7 +6,9 @@
 @section('url'){{asset('')}}@endsection
 
 @section('css')
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
 <link href="assets/css/project.css" rel="stylesheet">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
@@ -15,7 +17,7 @@
 @section('content')
 
 <section class="sec-img bg">
-    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper-product">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="data/images/{{$post->img}}" />
@@ -29,7 +31,7 @@
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
     </div>
-    <div thumbsSlider="" class="swiper mySwiper">
+    <div thumbsSlider="" class="swiper mySwiper-product-thumr">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
                 <img src="data/images/{{$post->img}}" />
@@ -42,6 +44,7 @@
         </div>
     </div>
 </section>
+
 
 <div class="container">
     <div class="row">
@@ -103,19 +106,25 @@
                     {!! $section->content !!}
                 </div>
                 <div class="content-img">
-                    <div class="swiper mySwiper-section-2">
+                    <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper slider-section">
                         <div class="swiper-wrapper">
                             @foreach($section->Images as $img)
                             <div class="swiper-slide">
-                                <div class="card-overlay-flex">
-                                    <a class="card-overlay" data-fancybox="section{{$img->id}}" href="data/images/{{$img->img}}" title="2/4">
-                                        <span class="card-overlay-img"><img src="data/images/{{$img->img}}" alt="" class="w-100"></span>
-                                    </a>
-                                </div>
+                                <img src="data/images/{{$img->img}}" />
                             </div>
                             @endforeach
                         </div>
-                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                    <div thumbsSlider="" class="swiper slider-section-thumbs">
+                        <div class="swiper-wrapper">
+                            @foreach($section->Images as $img)
+                            <div class="swiper-slide">
+                                <img src="data/images/{{$img->img}}" />
+                            </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
@@ -255,7 +264,9 @@
 
 @section('js')
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="assets/js/project.js"></script>
+
 <script type="text/javascript">
     var swiper = new Swiper(".menu-tab", {
         spaceBetween: 10,

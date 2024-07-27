@@ -1,21 +1,57 @@
-var swiper = new Swiper(".mySwiper", {
-      spaceBetween: 2,
-      slidesPerView: 10,
-      freeMode: true,
-      watchSlidesProgress: true,
-    });
-    var swiper2 = new Swiper(".mySwiper2", {
-      spaceBetween: 2,
-      slidesPerView: 2,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      thumbs: {
-        swiper: swiper,
-      },
-    });
+var swiper = new Swiper(".mySwiper-product-thumr", {
+  spaceBetween: 2,
+  slidesPerView: 10,
+  freeMode: true,
+  watchSlidesProgress: true,
+});
 
+var swiper2 = new Swiper(".mySwiper-product", {
+  spaceBetween: 2,
+  slidesPerView: 2,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: swiper,
+  },
+});
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Lấy tất cả các cặp slider
+    const sliders = document.querySelectorAll('.content-img');
+
+    sliders.forEach((slider, index) => {
+        // Tạo unique class name cho từng slider
+        const mySwiperClass = `slider-section-thumbs-${index}`;
+        const mySwiper2Class = `slider-section-${index}`;
+        
+        // Thêm class name cho các container swiper
+        slider.querySelector('.slider-section-thumbs').classList.add(mySwiperClass);
+        slider.querySelector('.slider-section').classList.add(mySwiper2Class);
+
+        // Khởi tạo Swiper cho các container swiper
+        var swiper = new Swiper(`.${mySwiperClass}`, {
+            spaceBetween: 2,
+            slidesPerView: 10,
+            freeMode: true,
+            watchSlidesProgress: true,
+        });
+
+        var swiper2 = new Swiper(`.${mySwiper2Class}`, {
+            spaceBetween: 2,
+            slidesPerView: 1,
+            navigation: {
+                nextEl: `.swiper-button-next`,
+                prevEl: `.swiper-button-prev`,
+            },
+            thumbs: {
+                swiper: swiper,
+            },
+        });
+    });
+});
 
 var swiper = new Swiper(".mySwiper-section-1", {
   spaceBetween: 2,

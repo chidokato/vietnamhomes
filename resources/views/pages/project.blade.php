@@ -6,11 +6,9 @@
 @section('url'){{asset('')}}@endsection
 
 @section('css')
-<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" /> -->
+<!-- css project -->
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
-
 <link href="assets/css/project.css" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 @endsection
 
@@ -279,10 +277,11 @@
 @endsection
 
 @section('js')
+<!-- js project -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <script src="assets/js/project.js"></script>
-
 <script type="text/javascript">
     var swiper = new Swiper(".menu-tab", {
         spaceBetween: 10,
@@ -292,7 +291,6 @@
         },
     });
 </script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <script>
     $(document).ready(function() {
         $("[data-fancybox='gallery']").fancybox({

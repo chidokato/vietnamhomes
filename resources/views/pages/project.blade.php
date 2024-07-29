@@ -288,22 +288,22 @@
 
         sliders.forEach((slider, index) => {
             // Tạo unique class name cho từng slider
-            const mySwiperClass = 'slider-section-thumbs-${index}';
-            const mySwiper2Class = 'slider-section-${index}';
+            const mySwiperClass = 'slider-section-thumbs-' + index;
+            const mySwiper2Class = 'slider-section-' + index;
             
             // Thêm class name cho các container swiper
             slider.querySelector('.slider-section-thumbs').classList.add(mySwiperClass);
             slider.querySelector('.slider-section').classList.add(mySwiper2Class);
 
             // Khởi tạo Swiper cho các container swiper
-            var swiper = new Swiper('.${mySwiperClass}', {
+            var swiper = new Swiper('.' + mySwiperClass, {
                 spaceBetween: 2,
                 slidesPerView: 10,
                 freeMode: true,
                 watchSlidesProgress: true,
             });
 
-            var swiper2 = new Swiper('.${mySwiper2Class}', {
+            var swiper2 = new Swiper('.' + mySwiper2Class, {
                 spaceBetween: 2,
                 slidesPerView: 1,
                 navigation: {
@@ -316,6 +316,7 @@
             });
         });
     });
+
 </script>
 
 <script src="assets/js/project.js"></script>

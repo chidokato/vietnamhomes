@@ -281,6 +281,44 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+        // Lấy tất cả các cặp slider
+        const sliders = document.querySelectorAll('.content-img');
+
+        sliders.forEach((slider, index) => {
+            // Tạo unique class name cho từng slider
+            const mySwiperClass = `slider-section-thumbs-${index}`;
+            const mySwiper2Class = `slider-section-${index}`;
+            
+            // Thêm class name cho các container swiper
+            slider.querySelector('.slider-section-thumbs').classList.add(mySwiperClass);
+            slider.querySelector('.slider-section').classList.add(mySwiper2Class);
+
+            // Khởi tạo Swiper cho các container swiper
+            var swiper = new Swiper(`.${mySwiperClass}`, {
+                spaceBetween: 2,
+                slidesPerView: 10,
+                freeMode: true,
+                watchSlidesProgress: true,
+            });
+
+            var swiper2 = new Swiper(`.${mySwiper2Class}`, {
+                spaceBetween: 2,
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: `.swiper-button-next`,
+                    prevEl: `.swiper-button-prev`,
+                },
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
+        });
+    });
+</script>
+
 <script src="assets/js/project.js"></script>
 <script type="text/javascript">
     var swiper = new Swiper(".menu-tab", {

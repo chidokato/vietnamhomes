@@ -17,8 +17,47 @@ var swiper2 = new Swiper(".mySwiper-product", {
   },
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+// Lấy tất cả các cặp slider
+    const sliders = document.querySelectorAll('.content-img');
 
+    sliders.forEach((slider, index) => {
+        // Lấy phần tử swiper
+        const mySwiperElem = slider.querySelector('.slider-section-thumbs');
+        const mySwiper2Elem = slider.querySelector('.slider-section');
+        
+        // Kiểm tra sự tồn tại của các phần tử
+        if (mySwiperElem && mySwiper2Elem) {
+            // Tạo unique class name cho từng slider
+            const mySwiperClass = 'slider-section-thumbs-' + index;
+            const mySwiper2Class = 'slider-section-' + index;
+            
+            // Thêm class name cho các container swiper
+            mySwiperElem.classList.add(mySwiperClass);
+            mySwiper2Elem.classList.add(mySwiper2Class);
 
+            // Khởi tạo Swiper cho các container swiper
+            var swiper = new Swiper('.' + mySwiperClass, {
+                spaceBetween: 2,
+                slidesPerView: 10,
+                freeMode: true,
+                watchSlidesProgress: true,
+            });
+
+            var swiper2 = new Swiper('.' + mySwiper2Class, {
+                spaceBetween: 2,
+                slidesPerView: 1,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                thumbs: {
+                    swiper: swiper,
+                },
+            });
+        }
+    });
+});
 
 var swiper = new Swiper(".mySwiper-section-1", {
   spaceBetween: 2,

@@ -69,7 +69,7 @@
                             </tbody>
                         </form>
                     </table>
-                    {!! $district->links() !!}
+                    {{ $district->appends(request()->all())->links() }}
                     @endif
                 </div>
             </div>

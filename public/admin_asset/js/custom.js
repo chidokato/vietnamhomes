@@ -172,6 +172,30 @@ $(document).ready(function(){
 }); // update status
 
 $(document).ready(function(){
+    $("input#status_province").click(function(){
+        var status = $(this).is(':checked');
+        var id = $(this).parents('#province').find('input[id="id"]').val();
+        // alert(id);
+        $.ajax({
+            url:  'ajax/update_status_province/'+id+'/'+status, type: 'GET', cache: false, data: {
+            },
+        });
+    });
+}); // update status
+
+$(document).ready(function(){
+    $("input#home_province").click(function(){
+        var status = $(this).is(':checked');
+        var id = $(this).parents('#province').find('input[id="id"]').val();
+        // alert(id);
+        $.ajax({
+            url:  'ajax/update_home_province/'+id+'/'+status, type: 'GET', cache: false, data: {
+            },
+        });
+    });
+}); // update status
+
+$(document).ready(function(){
     $("input#hot_post").click(function(){
         var hot = $(this).is(':checked');
         var id = $(this).parents('#post').find('input[id="id"]').val();

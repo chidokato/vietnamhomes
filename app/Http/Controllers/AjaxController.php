@@ -118,6 +118,20 @@ class AjaxController extends Controller
         $Post->save();
     }
 
+    public function update_status_province($id, $status)
+    {
+        $province = Province::find($id);
+        $province->status = $status;
+        $province->save();
+    }
+
+    public function update_home_province($id, $status)
+    {
+        $province = Province::find($id);
+        $province->home = $status;
+        $province->save();
+    }
+
     public function update_hot_post($id, $hot)
     {
         $Post = Post::find($id);

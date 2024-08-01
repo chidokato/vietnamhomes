@@ -3,7 +3,7 @@
 @section('content')
 @include('admin.alert')
 
-<form method="post" action="{{route('province.update', [$id])}}">
+<form method="post" action="{{route('province.update', $data->id)}}" enctype="multipart/form-data">
 @csrf
 @method('PUT')
 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow fixed">
@@ -27,27 +27,41 @@
 </div>
 
 <div class="row">
-  <div class="col-xl-9 col-lg-9">
+    <div class="col-xl-9 col-lg-9">
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
                 <h6 class="m-0 font-weight-bold text-primary">Images</h6>
             </div>
             <div class="card-body">
                 <div class="row">
-                    @foreach($data as $val)
                       <div class="col-md-4">
                           <div class="form-group">
                               <label>Name</label>
-                              <input name="id[]" value="{{$val->id}}" placeholder="..." type="hidden" class="form-control">
-                              <input name="name[]" value="{{$val->name}}" placeholder="..." type="text" class="form-control">
+                              <input disabled name="name" value="{{$data->name}}" placeholder="..." type="text" class="form-control">
                           </div>
                       </div>
-                    @endforeach
                   </div>
             </div>
         </div>
     </div>
-    
+    <div class="col-xl-3 col-lg-3">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Images</h6>
+            </div>
+            <div class="card-body">
+                <div class="file-upload">
+                    <div class="file-upload-content" onclick="$('.file-upload-input').trigger( 'click' )">
+                        <img class="file-upload-image" src="data/images/{{$data->img}}" />
+                    </div>
+                    <div class="image-upload-wrap">
+                        <input name="img" class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </div>
 </form>
 @endsection

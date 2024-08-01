@@ -80,28 +80,30 @@
         </div>
         <div class="news-hightlight">
             <div class="row g-3">
-                @for($i=0; $i<4; $i++)
+                @foreach($provinces as $key => $val)
+                @if($key % 2 == 0)
                 <div class="col-lg-3">
                     <div class="card-overlay-flex">
                         <a class="card-overlay card-overlay-sm outline-effect" href="#">
-                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('data/images/{{$provinces[$key]->img}}');"></span>
                             <div class="card-overlay-body">
-                                <h2><span>Quảng</span><span>Ninh</span></h2>
-                                <div>100 sản phẩm</div>
+                                <h2><span>{{$provinces[$key]->name}}</span></h2>
+                                <div>100+ sản phẩm</div>
                             </div>
                         </a>
                     </div>
                     <div class="card-overlay-flex">
                         <a class="card-overlay card-overlay-sm outline-effect" href="#">
-                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('http://motorbiketoursinvietnam.com/wp-content/uploads/2014/11/Danang-City.jpg');"></span>
+                            <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('data/images/{{$provinces[$key+1]->img}}');"></span>
                             <div class="card-overlay-body">
-                                <h2><span>Quảng</span><span>Ninh</span></h2>
-                                <div>100 sản phẩm</div>
+                                <h2><span>{{$provinces[$key+1]->name}}</span></h2>
+                                <div>100+ sản phẩm</div>
                             </div>
                         </a>
                     </div>
                 </div>
-                @endfor                
+                @endif
+                @endforeach               
             </div>
         </div>
         <div class="load-more text-center mt-4 pt-2">

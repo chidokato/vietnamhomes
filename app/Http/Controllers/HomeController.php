@@ -19,6 +19,7 @@ use App\Models\Customer;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\User;
+use App\Models\Province;
 use Mail;
 use Image;
 use File;
@@ -45,10 +46,12 @@ class HomeController extends Controller
     {
         $slider = Slider::orderBy('id', 'desc')->get();
         $product = Post::where('hot', 'true')->orderBy('id', 'desc')->take(8)->get();
+        $provinces = Province::where('home', 'true')->get();
 
         return view('pages.home', compact(
             'slider',
             'product',
+            'provinces',
 
         ));
     }

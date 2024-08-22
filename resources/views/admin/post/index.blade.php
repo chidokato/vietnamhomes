@@ -37,6 +37,17 @@
             <div class="tab-content">
                 <div class="tab-pane overflow active" id="tab2">
                     @if(count($posts) > 0)
+                    <div class="search paginate-search">
+                        <div>Hiển thị: </div>
+                        <select class="form-control paginate" name="per_page" onchange="this.form.submit()">
+                            <option value="10" {{ request()->per_page == 10 ? 'selected' : '' }}>10</option>
+                            <option value="20" {{ request()->per_page == 20 ? 'selected' : '' }}>20</option>
+                            <option value="50" {{ request()->per_page == 50 ? 'selected' : '' }}>50</option>
+                            <option value="100" {{ request()->per_page == 100 ? 'selected' : '' }}>100</option>
+                        </select>
+                        <div> Từ {{ $posts->firstItem() }} đến {{ $posts->lastItem() }} trên tổng {{ $posts->total() }} </div>
+                        {{ $posts->appends(request()->all())->links() }}
+                    </div>
                     <table class="table">
                         <thead>
                             <tr>
@@ -87,17 +98,7 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="search">
-                        <div>Hiển thị: </div>
-                        <select class="form-control paginate" name="per_page" onchange="this.form.submit()">
-                            <option value="10" {{ request()->per_page == 10 ? 'selected' : '' }}>10</option>
-                            <option value="20" {{ request()->per_page == 20 ? 'selected' : '' }}>20</option>
-                            <option value="50" {{ request()->per_page == 50 ? 'selected' : '' }}>50</option>
-                            <option value="100" {{ request()->per_page == 100 ? 'selected' : '' }}>100</option>
-                        </select>
-                        <div> Từ {{ $posts->firstItem() }} đến {{ $posts->lastItem() }} trên tổng {{ $posts->total() }} </div>
-                        {{ $posts->appends(request()->all())->links() }}
-                    </div>
+                    
                     @endif
                 </div>
             </div>

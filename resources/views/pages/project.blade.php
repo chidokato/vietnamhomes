@@ -66,7 +66,7 @@
                 </div>
                 <div class="right">
                     <div class="price"> {{$post->price}} {{$post->price_max ? ' - '.$post->price_max:''}} {{$post->unit}}</div>
-                    <div class="price_acreage">{{number_format($post->price*1000000000/$post->acreage/1000000, 2)}} triệu/m<sup>2</sup></div>
+                    <div class="price_acreage">{{ $post->acreage ? number_format($post->price*1000000000/$post->acreage/1000000, 2) : '...'}} triệu/m<sup>2</sup></div>
                 </div>
             </div>
         </div>

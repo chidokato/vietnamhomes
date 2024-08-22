@@ -13,6 +13,7 @@
 <form class="width100" action="{{ url()->current() }}" method="GET">
     <div class="col-xl-12 col-lg-12 search flex-start">
         <input type="text" value="{{ request()->key ?? '' }}" placeholder="Tìm kiếm..." class="form-control" name="key" onchange="this.form.submit()">
+        
         <button type="submit" class="btn btn-success mr-2">Tìm kiếm</button>
         <a href="{{ url()->current() }}" class="btn btn-warning">
             Reset
@@ -23,7 +24,7 @@
         <div class="card shadow mb-4">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
                 <ul class="nav nav-pills">
-                    <li><a data-toggle="tab" class="nav-link active" href="#tab1">{{__('lang.all')}}</a></li>
+                    <li><a data-toggle="tab" class="nav-link active" href="#tab1">Tất cả</a></li>
                     <!-- <li><a data-toggle="tab" class="nav-link " href="#tab2">Hiển thị</a></li> -->
                     <!-- <li><a data-toggle="tab" class="nav-link" href="#tab3">Ẩn</a></li> -->
                 </ul>

@@ -61,6 +61,8 @@ class PostController extends Controller
             $query->where('name', 'like', '%' . $key . '%');
         }
 
+        
+
         // Thêm logic sắp xếp
         $query->orderBy('status', $sort);
 

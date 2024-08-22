@@ -6,19 +6,10 @@
 <?php use App\Models\Category; ?>
 <div class="d-sm-flex align-items-center justify-content-between mb-3 flex">
     <h2 class="h3 mb-0 text-gray-800 line-1 size-1-3-rem">Quản lý sản phẩm</h2>
-    <a class="add-iteam" href="{{route('post.create')}}"><button class="btn-success form-control" type="button"><i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</button></a>
+    <a class="add-iteam" href="{{route('news.create')}}"><button class="btn-success form-control" type="button"><i class="fa fa-plus" aria-hidden="true"></i> Thêm mới</button></a>
 </div>
 
 <div class="row">
-<form class="width100" action="{{ url()->current() }}" method="GET">
-    <div class="col-xl-12 col-lg-12 search flex-start">
-        <input type="text" value="{{ request()->key ?? '' }}" placeholder="Tìm kiếm..." class="form-control" name="key" onchange="this.form.submit()">
-        <button type="submit" class="btn btn-success mr-2">Tìm kiếm</button>
-        <a href="{{ url()->current() }}" class="btn btn-warning">
-            Reset
-        </a>
-    </div>
-    
     <div class="col-xl-12 col-lg-12">
         <div class="card shadow mb-4">
             <div class="card-header d-flex flex-row align-items-center justify-content-between">
@@ -51,7 +42,7 @@
                                 <input type="hidden" name="id" id="id" value="{{$val->id}}" >
                                 <td class="thumb"><img src="data/images/{{$val->img}}"></td>
                                 <td>
-                                    <div class="name"><a href="{{route('post.edit',[$val->id])}}" >{{$val->name}}</a></div>
+                                    <div class="name"><a href="{{route('news.edit',[$val->id])}}" >{{$val->name}}</a></div>
                                     <div class="slug">{{$val->slug}}</div>
                                 </td>
                                 <td>{{number_format($val->price).' '.$val->unit}} 
@@ -67,9 +58,9 @@
                                 <td>{{date_format($val->updated_at,"d/m/Y")}}</td>
                                 <td>{{$val->User->yourname}}</td>
                                 <td style="display: flex;">
-                                    <a href="{{route('post_up', [$val->id])}}" class="mr-3"><i class="fas fa-arrow-up" aria-hidden="true"></i></a> 
-                                    <a href="{{route('post.edit',[$val->id])}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
-                                    <form action="{{route('post.destroy', [$val->id])}}" method="POST">
+                                    <!-- <a href="{{route('post_up', [$val->id])}}" class="mr-3"><i class="fas fa-arrow-up" aria-hidden="true"></i></a>  -->
+                                    <a href="{{route('news.edit',[$val->id])}}" class="mr-2"><i class="fas fa-edit" aria-hidden="true"></i></a>
+                                    <form action="{{route('news.destroy', [$val->id])}}" method="POST">
                                       @method('DELETE')
                                       @csrf
                                       <button class="button_none" onclick="return confirm('Bạn muốn xóa bản ghi ?')"><i class="fas fa-trash-alt"></i></button>
@@ -79,24 +70,13 @@
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="search">
-                        <div>Hiển thị: </div>
-                        <select class="form-control paginate" name="per_page" onchange="this.form.submit()">
-                            <option value="10" {{ request()->per_page == 10 ? 'selected' : '' }}>10</option>
-                            <option value="20" {{ request()->per_page == 20 ? 'selected' : '' }}>20</option>
-                            <option value="50" {{ request()->per_page == 50 ? 'selected' : '' }}>50</option>
-                            <option value="100" {{ request()->per_page == 100 ? 'selected' : '' }}>100</option>
-                        </select>
-                        <div> Từ {{ $posts->firstItem() }} đến {{ $posts->lastItem() }} trên tổng {{ $posts->total() }} </div>
-                        {{ $posts->appends(request()->all())->links() }}
-                    </div>
                     @endif
                 </div>
+                {{ $posts->appends(request()->all())->links() }}
             </div>
         </div>
     </div>
 </div>
-</form>
 
 @endsection
 

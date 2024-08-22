@@ -423,10 +423,8 @@
     }
 
     function loadMap() {
-            var mapEmbedCode = document.getElementById('maps').value;
-            document.getElementById('load_maps').innerHTML = mapEmbedCode;
-        }
-
-
+        var mapEmbedCode = document.getElementById('maps').value;
+        document.getElementById('load_maps').innerHTML = mapEmbedCode;
+    }
 </script>
 @endsection

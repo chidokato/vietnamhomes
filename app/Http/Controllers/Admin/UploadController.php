@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Session;
 
 use Illuminate\Support\Facades\Log;
+use Intervention\Image\Facades\Image;
 
 class UploadController extends Controller
 {
@@ -19,10 +20,16 @@ class UploadController extends Controller
         if ($request->hasFile('upload')) {
             $file = $request->file('upload');
             $filename = time() . '.' . $file->getClientOriginalExtension();
-            // $filename = $file->getClientOriginalName();
-            // while(file_exists("/uploads".$filename)){$filename = rand(0,99)."_".$filename;}
             $destinationPath = public_path('/uploads');
-            $file->move($destinationPath, $filename);
+
+            // Resize the image
+            $image = Image::make($file)->resize(1500, 1500, function ($constraint) {
+                $constraint->aspectRatio();
+                $constraint->upsize();
+            });
+
+            // Save the resized image
+            $image->save($destinationPath . '/' . $filename);
 
             $url = url('/uploads/' . $filename);
 

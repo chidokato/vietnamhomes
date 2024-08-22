@@ -12,7 +12,7 @@ use App\Http\Controllers\Admin\CartController;
 use App\Http\Controllers\Admin\OptionController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\PostController;
-use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\SliderController;
@@ -92,6 +92,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('option/double/{id}', [OptionController::class, 'double']);
 
         Route::resource('post',PostController::class);
+        Route::resource('news',NewsController::class);
         Route::get('post/post_up/{id}', [PostController::class, 'post_up'])->name('post_up');
 
         Route::resource('product',ProductController::class);

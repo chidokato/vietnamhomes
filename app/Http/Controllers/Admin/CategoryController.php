@@ -2,16 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Session;
-use Illuminate\Support\Str;
-
-use App\Models\Category;
-use Illuminate\Support\Facades\Auth;
-
-use Image;
-use File;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends Controller
 {

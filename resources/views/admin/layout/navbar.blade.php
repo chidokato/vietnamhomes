@@ -26,6 +26,9 @@
     <li class="nav-item">
         <a class="nav-link" href="{{route('post.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Dự án</span></a>
     </li>
+    <li class="nav-item">
+        <a class="nav-link" href="{{route('news.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Tin tức</span></a>
+    </li>
     <!-- <li class="nav-item">
         <a class="nav-link" href="{{route('promotion.index')}}"><i class="fas fa-fw fa-chart-area"></i><span>Sự kiện & Khuyến mãi</span></a>
     </li> -->

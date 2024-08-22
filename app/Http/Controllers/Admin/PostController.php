@@ -48,21 +48,27 @@ class PostController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index()
+    public function index(Request $request)
     {
         $category = Category::where('sort_by', 'Product')->where('parent', '0')->orderBy('view', 'DESC')->get();
-        $posts = Post::where('sort_by', 'Product')->orderBy('id', 'DESC');
-        if($key = request()->key){
-            $posts->where('name', 'like', '%' . $key . '%');
+        $perPage = $request->get('per_page', 10); // Mặc định là 20 nếu không có lựa chọn
+        $key = $request->get('key', '');
+        $sort = $request->get('sort', 'desc'); // Mặc định là sắp xếp giảm dần
+        
+        $query = Post::query();
+
+        if ($key) {
+            $query->where('name', 'like', '%' . $key . '%');
         }
-        if($cid = request()->cid){
-            $posts->where('category_id', $cid);
-        }
-        $posts = $posts->paginate(30);
+
+        // Thêm logic sắp xếp
+        $query->orderBy('status', $sort);
+
+        $posts = $query->paginate($perPage);
 
         return view('admin.post.index', compact(
             'posts',
-            'category'
+            'category',
         ));
     }
 

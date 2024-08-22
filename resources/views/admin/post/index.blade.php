@@ -36,6 +36,7 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
+                                <th></th>
                                 <th>Price</th>
                                 <th>Category</th>
                                 <th>Hot</th>
@@ -52,8 +53,9 @@
                                 <td class="thumb"><img src="data/images/{{$val->img}}"></td>
                                 <td>
                                     <div class="name"><a href="{{route('post.edit',[$val->id])}}" >{{$val->name}}</a></div>
-                                    <div class="slug">{{$val->slug}}</div>
+                                    
                                 </td>
+                                <td><div class="slug">{{$val->slug}}</div></td>
                                 <td>{{number_format($val->price).' '.$val->unit}} 
                                     <div class="slug" style="color:red">{{$val->sale?'sale: '.$val->sale.'%':''}}</div>
                                 </td>

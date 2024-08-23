@@ -455,7 +455,7 @@ class HomeController extends Controller
         }elseif ($post->sort_by == 'News') {
             return view('pages.post', compact(
                 'post',
-                // 'related_post',
+                'related_post',
             ));
         }
         

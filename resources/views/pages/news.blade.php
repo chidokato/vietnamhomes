@@ -57,7 +57,7 @@
                             @foreach($post as $key => $val)
                             @if($key < 3)
                             <div class="iteam">
-                                <a class="card-overlay outline-effect {{ $key>0 ? 'card-overlay-sm':'' }} " href="news-detail.htm">
+                                <a class="card-overlay outline-effect {{ $key>0 ? 'card-overlay-sm':'' }} " href="{{$val->category->slug}}/{{$val->slug}}">
                                     <span class="card-overlay-img"><img src="assets/images/space-4.gif" alt="" class="w-100" style="background-image: url('data/images/{{$val->img}}');"></span>
                                     <div class="card-overlay-body">
                                         <div class="card-overlay-body-wrap">
@@ -81,12 +81,12 @@
                     @if($key > 2)
                     <div class="col">
                         <div class="card card-s card-s4">
-                            <a href="news-detail.htm">
+                            <a href="{{$val->category->slug}}/{{$val->slug}}">
                                 <span><img src="assets/images/space-3.gif" class="card-img-top" style="background-image: url('data/images/{{$val->img}}');" alt="..."></span>
                             </a>
                             <div class="card-body">
                                 <div class="card-body-wrap">
-                                    <h5 class="card-title"><a href="news-detail.htm">{{$val->name}}</a></h5>
+                                    <h5 class="card-title"><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h5>
                                     <div class="card-info">
                                         <span><i class="icon-time me-2"></i>2 ngày trước</span>
                                         <span><i class="icon-user me-2"></i>Minh Hoàng</span>
@@ -99,12 +99,7 @@
                     @endif
                     @endforeach
 
-                   
-                    
                 </div>
-                
-               
-
             </div>
             <div class="col-lg-3 d-none d-lg-block">
 
@@ -121,7 +116,7 @@
                     <h4><span>Tin xem nhiều</span></h4>
                     @foreach($post as $key => $val)
                     @if($key == 0)
-                    <a href="#" class="news-item-captain">
+                    <a href="{{$val->category->slug}}/{{$val->slug}}" class="news-item-captain">
                         <div class="news-item-captain-img">
                             <div class="news-item-captain-img-wrap">
                                 <img src="assets/images/space-3.gif" style="background-image: url('data/images/{{$val->img}}');" alt="" class="w-100">
@@ -134,7 +129,7 @@
                         </div>
                     </a>
                     @else
-                    <a href="#" class="news-item">
+                    <a href="{{$val->category->slug}}/{{$val->slug}}" class="news-item">
                         <span><img src="assets/images/space-3.gif" style="background-image: url('data/images/{{$val->img}}');" alt="" class="w-100"></span>
                         <div class="news-item-body">
                             <span class="date"><i class="icon-time me-1"></i>2 ngày trước</span>

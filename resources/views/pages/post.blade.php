@@ -25,12 +25,12 @@
 </section>
 <!------------------- END: BREADCRUMB ------------------->
 
-
 <section class="card-grid news-sec">
     <div class="container">
-        <h3 class="text-uppercase title-subpage">{{ $post->name }}</h3>
+        
         <div class="row">
             <div class="col-lg-9">
+                <h1 class="text-uppercase title-subpage">{{ $post->name }}</h1>
                 <div class="news-detail">
                     <div class="description">
                         {!! $post->detail !!}

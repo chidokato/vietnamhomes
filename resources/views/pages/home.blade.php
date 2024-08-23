@@ -129,42 +129,32 @@
         </div>
         <div class="news-hightlight">
             <div class="row">
+                @foreach($news as $key => $val)
+                @if($key==0)
                 <div class="col-lg-6">
                     <div class="card-overlay-flex">
-                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
-                            <span class="card-overlay-img"><img src="assets/images/space-3.gif" alt="" class="w-100 thumb" style="background-image: url('https://datxanhindochine.com/data/news/dt_15120241439_screenshot-(65).jpg');"></span>
+                        <a class="card-overlay card-overlay-sm outline-effect" href="{{$val->category->slug}}/{{$val->slug}}">
+                            <span class="card-overlay-img"><img src="assets/images/space-3.gif" alt="" class="w-100 thumb" style="background-image: url('data/images/{{$val->img}}');"></span>
                             <div class="card-overlay-body">
-                                <h3>30.000 chuyên gia cao cấp khu Tây Hà Nội có nơi nghỉ dưỡng xứng đáng dành cho mình?</h3>
-                                <div class="description text-truncate-set text-truncate-set-2">Bước sang năm 2024, quần thể đô thị nghỉ dưỡng Casa Del Rio quy mô 142 ha bất ngờ tung 30 căn biệt thự phiên bản giới hạn thuộc phân khu Roma, thu hút sự quan tâm của đông đảo khách hàng, đặc biệt là giới chuyên gia làm</div>
+                                <h3>{{$val->name}}</h3>
+                                <div class="description text-truncate-set text-truncate-set-2">{{$val->detail}}</div>
                             </div>
                         </a>
                     </div>
                 </div>
+                @endif
+                @endforeach
                 <div class="col-lg-6">
-                    <a href="#" class="news-item">
-                        <span><img src="assets/images/space-1.gif" style="background-image: url('https://datxanhindochine.com/data/news/1vh-anh-1.jpg')" alt="" class="w-100 thumb"></span>
+                    @foreach($news as $key => $val)
+                    @if($key>0)
+                    <a href="{{$val->category->slug}}/{{$val->slug}}" class="news-item">
+                        <span><img src="assets/images/space-1.gif" style="background-image: url('data/images/{{$val->img}}')" alt="" class="w-100 thumb"></span>
                         <div class="news-item-body">
-                            <p class="mb-0 text-truncate-set text-truncate-set-3">Review phường Hoàng Liệt Bản đồ , vị trí , dịch vụ tiện ích và các thông tin </p>
+                            <p class="mb-0 text-truncate-set text-truncate-set-3">{{$val->name}} </p>
                         </div>
                     </a>
-                    <a href="#" class="news-item">
-                        <span><img src="assets/images/space-1.gif" style="background-image: url('https://datxanhindochine.com/data/news/chung-cu-ha-noi-vi-tri-dep-1536x864.jpg')" alt="" class="w-100 thumb"></span>
-                        <div class="news-item-body">
-                            <p class="mb-0 text-truncate-set text-truncate-set-3">Review phường Hoàng Liệt Bản đồ , vị trí , dịch vụ tiện ích và các thông tin </p>
-                        </div>
-                    </a>
-                    <a href="#" class="news-item">
-                        <span><img src="assets/images/space-1.gif" style="background-image: url('https://datxanhindochine.com/data/news/546db51c9b7730296966-1-8100.jpg')" alt="" class="w-100 thumb"></span>
-                        <div class="news-item-body">
-                            <p class="mb-0 text-truncate-set text-truncate-set-3">Review phường Hoàng Liệt Bản đồ , vị trí , dịch vụ tiện ích và các thông tin </p>
-                        </div>
-                    </a>
-                    <a href="#" class="news-item">
-                        <span><img src="assets/images/space-1.gif" style="background-image: url('https://datxanhindochine.com/data/news/1vh-anh-1.jpg')" alt="" class="w-100 thumb"></span>
-                        <div class="news-item-body">
-                            <p class="mb-0 text-truncate-set text-truncate-set-3">Review phường Hoàng Liệt Bản đồ , vị trí , dịch vụ tiện ích và các thông tin </p>
-                        </div>
-                    </a>
+                    @endif
+                    @endforeach
                 </div>
             </div>
         </div>

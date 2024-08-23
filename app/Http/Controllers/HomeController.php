@@ -45,12 +45,14 @@ class HomeController extends Controller
     public function index()
     {
         $slider = Slider::orderBy('id', 'desc')->get();
-        $product = Post::where('hot', 'true')->orderBy('id', 'desc')->take(8)->get();
+        $product = Post::where('hot', 'true')->where('sort_by', 'Product')->orderBy('id', 'desc')->take(8)->get();
+        $news = Post::where('sort_by', 'News')->orderBy('id', 'desc')->take(5)->get();
         $provinces = Province::where('home', 'true')->get();
 
         return view('pages.home', compact(
             'slider',
             'product',
+            'news',
             'provinces',
 
         ));

@@ -194,7 +194,8 @@ class PostController extends Controller
             }
         }
 
-        return redirect('admin/post')->with('Success','Success');
+        // return redirect('admin/post')->with('Success','Success');
+        return response()->json(['success' => 'Success']);
     }
 
     /**
@@ -283,7 +284,11 @@ class PostController extends Controller
             $filename = $this->saveImage($file);
             $post->img = $filename;
         }
-        $post->save();
+
+
+
+
+        
 
         // thêm ảnh chi tiết
         if($request->hasFile('imgdetail')){
@@ -357,6 +362,7 @@ class PostController extends Controller
             }
         }
 
+        $post->save();
         
         return redirect()->back()->with('Success','Success');
     }

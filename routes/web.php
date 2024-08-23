@@ -147,5 +147,7 @@ Route::get('knot/clik_buckle/{id}', [HomeController::class, 'clik_buckle'])->nam
 
 
 Route::get('custom-knot', [HomeController::class, 'customknot'])->name('customknot');
+Route::get('location/{slug}', [HomeController::class, 'province']);
 Route::get('{slug}', [HomeController::class, 'category']);
 Route::get('{catslug}/{slug}', [HomeController::class, 'post']);
+

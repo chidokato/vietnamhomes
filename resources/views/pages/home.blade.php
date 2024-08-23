@@ -84,7 +84,7 @@
                 @if($key % 2 == 0)
                 <div class="col-lg-3">
                     <div class="card-overlay-flex">
-                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="location/{{$val->slug}}">
                             <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('data/images/{{$provinces[$key]->img}}');"></span>
                             <div class="card-overlay-body">
                                 <h2><span>{{$provinces[$key]->name}}</span></h2>
@@ -93,7 +93,7 @@
                         </a>
                     </div>
                     <div class="card-overlay-flex">
-                        <a class="card-overlay card-overlay-sm outline-effect" href="#">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="location/{{$val->slug}}">
                             <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('data/images/{{$provinces[$key+1]->img}}');"></span>
                             <div class="card-overlay-body">
                                 <h2><span>{{$provinces[$key+1]->name}}</span></h2>
@@ -104,11 +104,6 @@
                 </div>
                 @endif
                 @endforeach               
-            </div>
-        </div>
-        <div class="load-more text-center mt-4 pt-2">
-            <div class="cta-btn ir">
-                <a class="" href="#"><span class="cta-text font-weight-semibold">Xem tất cả</span><span class="cta-ico"><i class="icon-next"></i></span></a>
             </div>
         </div>
     </div>

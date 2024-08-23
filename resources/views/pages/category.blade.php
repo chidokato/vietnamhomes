@@ -101,7 +101,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Vietnam Homes</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Dự án</li>
+                    <li class="breadcrumb-item active" aria-current="page">{{$data->name}}</li>
                     </ol>
                 </nav>
                 <h1 class="text-uppercase title-cat">Các dự án bất động sản trên toàn quốc</h1>

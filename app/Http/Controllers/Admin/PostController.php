@@ -55,13 +55,11 @@ class PostController extends Controller
         $key = $request->get('key', '');
         $sort = $request->get('sort', 'desc'); // Mặc định là sắp xếp giảm dần
         
-        $query = Post::query();
+        $query = Post::query()->where('sort_by', 'Product');
 
         if ($key) {
             $query->where('name', 'like', '%' . $key . '%');
         }
-
-        
 
         // Thêm logic sắp xếp
         $query->orderBy('status', $sort);

@@ -84,7 +84,7 @@
                 @if($key % 2 == 0)
                 <div class="col-lg-3">
                     <div class="card-overlay-flex">
-                        <a class="card-overlay card-overlay-sm outline-effect" href="location/{{$val->slug}}">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="location/{{$provinces[$key]->name}}">
                             <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('data/images/{{$provinces[$key]->img}}');"></span>
                             <div class="card-overlay-body">
                                 <h2><span>{{$provinces[$key]->name}}</span></h2>
@@ -93,7 +93,7 @@
                         </a>
                     </div>
                     <div class="card-overlay-flex">
-                        <a class="card-overlay card-overlay-sm outline-effect" href="location/{{$val->slug}}">
+                        <a class="card-overlay card-overlay-sm outline-effect" href="location/{{$provinces[$key+1]->name}}">
                             <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('data/images/{{$provinces[$key+1]->img}}');"></span>
                             <div class="card-overlay-body">
                                 <h2><span>{{$provinces[$key+1]->name}}</span></h2>

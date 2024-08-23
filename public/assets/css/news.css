@@ -1,5 +1,15 @@
-@media (max-width: 1024px) {
+/*@media (max-width: 1024px) {
 	.sec-cover picture {display: none;}
 	.sec-cover .container {max-width:100%; padding:0}
 	.sec-cover .cover-content {position: static;padding: 40px 24px; background:url(../images/cover-fengshui.jpg) no-repeat center center;background-size: cover;max-width: unset;}
 }
+*/
+
+.sec-fiter-search{ display:flex; }
+.sec-fiter-search .col-lg-6 {
+    display: flex;
+    border: 1.5px solid var(--main-color);
+    border-radius: 100px;
+    padding: 0;
+}
+.news-hightlight .card-overlay-flex .card-overlay{ margin-bottom:15px }

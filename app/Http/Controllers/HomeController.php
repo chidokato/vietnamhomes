@@ -429,6 +429,15 @@ class HomeController extends Controller
                     'total'
                 ));
             }
+            if ($data->sort_by == 'News') {
+                $post = Post::whereIn('category_id', $cat_array)->orderBy('id', 'DESC')->paginate(30);
+                $total = Post::whereIn('category_id', $cat_array)->count();
+                return view('pages.news', compact(
+                    'data',
+                    'post',
+                    'total'
+                ));
+            }
         }
         
         

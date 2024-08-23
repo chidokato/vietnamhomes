@@ -27,7 +27,6 @@
                             <tr>
                                 <th></th>
                                 <th>Name</th>
-                                <th>Slug</th>
                                 <th>Price</th>
                                 <th>Category</th>
                                 <th>Hot</th>
@@ -46,7 +45,7 @@
                                     <div class="name"><a href="{{route('news.edit',[$val->id])}}" >{{$val->name}}</a></div>
                                     
                                 </td>
-                                <td>{{$val->slug}}</td>
+                                <!-- <td>{{$val->slug}}</td> -->
                                 <td>{{number_format($val->price).' '.$val->unit}} 
                                     <div class="slug" style="color:red">{{$val->sale?'sale: '.$val->sale.'%':''}}</div>
                                 </td>

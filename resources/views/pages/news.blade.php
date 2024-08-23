@@ -129,19 +129,14 @@
                 <div class="widget widget-list mb-3">
                     <h4><span>Tin tức</span></h4>
                     <ul>
-                        <li><a href="#"><i class="icon-next me-2"></i>Thị trường bất động sản</a></li>
-                        <li><a href="#"><i class="icon-next me-2"></i>Tư vấn tài chính</a></li>
-                        <li><a href="#"><i class="icon-next me-2"></i>Tư vấn phong thủy</a></li>
-                        <li><a href="#"><i class="icon-next me-2"></i>Dịch vụ công chứng</a></li>
-                        <li><a href="#"><i class="icon-next me-2"></i>Thẩm định giá</a></li>
-                        <li><a href="#"><i class="icon-next me-2"></i>Luật, thủ tục mua bán</a></li>
-                        <li><a href="#"><i class="icon-next me-2"></i>Quy hoạch đô thị</a></li>
+                        <li><a href="tin-thi-truong"><i class="icon-next me-2"></i>Tin thị trường</a></li>
+                        <li><a href="tin-noi-bo"><i class="icon-next me-2"></i>Tin nội bộ</a></li>
                     </ul>
                 </div>
 
                 
                 <div class="widget widget-list widget-news mb-3">
-                    <h4><span>Review 4 phương</span></h4>
+                    <h4><span>Tin xem nhiều</span></h4>
                     <a href="#" class="news-item-captain">
                         <div class="news-item-captain-img">
                             <div class="news-item-captain-img-wrap">

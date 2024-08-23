@@ -160,7 +160,7 @@
         </div>
         <div class="load-more text-center mt-4 pt-2">
             <div class="cta-btn ir">
-                <a class="" href="#"><span class="cta-text font-weight-semibold">Xem tất cả</span><span class="cta-ico"><i class="icon-next"></i></span></a>
+                <a class="" href="tin-tuc"><span class="cta-text font-weight-semibold">Xem tất cả</span><span class="cta-ico"><i class="icon-next"></i></span></a>
             </div>
         </div>
     </div>

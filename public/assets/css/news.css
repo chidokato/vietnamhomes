@@ -13,3 +13,6 @@
     padding: 0;
 }
 .news-hightlight .card-overlay-flex .card-overlay{ margin-bottom:15px }
+.news-hightlight .iteam{ width: 33.33333333%; float:right; padding-left: calc(var(--bs-gutter-x)* .5); padding-bottom: calc(var(--bs-gutter-x)* .5); }
+.news-hightlight .iteam:first-child{ width: 66.66666667%; float:left; padding-left: 0; padding-right: calc(var(--bs-gutter-x)* .2);}
+.product-status, .card-overlay .card-overlay-body{ justify-content: flex-start; }

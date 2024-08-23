@@ -62,8 +62,8 @@
                                     <div class="card-overlay-body">
                                         <div class="card-overlay-body-wrap">
                                             <div class="time-box">
-                                                <span>21/10</span>
-                                                <span><i class="icon-time me-1"></i>2022</span>
+                                                <span>{{date_format($val->updated_at,"d/m")}}</span>
+                                                <span><i class="icon-time me-1"></i>{{date_format($val->updated_at,"Y")}}</span>
                                             </div>
                                             <p class="text-truncate-set text-truncate-set-2">{{$val->name}}</p>
                                         </div>
@@ -88,8 +88,8 @@
                                 <div class="card-body-wrap">
                                     <h5 class="card-title"><a href="{{$val->category->slug}}/{{$val->slug}}">{{$val->name}}</a></h5>
                                     <div class="card-info">
-                                        <span><i class="icon-time me-2"></i>2 ngày trước</span>
-                                        <span><i class="icon-user me-2"></i>Minh Hoàng</span>
+                                        <span><i class="icon-time me-2"></i>{{date_format($val->updated_at,"d/m/Y")}}</span>
+                                        <span><i class="icon-user me-2"></i>{{$val->User->yourname}}</span>
                                     </div>
                                     <p class="mb-0 text-truncate-set text-truncate-set-2">Chính chủ cần chuyển nhượng gấp căn 2 ngủ diện tích thông thủy 78m2 full đồ, khách mua chỉ cần dọn quần áo đến có thể ở ngay</p>
                                 </div>

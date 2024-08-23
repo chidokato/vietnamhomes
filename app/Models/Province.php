@@ -22,4 +22,8 @@ class Province extends Model
     {
         return $this->hasMany(Street::class, 'province_id', 'id');
     }
+    public function Post()
+    {
+        return $this->hasMany(Post::class, 'province_id', 'id');
+    }
 }

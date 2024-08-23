@@ -88,7 +88,7 @@
                             <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('data/images/{{$provinces[$key]->img}}');"></span>
                             <div class="card-overlay-body">
                                 <h2><span>{{$provinces[$key]->name}}</span></h2>
-                                <div>100+ sản phẩm</div>
+                                <div>{{ count($provinces[$key]->Post) }} sản phẩm</div>
                             </div>
                         </a>
                     </div>
@@ -97,7 +97,7 @@
                             <span class="card-overlay-img"><img src="assets/images/space-2.gif" alt="" class="w-100 thumb" style="background-image: url('data/images/{{$provinces[$key+1]->img}}');"></span>
                             <div class="card-overlay-body">
                                 <h2><span>{{$provinces[$key+1]->name}}</span></h2>
-                                <div>100+ sản phẩm</div>
+                                <div>{{ count($provinces[$key+1]->Post) }} sản phẩm</div>
                             </div>
                         </a>
                     </div>

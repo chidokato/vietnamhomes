@@ -54,11 +54,11 @@ class ProvinceController extends Controller
 
         $provinces = $query->paginate($perPage);
 
-        foreach($provinces as $val){
-            $data = Province::find($val->id);
-            $data->slug = Str::slug($data['name'], '-');
-            $data->save();
-        }
+        // foreach($provinces as $val){
+        //     $data = Province::find($val->id);
+        //     $data->slug = Str::slug($data['name'], '-');
+        //     $data->save();
+        // }
 
         return view('admin.province.index', compact('provinces'));
     }

@@ -201,7 +201,7 @@
                 <div class="right-sidebar">
                     <div class="top">
                         <div class="avatar">
-                            <img src="assets/images/logo-01_45.png">
+                            <img src="data/images/logo-vnh-01.png">
                         </div>
                         <div class="right">
                             <h5>Liên hệ tư vấn</h5>

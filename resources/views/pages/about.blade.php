@@ -42,9 +42,9 @@
                 </div>
                 <div class="col-md-8">
                     <div class="content">
-                        <p>Được thành lập từ đam mê, kiến tạo bởi khát vọng, đắp xây bởi nhiệt huyết, Công Ty Cổ Phần Bất Động Sản INDOCHINE đang vươn lên trở thành một trong những đơn vị bất động sản hàng đầu Việt Nam.</p>
-                        <p>Năm 2022, thị trường bất động sản trải qua "cơn bĩ cực" chưa từng có khiến hàng trăm doanh nghiệp địa ốc đóng cửa, giải thể, thu hẹp quy mô. Nhạy bén trước thời cơ, biến cơ hội thành thách thức để vươn lên, INDOCHINE chính thức chào sân thị trường bằng lễ ra mắt hoành tráng, đánh dấu cho sự ra đời của một "ngôi sao mới". Thực lực được khẳng định bằng thực tích, chỉ trong một thời gian ngắn, INDOCHINE đã khiến toàn thị trường "rúng động" với hàng trăm giao dịch thành công, tiên phong "phá băng" thị trường bất động sản trong giai đoạn bấy giờ. Được đà tiến lên, INDOCHINE tiếp tục phát triển vượt bậc, xứng danh "hắc mã" trên thị trường bất động sản.</p>
-                        <p>Đặc biệt, INDOCHINE cũng tự hào là một trong những đơn vị đầu tiên đưa bất động sản Việt Nam lên vũ đài thế giới, tiên phong cung cấp dịch vụ bất động sản toàn diện cho khách hàng quốc tế mong muốn an cư - đầu tư tại Việt Nam. Bằng năng lực, nhiệt huyết, sự chuyên nghiệp và am hiểu thị trường, INDOCHINE hứa hẹn sẽ là cầu nối đáng tin cậy, mang lại cho quý khách hàng, quý nhà đầu tư những bất động sản vượt trội có giá trị và tính thanh khoản cao.</p>
+                        <p>Được thành lập từ đam mê, kiến tạo bởi khát vọng, đắp xây bởi nhiệt huyết, Công Ty Cổ Phần Bất Động Sản VietnamHomes Group đang vươn lên trở thành một trong những đơn vị bất động sản hàng đầu Việt Nam.</p>
+                        <p>Năm 2022, thị trường bất động sản trải qua "cơn bĩ cực" chưa từng có khiến hàng trăm doanh nghiệp địa ốc đóng cửa, giải thể, thu hẹp quy mô. Nhạy bén trước thời cơ, biến cơ hội thành thách thức để vươn lên, VietnamHomes Group chính thức chào sân thị trường bằng lễ ra mắt hoành tráng, đánh dấu cho sự ra đời của một "ngôi sao mới". Thực lực được khẳng định bằng thực tích, chỉ trong một thời gian ngắn, VietnamHomes Group đã khiến toàn thị trường "rúng động" với hàng trăm giao dịch thành công, tiên phong "phá băng" thị trường bất động sản trong giai đoạn bấy giờ. Được đà tiến lên, VietnamHomes Group tiếp tục phát triển vượt bậc, xứng danh "hắc mã" trên thị trường bất động sản.</p>
+                        <p>Đặc biệt, VietnamHomes Group cũng tự hào là một trong những đơn vị đầu tiên đưa bất động sản Việt Nam lên vũ đài thế giới, tiên phong cung cấp dịch vụ bất động sản toàn diện cho khách hàng quốc tế mong muốn an cư - đầu tư tại Việt Nam. Bằng năng lực, nhiệt huyết, sự chuyên nghiệp và am hiểu thị trường, VietnamHomes Group hứa hẹn sẽ là cầu nối đáng tin cậy, mang lại cho quý khách hàng, quý nhà đầu tư những bất động sản vượt trội có giá trị và tính thanh khoản cao.</p>
                     </div>
                 </div>
             </div>
@@ -124,7 +124,7 @@
                     <h2>MỤC TIÊU CHIẾN LƯỢC</h2>
                     <p>Trong 5 năm tới, trở thành đơn vị hàng đầu tại Việt Nam trong các lĩnh vực đầu tư, kinh doanh, phân phối và cho thuê bất động sản</p>
                     <p>Tiếp tục hoàn chỉnh và chuyên nghiệp hóa dịch vụ, tạo ra các giá trị tốt nhất và phù hợp nhất</p>
-                    <p>Kinh doanh dịch vụ sẽ là mảng dinh doanh mũi nhọn đưa Indochine thâm nhập thị trường quốc tế</p>
+                    <p>Kinh doanh dịch vụ sẽ là mảng dinh doanh mũi nhọn đưa VietnamHomes Group thâm nhập thị trường quốc tế</p>
                 </div>
             </div>
         </div>
@@ -193,7 +193,7 @@
                     <div class="timeline-entry">
                         <div class="timeline-time">Năm 2022</div>
                         <div class="timeline-content">
-                            <p>Sáng lập thương hiệu Bất Động Sản INDOCHINE</p>
+                            <p>Sáng lập thương hiệu VietnamHomes Group</p>
                         </div>
                     </div>
                 </div>
@@ -202,7 +202,7 @@
                 <div class="info">
                     <div class="img"> <img src="assets/images/gioithieu/C-Hang.png"> </div>
                     <div class="name">BÀ LÊ THỊ HẰNG</div>
-                    <div class="function"> Tổng Giám Đốc <br> Công ty Cổ phần BĐS INDOCHINE </div>
+                    <div class="function"> Chủ Tịch HĐQT <br> VietnamHomes Group </div>
                 </div>
             </div>
         </div>
@@ -212,7 +212,7 @@
                 <div class="info">
                     <div class="img"> <img src="assets/images/gioithieu/hai-anh.png"> </div>
                     <div class="name">ÔNG NGUYỄN HẢI ANH</div>
-                    <div class="function"> Giám Đốc Kinh Doanh <br> Công ty Cổ phần BĐS INDOCHINE </div>
+                    <div class="function"> Tổng Giám Đốc <br> VietnamHomes Group </div>
                 </div>
             </div>
             <div class="col-md-5">
@@ -233,6 +233,7 @@
                         <div class="timeline-time">2022 - Nay</div>
                         <div class="timeline-content">
                             <p>Giám đốc kinh doanh <br> Công ty Cổ Phần Bất Động Sản Indochine </p>
+                            <p>Tổng Giám Đốc <br> VietnamHomes Group </p>
                         </div>
                     </div>
                 </div>

@@ -38,7 +38,7 @@
             <div class="col-md-8 ft-main">
                 <div class="row">
                     <div class="col-md-6 ft-info">
-                        <img src="assets/images/logo.png" alt="">
+                        <img src="assets/images/logo VNH-04.png" alt="">
                     </div>
                     
                     <div class="col-md-6">

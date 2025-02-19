@@ -29,7 +29,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Công ty Cổ Phần Bất Động Sản VIETNAM HOMES</h1>
+                <h1>Công ty Cổ Phần VietnamHomes Group</h1>
                 <div class="review-map">
                     <ul class="nav review-tabs" role="tablist">
                         <li>
